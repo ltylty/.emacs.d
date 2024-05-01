@@ -1,19 +1,8 @@
-
 (use-package avy
-  :ensure t
-  :demand t)
+  :ensure t)
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;
-;;;   Power-ups: Embark and Consult
-;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-;; Consult: Misc. enhanced commands
 (use-package consult
   :ensure t
-  ;; Other good things to bind: consult-line-multi, consult-history,
-  ;; consult-outline, consult-org-agenda, etc.
   :bind (("C-x b" . consult-buffer)  ; orig. switch-to-buffer
          ("M-y" . consult-yank-pop)  ; orig. yank-pop
          ("M-s r" . consult-ripgrep)
@@ -24,44 +13,28 @@
 
 (use-package embark
   :ensure t
-  :demand t
-  :after avy
-  :bind (:map minibuffer-mode-map ("C-c C-e" . embark-export))
-  :init
-  ;; Add the option to run embark when using avy
-  (defun bedrock/avy-action-embark (pt)
-    (unwind-protect
-        (save-excursion
-          (goto-char pt)
-          (embark-act))
-      (select-window
-       (cdr (ring-ref avy-ring 0))))
-    t)
-
-  ;; After invoking avy-goto-char-timer, hit "." to run embark at the next
-  ;; candidate you select
-  (setf (alist-get ?. avy-dispatch-alist) 'bedrock/avy-action-embark))
+  :bind
+  (("C-c a" . embark-act))
+  (:map minibuffer-mode-map ("C-c C-e" . embark-export)))
 
 (use-package embark-consult
   :ensure t)
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;
-;;;   Minibuffer and completion
-;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-;; Vertico: better vertical completion for minibuffer commands
 (use-package vertico
   :ensure t
   :init
-  ;; You'll want to make sure that e.g. fido-mode isn't enabled
   (vertico-mode))
 
-(use-package vertico-directory
-  :after vertico
-  :bind (:map vertico-map
-              ("M-DEL" . vertico-directory-delete-word)))
+;; (use-package vertico-directory
+;;   :after vertico
+;;   :bind (:map vertico-map
+;;               ("M-DEL" . vertico-directory-delete-word)))
+
+;; Modify search results en masse
+(use-package wgrep
+  :ensure t
+  :config
+  (setq wgrep-auto-save-buffer t))
 
 ;; Marginalia: annotations for minibuffer
 (use-package marginalia
@@ -130,9 +103,3 @@
 ;;;   Misc. editing enhancements
 ;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-;; Modify search results en masse
-(use-package wgrep
-  :ensure t
-  :config
-  (setq wgrep-auto-save-buffer t))

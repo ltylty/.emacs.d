@@ -60,6 +60,7 @@
       "ss" 'consult-line
       "si" 'consult-imenu
       "sd" 'consult-ripgrep
+      "so" 'consult-outline
       ;; git
       "gg" 'magit
       ;; jump
