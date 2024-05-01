@@ -72,8 +72,9 @@
       ;; open
       "oe" 'eshell
       "oo" '(lambda () (interactive) (browse-url default-directory))
-      ;; hlep
+      ;; help
       "hk" 'describe-key
+      "hf" 'describe-function
       ;; quit
       "qq" '("Quit" . save-buffers-kill-terminal))
 

@@ -1,7 +1,6 @@
 (use-package emacs
   :config
   :hook
-  ;; Auto parenthesis matching
   ((prog-mode . electric-pair-mode)))
 
 (use-package magit
