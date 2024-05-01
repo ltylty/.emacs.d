@@ -52,9 +52,11 @@
   (corfu-cycle t)
   (corfu-auto t)
   (corfu-auto-prefix 1)
+  (corfu-preselect 'prompt)
   :init
   (global-corfu-mode)
   :bind
+  ("M-/" . completion-at-point)
   (:map corfu-map
         ("C-n" . corfu-next)
         ("C-p" . corfu-previous)))
