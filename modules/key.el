@@ -90,3 +90,4 @@
 (add-hook 'evil-insert-state-exit-hook  #'exit-insert-state)
 (evil-define-key '(normal motion) global-map "gh" #'evil-first-non-blank)
 (evil-define-key '(normal motion) global-map "gl" #'evil-end-of-line)
+(evil-define-key 'insert eshell-mode-map (kbd "C-r") #'consult-history)
