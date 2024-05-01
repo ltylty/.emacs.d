@@ -29,7 +29,10 @@
 
 (use-package treemacs
   :ensure t
-  :defer t)
+  :defer t
+  :config
+  (treemacs-project-follow-mode t)
+  (treemacs-follow-mode t))
 
 (use-package treemacs-evil
   :after (treemacs evil)

@@ -6,7 +6,7 @@
   (setq evil-respect-visual-line-mode t)
   (setq evil-undo-system 'undo-redo)
 
-  ;; (setq evil-want-keybinding nil)
+  (setq evil-want-keybinding nil)
 
   :config
   (evil-mode)
@@ -28,12 +28,12 @@
       "ww" 'evil-window-next
       "wm" 'delete-other-windows
       "ws" 'evil-window-split
-      "wS" (lambda () (interactive) (window-toggle-side-windows))
       "wv" 'evil-window-vsplit
       "wh" 'evil-window-left
       "wj" 'evil-window-down
       "wk" 'evil-window-up
       "wl" 'evil-window-right
+      "0" 'treemacs-select-window
       ;; file
       "ff" 'find-file
       "fs" 'save-buffer
@@ -53,7 +53,9 @@
       "pf" 'consult-fd
       ;; open
       "oe" 'eshell
-      "oo" '(lambda () (interactive) (browse-url default-directory)))
+      "oo" '(lambda () (interactive) (browse-url default-directory))
+      ;; hlep
+      "hk" 'describe-key
       ;; quit
       "qq" '("Quit" . save-buffers-kill-terminal))
 
@@ -61,11 +63,11 @@
     [tab] 'org-cycle
     [S-tab] 'org-shifttab)
 
-  (evil-define-key 'motion org-mode-map
-    "{" 'org-backward-paragraph
-    "}" 'org-forward-paragraph
-    "(" 'org-backward-sentence
-    ")" 'org-forward-sentence)
+  ;; (evil-define-key 'motion org-mode-map
+  ;;   "{" 'org-backward-paragraph
+  ;;   "}" 'org-forward-paragraph
+  ;;   "(" 'org-backward-sentence
+  ;;   ")" 'org-forward-sentence)
   
   ;; Configuring initial major mode for some modes
   (evil-set-initial-state 'vterm-mode 'emacs))
