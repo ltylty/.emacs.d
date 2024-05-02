@@ -24,6 +24,12 @@
   :ensure t
   :after evil)
 
+(use-package evil-visualstar
+  :ensure t
+  :after evil
+  :init
+  (global-evil-visualstar-mode))
+
 (use-package general
   :ensure t
   :after evil)
