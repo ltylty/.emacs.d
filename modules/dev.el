@@ -13,6 +13,11 @@
 (use-package magit
   :ensure t)
 
+(use-package git-gutter
+  :ensure t
+  :init
+  (global-git-gutter-mode +1))
+
 (use-package markdown-mode
   :hook ((markdown-mode . visual-line-mode)))
 
