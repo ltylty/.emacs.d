@@ -37,6 +37,7 @@
 (global-leader
       ;; buffer
       "bb" 'tabspaces-switch-to-buffer
+      "bO" 'tabspaces-clear-buffers
       "bB" 'consult-buffer
       "bd" 'evil-delete-buffer
       "bl" 'evil-switch-to-windows-last-buffer
@@ -70,8 +71,10 @@
       ;; project
       "pp" 'tabspaces-open-or-create-project-and-workspace
       "pd" 'tabspaces-kill-buffers-close-workspace
+      "pP" 'tab-switch
       "pf" 'project-find-file
       "ps" 'project-find-regexp
+      "pt" 'treemacs
       ;; open
       "oe" 'eshell
       "oo" '(lambda () (interactive) (browse-url default-directory))
