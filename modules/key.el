@@ -33,6 +33,7 @@
 
 (use-package evil-mc
   :ensure t
+  :defer t
   :after evil
   :init
   (global-evil-mc-mode 1))
