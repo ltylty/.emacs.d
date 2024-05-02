@@ -44,7 +44,7 @@
 
 (general-create-definer global-leader
     :keymaps 'override
-    :states '(normal visual insert emacs)
+    :states '(normal visual motion insert emacs)
     :prefix "SPC"
     :non-normal-prefix "C-SPC")
 
@@ -66,7 +66,7 @@
       "wj" 'evil-window-down
       "wk" 'evil-window-up
       "wl" 'evil-window-right
-      "0" 'treemacs-select-window
+      "w0" 'treemacs-select-window
       ;; file
       "ff" 'find-file
       "fF" 'consult-fd
@@ -97,6 +97,7 @@
       "hk" 'describe-key
       "hf" 'describe-function
       "hv" 'describe-variable
+      "hm" 'describe-mode
       ;; quit
       "qq" '("Quit" . save-buffers-kill-terminal))
 

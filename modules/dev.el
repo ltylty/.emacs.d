@@ -42,3 +42,7 @@
   :config
   (treemacs-project-follow-mode t)
   (treemacs-follow-mode t))
+
+(use-package treemacs-evil
+  :after (treemacs evil)
+  :ensure t)

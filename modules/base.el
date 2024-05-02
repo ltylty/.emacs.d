@@ -49,7 +49,6 @@
   :init
   (global-corfu-mode)
   :bind
-  ("M-/" . completion-at-point)
   (:map corfu-map
         ("C-n" . corfu-next)
         ("C-p" . corfu-previous)))
