@@ -13,7 +13,8 @@
   :ensure t
   :after evil
   :init
-  (evil-collection-init))
+  (evil-collection-init)
+  (setq evil-collection-key-blacklist '("SPC")))
 
 (use-package evil-surround
   :ensure t
