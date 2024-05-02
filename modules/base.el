@@ -14,12 +14,11 @@
 
 (use-package consult
   :ensure t
-  :bind (("C-x b" . consult-buffer)  ; orig. switch-to-buffer
-         ("M-y" . consult-yank-pop)  ; orig. yank-pop
+  :bind (("C-x b" . consult-buffer)
+         ("M-y" . consult-yank-pop)
          ("M-s r" . consult-ripgrep)
-         ("C-s" . consult-line))     ; orig. isearch
+         ("C-s" . consult-line))
   :config
-  ;; Narrowing lets you restrict results to certain groups of candidates
   (setq consult-narrow-key "<"))
 
 (use-package embark
