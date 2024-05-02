@@ -30,6 +30,12 @@
   :init
   (global-evil-visualstar-mode))
 
+(use-package evil-mc
+  :ensure t
+  :after evil
+  :init
+  (global-evil-mc-mode 1))
+
 (use-package general
   :ensure t
   :after evil)
