@@ -81,6 +81,7 @@
       ;; help
       "hk" 'describe-key
       "hf" 'describe-function
+      "hv" 'describe-variable
       ;; quit
       "qq" '("Quit" . save-buffers-kill-terminal))
 
