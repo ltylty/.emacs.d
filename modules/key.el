@@ -51,6 +51,7 @@
 (global-leader
       ;; buffer
       "bb" 'tabspaces-switch-to-buffer
+      "bi" 'ibuffer
       "bO" 'tabspaces-clear-buffers
       "bB" 'consult-buffer
       "bd" 'evil-delete-buffer
