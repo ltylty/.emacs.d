@@ -11,7 +11,8 @@
   :ensure t)
 
 (use-package magit
-  :ensure t)
+  :ensure t
+  :defer t)
 
 (use-package git-gutter
   :ensure t
