@@ -3,6 +3,15 @@
   :hook
   ((prog-mode . electric-pair-mode)))
 
+;; (use-package project
+;;     :custom
+;;     (project-switch-commands
+;; 	'((project-find-file "find file")
+;; 	  (project-dired "dired"))))
+
+(use-package tabspaces
+  :ensure t)
+
 (use-package magit
   :ensure t)
 

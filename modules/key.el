@@ -36,7 +36,8 @@
 
 (global-leader
       ;; buffer
-      "bb" 'consult-buffer
+      "bb" 'tabspaces-switch-to-buffer
+      "bB" 'consult-buffer
       "bd" 'evil-delete-buffer
       "bl" 'evil-switch-to-windows-last-buffer
       ;; window
@@ -67,7 +68,8 @@
       "jw" 'avy-goto-char-timer
       "jl" 'avy-goto-line
       ;; project
-      "pp" 'project-switch-project
+      "pp" 'tabspaces-open-or-create-project-and-workspace
+      "pd" 'tabspaces-kill-buffers-close-workspace
       "pf" 'project-find-file
       "ps" 'project-find-regexp
       ;; open
