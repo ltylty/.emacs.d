@@ -13,13 +13,7 @@
   :ensure t)
 
 (use-package consult
-  :ensure t
-  :bind (("C-x b" . consult-buffer)
-         ("M-y" . consult-yank-pop)
-         ("M-s r" . consult-ripgrep)
-         ("C-s" . consult-line))
-  :config
-  (setq consult-narrow-key "<"))
+  :ensure t)
 
 (use-package embark
   :ensure t
