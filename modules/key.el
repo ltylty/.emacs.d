@@ -84,6 +84,7 @@
       ;; jump
       "jw" 'avy-goto-char-timer
       "jl" 'avy-goto-line
+      "jr" 'color-rg-search-symbol-in-project
       ;; project
       "pp" 'tabspaces-open-or-create-project-and-workspace
       "pd" 'tabspaces-kill-buffers-close-workspace

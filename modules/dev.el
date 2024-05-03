@@ -46,3 +46,8 @@
 (use-package treemacs-evil
   :after (treemacs evil)
   :ensure t)
+
+(unless (package-installed-p 'color-rg)
+  (package-vc-install "https://github.com/manateelazycat/color-rg"))
+(require 'color-rg)
+(setq color-rg-command-prefix "powershell")

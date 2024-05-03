@@ -13,7 +13,9 @@
   :ensure t)
 
 (use-package consult
-  :ensure t)
+  :ensure t
+  :config
+  (setq consult-async-input-debounce 0.8))
 
 (use-package embark
   :ensure t
