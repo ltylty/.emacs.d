@@ -7,9 +7,6 @@
     :custom
     (project-switch-commands 'project-dired))
 
-(use-package tabspaces
-  :ensure t)
-
 (use-package magit
   :ensure t
   :defer t)

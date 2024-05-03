@@ -51,10 +51,9 @@
 (global-leader
       "SPC" 'execute-extended-command
       ;; buffer
-      "bb" 'tabspaces-switch-to-buffer
-      "bi" 'ibuffer
-      "bO" 'tabspaces-clear-buffers
+      "bb" 'project-switch-to-buffer
       "bB" 'consult-buffer
+      "bi" 'ibuffer
       "bd" 'evil-delete-buffer
       "bl" 'evil-switch-to-windows-last-buffer
       ;; window
@@ -86,8 +85,8 @@
       "jl" 'avy-goto-line
       "jr" 'color-rg-search-symbol-in-project
       ;; project
-      "pp" 'tabspaces-open-or-create-project-and-workspace
-      "pd" 'tabspaces-kill-buffers-close-workspace
+      "pp" 'project-switch-project
+      "pd" 'project-kill-buffers
       "pP" 'tab-switch
       "pf" 'project-find-file
       "ps" 'consult-ripgrep
