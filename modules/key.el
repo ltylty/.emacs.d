@@ -114,3 +114,7 @@
 (evil-define-key '(normal motion) global-map "gh" #'evil-first-non-blank)
 (evil-define-key '(normal motion) global-map "gl" #'evil-end-of-line)
 (evil-define-key 'insert eshell-mode-map (kbd "C-r") #'consult-history)
+
+(define-key minibuffer-local-map (kbd "C-v") 'yank)
+(define-key minibuffer-local-map (kbd "C-w") 'evil-delete-backward-word)
+(define-key minibuffer-local-map (kbd "C-u") 'evil-delete-back-to-indentation)
