@@ -49,6 +49,7 @@
     :non-normal-prefix "C-SPC")
 
 (global-leader
+      "SPC" 'execute-extended-command
       ;; buffer
       "bb" 'tabspaces-switch-to-buffer
       "bi" 'ibuffer
@@ -66,7 +67,7 @@
       "wj" 'evil-window-down
       "wk" 'evil-window-up
       "wl" 'evil-window-right
-      "w0" 'treemacs-select-window
+      "0" 'treemacs-select-window
       ;; file
       "ff" 'find-file
       "fF" 'consult-fd
@@ -76,7 +77,7 @@
       ;; search
       "ss" 'consult-line
       "si" 'consult-imenu
-      "sd" 'consult-ripgrep
+      "sd" '(lambda () (interactive) (consult-ripgrep default-directory))
       "so" 'consult-outline
       ;; git
       "gg" 'magit
@@ -88,7 +89,7 @@
       "pd" 'tabspaces-kill-buffers-close-workspace
       "pP" 'tab-switch
       "pf" 'project-find-file
-      "ps" 'project-find-regexp
+      "ps" 'consult-ripgrep
       "pt" 'treemacs
       ;; open
       "oe" 'eshell
