@@ -1,8 +1,8 @@
 (use-package recentf
-    :init
-    (recentf-mode)
-    :config
-    (setq recentf-max-saved-items 200))
+  :init
+  (recentf-mode)
+  :config
+  (setq recentf-max-saved-items 200))
 
 (use-package which-key
   :ensure t
@@ -52,8 +52,8 @@
   (global-corfu-mode)
   :bind
   (:map corfu-map
-        ("C-n" . corfu-next)
-        ("C-p" . corfu-previous)))
+    ("C-n" . corfu-next)
+    ("C-p" . corfu-previous)))
 
 (use-package cape
   :ensure t

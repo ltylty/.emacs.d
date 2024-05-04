@@ -4,8 +4,8 @@
   ((prog-mode . electric-pair-mode)))
 
 (use-package project
-    :custom
-    (project-switch-commands 'project-dired))
+  :custom
+  (project-switch-commands 'project-dired))
 
 (use-package magit
   :ensure t

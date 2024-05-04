@@ -39,6 +39,7 @@
   :init
   (global-evil-mc-mode 1))
 
+;; space leader key
 (define-prefix-command 'my-leader-map)
 (keymap-set evil-motion-state-map "SPC" 'my-leader-map)
 (keymap-set evil-normal-state-map "SPC" 'my-leader-map)
@@ -80,7 +81,9 @@
   ;; jump
   "jw" 'avy-goto-char-timer
   "jl" 'avy-goto-line
-  "jr" 'color-rg-search-symbol-in-project
+  "jrp" 'color-rg-search-symbol-in-project
+  "jrd" 'color-rg-search-symbol
+  "jrf" 'color-rg-search-symbol-in-current-file
   ;; project
   "pp" 'project-switch-project
   "pd" 'project-kill-buffers
