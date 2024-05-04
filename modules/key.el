@@ -42,13 +42,13 @@
   (global-evil-mc-mode 1))
 
 ;; space leader key
-(define-prefix-command 'my-leader-map)
-(keymap-set evil-motion-state-map "SPC" 'my-leader-map)
-(keymap-set evil-normal-state-map "SPC" 'my-leader-map)
-(evil-define-key '(normal visual) magit-mode-map (kbd "SPC") 'my-leader-map)
-(evil-define-key '(normal visual) help-mode-map (kbd "SPC") 'my-leader-map)
+(define-prefix-command 'space-leader-map)
+(keymap-set evil-motion-state-map "SPC" 'space-leader-map)
+(keymap-set evil-normal-state-map "SPC" 'space-leader-map)
+(evil-define-key '(normal visual) magit-mode-map (kbd "SPC") 'space-leader-map)
+(evil-define-key '(normal visual) help-mode-map (kbd "SPC") 'space-leader-map)
 
-(evil-define-key nil my-leader-map
+(evil-define-key nil space-leader-map
   "SPC" 'execute-extended-command
   ;; buffer
   "bb" 'project-switch-to-buffer
