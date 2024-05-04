@@ -1,5 +1,6 @@
 (use-package emacs
   :config
+  (defalias 'yes-or-no-p 'y-or-n-p)
   :hook
   ((prog-mode . electric-pair-mode)))
 

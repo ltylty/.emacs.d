@@ -1,4 +1,5 @@
 (use-package recentf
+  :defer
   :init
   (recentf-mode)
   :config
