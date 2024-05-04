@@ -1,8 +1,7 @@
 (use-package evil
   :ensure t
-  :custom
-  (evil-disable-insert-state-bindings t)
   :init
+  (setq evil-disable-insert-state-bindings t)
   (setq evil-undo-system 'undo-redo)
   (setq evil-want-keybinding nil)
   (setq evil-want-C-u-scroll t)
@@ -10,7 +9,7 @@
   (setq evil-want-C-w-delete t)
   (setq evil-shift-width 2)
   :config
-  (setq evil-emacs-state-modes '(ediff-mode ediff-meta-mode))
+  (setq evil-emacs-state-modes '(ediff-mode ediff-meta-mode color-rg-mode))
   (add-hook 'with-editor-mode-hook 'evil-insert-state)
   (evil-select-search-module 'evil-search-module 'evil-search)
   (evil-mode))

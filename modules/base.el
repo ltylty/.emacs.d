@@ -53,6 +53,7 @@
   (global-corfu-mode)
   :bind
   (:map corfu-map
+    ("<escape>" . corfu-quit)
     ("C-n" . corfu-next)
     ("C-p" . corfu-previous)))
 
