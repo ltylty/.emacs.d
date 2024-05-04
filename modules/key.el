@@ -1,5 +1,7 @@
 (use-package evil
   :ensure t
+  :custom
+  (evil-disable-insert-state-bindings t)
   :init
   (setq evil-undo-system 'undo-redo)
   (setq evil-want-keybinding nil)
@@ -43,8 +45,8 @@
 (define-prefix-command 'my-leader-map)
 (keymap-set evil-motion-state-map "SPC" 'my-leader-map)
 (keymap-set evil-normal-state-map "SPC" 'my-leader-map)
-(evil-define-key 'normal magit-mode-map (kbd "SPC") 'my-leader-map)
-(evil-define-key 'normal help-mode-map (kbd "SPC") 'my-leader-map)
+(evil-define-key '(normal visual) magit-mode-map (kbd "SPC") 'my-leader-map)
+(evil-define-key '(normal visual) help-mode-map (kbd "SPC") 'my-leader-map)
 
 (evil-define-key nil my-leader-map
   "SPC" 'execute-extended-command

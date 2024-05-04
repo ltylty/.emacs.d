@@ -44,6 +44,14 @@
   :after (treemacs evil)
   :ensure t)
 
+(use-package highlight-thing
+  :ensure t
+  :config
+  (setq highlight-thing-exclude-thing-under-point t)
+  (custom-set-faces
+    '(highlight-thing ((t (:background "dark slate gray" :foreground "white")))))
+  (add-hook 'prog-mode-hook 'highlight-thing-mode))
+
 (unless (package-installed-p 'color-rg)
   (package-vc-install "https://github.com/manateelazycat/color-rg"))
 (require 'color-rg)
