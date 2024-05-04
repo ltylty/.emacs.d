@@ -12,6 +12,7 @@
   :config
   (setq evil-emacs-state-modes '(ediff-mode ediff-meta-mode))
   (add-hook 'with-editor-mode-hook 'evil-insert-state)
+  (evil-select-search-module 'evil-search-module 'evil-search)
   (evil-mode))
   
 (use-package evil-surround
@@ -42,7 +43,7 @@
 (keymap-set evil-normal-state-map "SPC" 'space-leader-map)
 
 (evil-define-key nil space-leader-map
-  "SPC" 'execute-extended-command
+  (kbd "SPC") 'execute-extended-command
   ;; buffer
   "bb" 'project-switch-to-buffer
   "bB" 'consult-buffer
@@ -62,7 +63,7 @@
   "0" 'treemacs-select-window
   ;; file
   "ff" 'find-file
-  "fF" 'consult-fd
+  "fF" '(lambda () (interactive) (consult-fd default-directory))
   "fs" 'save-buffer
   "fr" 'consult-recent-file
   "fd" 'dired
