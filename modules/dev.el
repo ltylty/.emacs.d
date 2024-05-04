@@ -7,6 +7,11 @@
   :custom
   (project-switch-commands 'project-dired))
 
+(use-package project-tab-groups
+  :ensure
+  :config
+  (project-tab-groups-mode 1))
+
 (use-package magit
   :ensure t
   :defer t)

@@ -105,7 +105,7 @@
   "qq" '("Quit" . save-buffers-kill-terminal))
 
 ;; emacs key
-(add-hook 'buffer-list-update-hook '(lambda () (interactive) (keymap-set space-leader-map "e" (symbol-value (intern-soft (format "%s-map" major-mode))))))
+(add-hook 'buffer-list-update-hook '(lambda () (interactive) (keymap-set space-leader-map "m" (symbol-value (intern-soft (format "%s-map" major-mode))))))
 
 (defun exit-insert-state ()
   (cua-mode -1)
