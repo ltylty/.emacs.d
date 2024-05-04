@@ -7,6 +7,10 @@
     :custom
     (project-switch-commands 'project-dired))
 
+(use-package magit
+  :ensure t
+  :defer t)
+
 (use-package git-gutter
   :ensure t
   :init
