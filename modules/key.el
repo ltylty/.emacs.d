@@ -10,15 +10,9 @@
   (setq evil-want-C-w-delete t)
   (setq evil-shift-width 2)
   :config
+  (setq evil-emacs-state-modes '(ediff-mode ediff-meta-mode))
   (evil-mode))
   
-;; (use-package evil-collection
-;;   :ensure t
-;;   :after evil
-;;   :init
-;;   (evil-collection-init)
-;;   (setq evil-collection-key-blacklist '("SPC")))
-
 (use-package evil-surround
   :ensure t
   :init
@@ -45,12 +39,6 @@
 (define-prefix-command 'space-leader-map)
 (keymap-set evil-motion-state-map "SPC" 'space-leader-map)
 (keymap-set evil-normal-state-map "SPC" 'space-leader-map)
-
-;; (keymap-set evil-normal-state-map "2" dired-mode-map)
-
-
-;; (evil-define-key '(normal visual) magit-mode-map (kbd "SPC") 'space-leader-map)
-;; (evil-define-key '(normal visual) help-mode-map (kbd "SPC") 'space-leader-map)
 
 (eval-after-load "evil-maps"
   (dolist (map '(evil-motion-state-map
@@ -112,18 +100,10 @@
   "hf" 'describe-function
   "hv" 'describe-variable
   "hm" 'describe-mode
-  ;; emacs key
-  ;; "e" (symbol-value (intern (format "%s-map" major-mode)))
-  ;; "e" (symbol-value (intern (format "%s-map" major-mode)))
-  ;; "e" (eval (intern (format "%s-map" major-mode)))
-  ;; "e" dired-mode-map
-  ;; "e" (bintern (format "%s-map" major-mode))
   ;; quit
   "qq" '("Quit" . save-buffers-kill-terminal))
 
-;; (keymap-set space-leader-map "1" (lambda () (interactive) (symbol-value (intern-soft (format "%s-map" major-mode)))))
-;; (keymap-set space-leader-map "3" emacs-lisp-mode-map)
-
+;; emacs key
 (add-hook 'buffer-list-update-hook '(lambda () (interactive) (keymap-set space-leader-map "e" (symbol-value (intern-soft (format "%s-map" major-mode))))))
 
 (defun exit-insert-state ()
