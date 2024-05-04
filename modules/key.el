@@ -42,7 +42,7 @@
 (keymap-set evil-motion-state-map "SPC" 'my-leader-map)
 (keymap-set evil-normal-state-map "SPC" 'my-leader-map)
 
-(evil-define-key 'normal magit-mode-map (kbd "SPC") my-leader-map)
+(evil-define-key 'normal magit-mode-map (kbd "SPC") 'my-leader-map)
 
 (evil-define-key nil my-leader-map
       "SPC" 'execute-extended-command
