@@ -41,13 +41,6 @@
 (keymap-set evil-motion-state-map "SPC" 'space-leader-map)
 (keymap-set evil-normal-state-map "SPC" 'space-leader-map)
 
-(eval-after-load "evil-maps"
-  (dolist (map '(evil-motion-state-map
-                 evil-normal-state-map))
-    (define-key (eval map) "q" nil)
-    (define-key (eval map) (kbd "TAB") nil)
-    (define-key (eval map) (kbd "RET") nil)))
-
 (evil-define-key nil space-leader-map
   "SPC" 'execute-extended-command
   ;; buffer
@@ -105,6 +98,13 @@
   "qq" '("Quit" . save-buffers-kill-terminal))
 
 ;; emacs key
+(eval-after-load "evil-maps"
+  (dolist (map '(evil-motion-state-map
+                 evil-normal-state-map))
+    (define-key (eval map) "q" nil)
+    (define-key (eval map) (kbd "TAB") nil)
+    (define-key (eval map) (kbd "RET") nil)))
+
 (add-hook 'buffer-list-update-hook '(lambda () (interactive) (keymap-set space-leader-map "m" (symbol-value (intern-soft (format "%s-map" major-mode))))))
 
 (defun exit-insert-state ()
