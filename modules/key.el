@@ -7,6 +7,7 @@
   (setq evil-want-C-u-scroll t)
   (setq evil-want-C-u-delete t)
   (setq evil-want-C-w-delete t)
+  (setq evil-want-C-i-jump nil)
   (setq evil-shift-width 2)
   :config
   (setq evil-emacs-state-modes '(ediff-mode ediff-meta-mode color-rg-mode))
@@ -16,6 +17,7 @@
   
 (use-package evil-surround
   :ensure t
+  :after evil
   :init
   (global-evil-surround-mode 1))
 
@@ -90,6 +92,8 @@
   "jc" 'avy-goto-char-timer
   "jw" 'ace-select-window
   "jl" 'avy-goto-line
+  "jb" 'evil-jump-backward
+  "jf" 'evil-jump-forward
   "jrp" 'color-rg-search-symbol-in-project
   "jrd" 'color-rg-search-symbol
   "jrf" 'color-rg-search-symbol-in-current-file
@@ -116,7 +120,6 @@
   (dolist (map '(evil-motion-state-map
                  evil-normal-state-map))
     (define-key (eval map) "q" nil)
-    (define-key (eval map) (kbd "TAB") nil)
     (define-key (eval map) (kbd "RET") nil)))
 
 (add-hook 'buffer-list-update-hook '(lambda () (interactive) (keymap-set space-leader-map "m" (symbol-value (intern-soft (format "%s-map" major-mode))))))

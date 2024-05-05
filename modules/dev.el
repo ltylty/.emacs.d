@@ -4,6 +4,17 @@
   :hook
   ((prog-mode . electric-pair-mode)))
 
+(use-package eglot
+  :hook
+  (((python-ts-mode java-ts-mode-hook) . eglot-ensure)))
+
+(use-package treesit-auto
+  :ensure t
+  :custom
+  (treesit-auto-install 'prompt)
+  :config
+  (global-treesit-auto-mode))
+
 (use-package project
   :custom
   (project-switch-commands 'project-dired))
@@ -27,17 +38,6 @@
 
 (use-package json-mode
   :ensure t)
-
-(use-package eglot
-  :hook
-  (((python-ts-mode java-ts-mode-hook) . eglot-ensure)))
-
-(use-package treesit-auto
-  :ensure t
-  :custom
-  (treesit-auto-install 'prompt)
-  :config
-  (global-treesit-auto-mode))
 
 (use-package treemacs
   :ensure t
