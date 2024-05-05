@@ -74,7 +74,8 @@
   ;; git
   "gg" 'magit
   ;; jump
-  "jw" 'avy-goto-char-timer
+  "jc" 'avy-goto-char-timer
+  "jw" 'ace-select-window
   "jl" 'avy-goto-line
   "jrp" 'color-rg-search-symbol-in-project
   "jrd" 'color-rg-search-symbol
