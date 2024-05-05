@@ -90,8 +90,8 @@
   "gg" 'magit
   ;; jump
   "jc" 'avy-goto-char-timer
-  "jw" 'ace-select-window
   "jl" 'avy-goto-line
+  "jw" 'ace-select-window
   "jb" 'evil-jump-backward
   "jf" 'evil-jump-forward
   "jrp" 'color-rg-search-symbol-in-project
@@ -140,3 +140,4 @@
 (define-key minibuffer-local-map (kbd "C-v") 'yank)
 (define-key minibuffer-local-map (kbd "C-w") 'evil-delete-backward-word)
 (define-key minibuffer-local-map (kbd "C-u") 'evil-delete-back-to-indentation)
+(define-key minibuffer-local-map (kbd "<escape>") 'keyboard-escape-quit)
