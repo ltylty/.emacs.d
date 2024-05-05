@@ -23,6 +23,19 @@
   :ensure t
   :after evil)
 
+(use-package evil-textobj-anyblock
+  :ensure t
+  :after evil
+  :config
+  (setq evil-textobj-anyblock-blocks
+        '(("'" . "'")
+	  ("\"" . "\"")
+	  ("`" . "`")
+	  ("‘" . "’")
+	  ("“" . "”")))
+  (define-key evil-inner-text-objects-map "q" 'evil-textobj-anyblock-inner-block)
+  (define-key evil-outer-text-objects-map "q" 'evil-textobj-anyblock-a-block))
+
 (use-package evil-visualstar
   :ensure t
   :after evil
@@ -119,6 +132,7 @@
 (evil-define-key '(normal motion) global-map "gh" #'evil-first-non-blank)
 (evil-define-key '(normal motion) global-map "gl" #'evil-end-of-line)
 (evil-define-key 'insert eshell-mode-map (kbd "C-r") #'consult-history)
+(evil-define-key 'insert shell-mode-map (kbd "C-r") #'consult-history)
 
 (define-key minibuffer-local-map (kbd "C-v") 'yank)
 (define-key minibuffer-local-map (kbd "C-w") 'evil-delete-backward-word)
