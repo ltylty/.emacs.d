@@ -138,6 +138,7 @@
 (add-hook 'evil-insert-state-exit-hook  #'exit-insert-state)
 (evil-define-key '(normal motion visual) global-map "gh" #'evil-first-non-blank)
 (evil-define-key '(normal motion visual) global-map "gl" #'evil-end-of-line)
+(evil-define-key '(normal motion visual) global-map "gr" #'xref-find-references)
 (evil-define-key 'insert eshell-mode-map (kbd "C-r") #'consult-history)
 (evil-define-key 'insert shell-mode-map (kbd "C-r") #'consult-history)
 
