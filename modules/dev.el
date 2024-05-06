@@ -27,9 +27,7 @@
 
 (use-package magit
   :ensure t
-  :defer t
-  :config
-  (setq magit-git-output-coding-system 'utf-8))
+  :defer t)
 
 (use-package git-gutter
   :ensure t
