@@ -59,8 +59,7 @@
 (evil-define-key nil space-leader-map
   (kbd "SPC") 'execute-extended-command
   ;; buffer
-  "bb" 'project-switch-to-buffer
-  "bB" 'consult-buffer
+  "bb" 'consult-buffer
   "bi" 'ibuffer
   "bd" 'evil-delete-buffer
   "bl" 'evil-switch-to-windows-last-buffer
@@ -104,6 +103,7 @@
   "pd" 'project-kill-buffers
   "pP" 'tab-switch
   "pf" 'project-find-file
+  "pb" 'project-switch-to-buffer
   "ps" 'consult-ripgrep
   "pt" 'treemacs
   ;; open
