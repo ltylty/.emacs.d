@@ -44,12 +44,12 @@
   :init
   (global-evil-visualstar-mode))
 
-(use-package evil-mc
-  :ensure t
-  :defer t
-  :after evil
-  :init
-  (global-evil-mc-mode 1))
+;; (use-package evil-mc
+;;   :ensure t
+;;   :defer t
+;;   :after evil
+;;   :init
+;;   (global-evil-mc-mode 1))
 
 ;; space leader key
 (define-prefix-command 'space-leader-map)
@@ -82,11 +82,14 @@
   "fs" 'save-buffer
   "fr" 'consult-recent-file
   "fd" 'dired
+  "fD" 'dired-jump
   ;; search
   "ss" 'consult-line
+  "sS" '(lambda () (interactive) (consult-ripgrep default-directory))
   "si" 'consult-imenu
-  "sd" '(lambda () (interactive) (consult-ripgrep default-directory))
   "so" 'consult-outline
+  "sb" 'consult-bookmark
+  "se" 'consult-flymake
   ;; git
   "gg" 'magit
   ;; jump
@@ -136,6 +139,7 @@
 (add-hook 'evil-insert-state-exit-hook  #'exit-insert-state)
 (evil-define-key '(normal motion) global-map "gh" #'evil-first-non-blank)
 (evil-define-key '(normal motion) global-map "gl" #'evil-end-of-line)
+(evil-define-key '(normal motion) global-map "gr" #'xref-find-references)
 (evil-define-key 'insert eshell-mode-map (kbd "C-r") #'consult-history)
 (evil-define-key 'insert shell-mode-map (kbd "C-r") #'consult-history)
 

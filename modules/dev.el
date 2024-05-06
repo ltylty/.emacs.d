@@ -5,8 +5,9 @@
   ((prog-mode . electric-pair-mode)))
 
 (use-package eglot
-  :hook
-  (((python-ts-mode java-ts-mode-hook) . eglot-ensure)))
+  :config
+  (add-hook 'java-ts-mode-hook 'eglot-ensure)
+  (add-hook 'python-ts-mode-hook 'eglot-ensure))
 
 (use-package treesit-auto
   :ensure t
