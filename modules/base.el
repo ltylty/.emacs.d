@@ -4,6 +4,10 @@
   :config
   (setq recentf-max-saved-items 200))
 
+(use-package winner
+  :init
+  (winner-mode))
+
 (use-package which-key
   :ensure t
   :config

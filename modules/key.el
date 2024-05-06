@@ -74,6 +74,8 @@
   "wj" 'evil-window-down
   "wk" 'evil-window-up
   "wl" 'evil-window-right
+  "wu" 'winner-undo
+  "wr" 'winner-redo
   "0" 'treemacs-select-window
   ;; file
   "ff" 'find-file
