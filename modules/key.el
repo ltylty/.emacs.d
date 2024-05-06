@@ -44,6 +44,12 @@
   :init
   (global-evil-visualstar-mode))
 
+(use-package evil-multiedit
+  :ensure t
+  :after evil
+  :config
+  (evil-multiedit-default-keybinds))
+
 ;; space leader key
 (define-prefix-command 'space-leader-map)
 (keymap-set evil-motion-state-map "SPC" 'space-leader-map)
@@ -73,7 +79,7 @@
   "ff" 'find-file
   "fF" '(lambda () (interactive) (consult-fd default-directory))
   "fs" 'save-buffer
-  "fr" 'consult-recent-file
+  "fr" 'recentf
   "fd" 'dired
   "fD" 'dired-jump
   ;; search
