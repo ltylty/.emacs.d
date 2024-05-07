@@ -26,6 +26,8 @@
   (setq xref-show-xrefs-function #'consult-xref
         xref-show-definitions-function #'consult-xref)
   :config
+  (add-to-list 'process-coding-system-alist '("[gG][rR][eE][pP]" . (utf-8 . gbk-dos)))
+  (add-to-list 'process-coding-system-alist '("[rR][gG]" . (utf-8 . gbk-dos)))
   (setq consult-async-input-debounce 0.8))
 
 (use-package embark

@@ -62,6 +62,7 @@
   "bi" 'ibuffer
   "bd" 'evil-delete-buffer
   "bl" 'evil-switch-to-windows-last-buffer
+  "bx" '(lambda () (interactive) (switch-to-buffer "*scratch*"))
   ;; window
   "wd" 'evil-window-delete
   "ww" 'evil-window-next
@@ -77,14 +78,12 @@
   "0" 'treemacs-select-window
   ;; file
   "ff" 'find-file
-  "fF" '(lambda () (interactive) (consult-fd default-directory))
+  "fd" '(lambda () (interactive) (consult-fd default-directory))
   "fs" 'save-buffer
   "fr" 'recentf
-  "fd" 'dired
-  "fD" 'dired-jump
   ;; search
   "ss" 'consult-line
-  "sS" '(lambda () (interactive) (consult-ripgrep default-directory))
+  "sd" '(lambda () (interactive) (consult-ripgrep default-directory))
   "si" 'consult-imenu
   "so" 'consult-outline
   "sb" 'consult-bookmark
@@ -109,6 +108,8 @@
   ;; open
   "oe" 'eshell
   "oo" '(lambda () (interactive) (browse-url default-directory))
+  "od" 'dired
+  "oD" 'dired-jump
   ;; help
   "hk" 'describe-key
   "hf" 'describe-function
