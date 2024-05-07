@@ -6,6 +6,11 @@
   :init
   (winner-mode))
 
+(use-package org
+  :defer t
+  :config
+  (setq org-log-done 'time))
+
 (use-package which-key
   :ensure t
   :config

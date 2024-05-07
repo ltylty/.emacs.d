@@ -5,6 +5,8 @@
   ((prog-mode . electric-pair-mode)))
 
 (use-package eglot
+  :custom
+  (eglot-autoshutdown t)  ;; shutdown language server after closing last file
   :config
   (add-hook 'java-ts-mode-hook 'eglot-ensure)
   (add-hook 'python-ts-mode-hook 'eglot-ensure))

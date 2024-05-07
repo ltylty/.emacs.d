@@ -95,8 +95,6 @@
   "jj" 'avy-goto-word-1
   "jl" 'avy-goto-line
   "jw" 'ace-select-window
-  "jb" 'evil-jump-backward
-  "jf" 'evil-jump-forwar
   "jrp" 'color-rg-search-symbol-in-project
   "jrd" 'color-rg-search-symbol
   "jrf" 'color-rg-search-symbol-in-current-file
