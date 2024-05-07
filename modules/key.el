@@ -141,6 +141,9 @@
 (evil-define-key '(normal motion visual) global-map "gr" #'xref-find-references)
 (evil-define-key 'insert eshell-mode-map (kbd "C-r") #'consult-history)
 (evil-define-key 'insert shell-mode-map (kbd "C-r") #'consult-history)
+(evil-define-key 'normal org-mode-map (kbd "RET") #'org-open-at-point)
+(evil-define-key 'normal markdown-mode-map (kbd "RET") #'markdown-follow-thing-at-point)
+(evil-define-key 'normal dired-mode-map (kbd "<backspace>") #'dired-up-directory)
 
 (define-key minibuffer-local-map (kbd "C-v") 'yank)
 (define-key minibuffer-local-map (kbd "C-w") 'evil-delete-backward-word)

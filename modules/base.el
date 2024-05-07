@@ -1,8 +1,6 @@
 (use-package recentf
   :init
-  (recentf-mode)
-  :config
-  (setq recentf-max-saved-items 200))
+  (recentf-mode))
 
 (use-package winner
   :init
