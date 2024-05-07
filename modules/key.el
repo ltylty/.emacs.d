@@ -92,7 +92,7 @@
   ;; git
   "gg" 'magit
   ;; jump
-  "jc" 'avy-goto-char-timer
+  "jj" 'avy-goto-word-1
   "jl" 'avy-goto-line
   "jw" 'ace-select-window
   "jb" 'evil-jump-backward
