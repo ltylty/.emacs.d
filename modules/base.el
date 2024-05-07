@@ -25,24 +25,10 @@
   :config
   (setq consult-async-input-debounce 0.8))
 
-(use-package embark
-  :ensure t
-  :bind
-  (("C-c a" . embark-act))
-  (:map minibuffer-mode-map ("C-c C-e" . embark-export)))
-
-(use-package embark-consult
-  :ensure t)
-
 (use-package vertico
   :ensure t
   :init
   (vertico-mode))
-
-(use-package wgrep
-  :ensure t
-  :config
-  (setq wgrep-auto-save-buffer t))
 
 (use-package marginalia
   :ensure t
