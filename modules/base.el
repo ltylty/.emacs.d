@@ -28,8 +28,16 @@
   :config
   (setq consult-async-input-debounce 0.8))
 
+(use-package embark
+  :ensure t
+  :bind
+  (("C-c C-a" . embark-act))
+  (:map minibuffer-mode-map ("C-c C-e" . embark-export)))
+
 (use-package vertico
   :ensure t
+  :custom
+  (vertico-cycle t)
   :init
   (vertico-mode))
 
