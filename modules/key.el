@@ -99,8 +99,7 @@
   "jrf" 'color-rg-search-symbol-in-current-file
   ;; project
   "pp" 'project-switch-project
-  "pk" 'project-kill-buffers
-  "pd" 'project-dired
+  "pd" 'project-kill-buffers
   "pl" 'tab-switch
   "pf" 'project-find-file
   "pb" 'project-switch-to-buffer
