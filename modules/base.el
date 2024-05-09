@@ -55,14 +55,27 @@
   (corfu-cycle t)
   (corfu-auto t)
   (corfu-auto-prefix 1)
-  (corfu-preselect 'prompt)
+  ;; (corfu-preselect 'prompt)
+  (corfu-quit-at-boundary t)
+  (corfu-quit-no-match t) 
   :init
   (global-corfu-mode)
+  :config
+  (setq completion-styles '(flex))
   :bind
   (:map corfu-map
     ("<escape>" . corfu-quit)
     ("C-n" . corfu-next)
     ("C-p" . corfu-previous)))
+
+(use-package corfu-popupinfo
+  :after corfu
+  :hook (corfu-mode . corfu-popupinfo-mode)
+  :custom
+  (corfu-popupinfo-delay '(0.25 . 0.1))
+  (corfu-popupinfo-hide nil)
+  :config
+  (corfu-popupinfo-mode))
 
 (use-package cape
   :ensure t
@@ -70,7 +83,7 @@
   (add-to-list 'completion-at-point-functions #'cape-dabbrev)
   (add-to-list 'completion-at-point-functions #'cape-file))
 
-(use-package orderless
-  :ensure t
-  :config
-  (setq completion-styles '(orderless)))
+;; (use-package orderless
+;;   :ensure t
+;;   :config
+;;   (setq completion-styles '(orderless)))

@@ -129,6 +129,7 @@
 
 (defun exit-insert-state ()
   (cua-mode -1)
+  (corfu-quit)
   (setq org-support-shift-select nil))
 (defun entry-insert-state ()
   (cua-mode 1)

@@ -15,7 +15,7 @@
   :config
   (load-theme 'ef-maris-dark :no-confirm))
 
-(set-face-attribute 'default nil :font "Maple Mono SC NF")
+;; (set-face-attribute 'default nil :font "Maple Mono SC NF")
 
 (load-file (expand-file-name "modules/base.el" user-emacs-directory))
 (load-file (expand-file-name "modules/key.el" user-emacs-directory))
