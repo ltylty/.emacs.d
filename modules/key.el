@@ -118,7 +118,7 @@
   ;; quit
   "qq" '("Quit" . save-buffers-kill-terminal))
 
-;; emacs key
+;; unbind evil key
 (eval-after-load "evil-maps"
   (dolist (map '(evil-motion-state-map
                  evil-normal-state-map))
