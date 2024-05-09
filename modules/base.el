@@ -1,15 +1,8 @@
-(use-package recentf
-  :init
-  (recentf-mode))
-
-(use-package winner
-  :init
-  (winner-mode))
-
-(use-package org
-  :defer t
-  :config
-  (setq org-log-done 'time))
+(recentf-mode)
+(winner-mode)
+(fset 'yes-or-no-p 'y-or-n-p)
+(setq completion-styles '(flex))
+(setq org-log-done 'time)
 
 (use-package which-key
   :ensure t
@@ -59,9 +52,7 @@
   (corfu-quit-at-boundary t)
   (corfu-quit-no-match t) 
   :init
-  (global-corfu-mode)
-  :config
-  (setq completion-styles '(flex)))
+  (global-corfu-mode))
 
 (use-package cape
   :ensure t

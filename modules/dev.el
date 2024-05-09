@@ -1,8 +1,4 @@
-(use-package emacs
-  :config
-  (defalias 'yes-or-no-p 'y-or-n-p)
-  :hook
-  ((prog-mode . electric-pair-mode)))
+(add-hook 'prog-mode-hook 'electric-pair-mode)
 
 (use-package eglot
   :custom
