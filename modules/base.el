@@ -59,15 +59,12 @@
   (corfu-quit-at-boundary t)
   (corfu-quit-no-match t) 
   :init
-  (global-corfu-mode))
+  (global-corfu-mode)
+  :config
+  (setq completion-styles '(flex)))
 
 (use-package cape
   :ensure t
   :init
   (add-to-list 'completion-at-point-functions #'cape-dabbrev)
   (add-to-list 'completion-at-point-functions #'cape-file))
-
-(use-package orderless
-  :ensure t
-  :config
-  (setq completion-styles '(orderless flex)))
