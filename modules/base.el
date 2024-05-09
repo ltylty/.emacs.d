@@ -1,7 +1,6 @@
 (recentf-mode)
 (winner-mode)
 (fset 'yes-or-no-p 'y-or-n-p)
-(setq completion-styles '(flex))
 (setq org-log-done 'time)
 
 (use-package which-key
@@ -59,3 +58,9 @@
   :init
   (add-to-list 'completion-at-point-functions #'cape-dabbrev)
   (add-to-list 'completion-at-point-functions #'cape-file))
+
+(use-package orderless
+  :ensure t
+  :config
+  (setq orderless-matching-styles '(orderless-flex))
+  (setq completion-styles '(orderless)))
