@@ -90,6 +90,7 @@
   "se" 'consult-flymake
   ;; git
   "gg" 'magit
+  "gL" 'magit-log-buffer-file
   ;; jump
   "jj" 'avy-goto-word-1
   "jl" 'avy-goto-line

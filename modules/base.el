@@ -62,5 +62,4 @@
 (use-package orderless
   :ensure t
   :config
-  (setq orderless-matching-styles '(orderless-flex))
-  (setq completion-styles '(orderless)))
+  (setq completion-styles '(orderless flex)))
