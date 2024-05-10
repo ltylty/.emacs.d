@@ -49,6 +49,11 @@
   :after (treemacs evil)
   :ensure t)
 
+(use-package dumb-jump
+  :ensure t
+  :config
+  (add-hook 'xref-backend-functions #'dumb-jump-xref-activate))
+
 (use-package highlight-thing
   :ensure t
   :config
@@ -57,7 +62,7 @@
     '(highlight-thing ((t (:background "dark slate gray" :foreground "white")))))
   (add-hook 'prog-mode-hook 'highlight-thing-mode))
 
-(unless (package-installed-p 'color-rg)
-  (package-vc-install "https://github.com/manateelazycat/color-rg"))
-(require 'color-rg)
-(setq color-rg-command-prefix "powershell")
+;; (unless (package-installed-p 'color-rg)
+;;   (package-vc-install "https://github.com/manateelazycat/color-rg"))
+;; (require 'color-rg)
+;; (setq color-rg-command-prefix "powershell")

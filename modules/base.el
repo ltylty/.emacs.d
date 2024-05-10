@@ -24,12 +24,6 @@
     (add-to-list 'process-coding-system-alist '("[rR][gG]" . (utf-8 . gbk-dos)))
     (setq consult-async-input-debounce 0.8)))
 
-(use-package embark
-  :ensure t
-  :bind
-  (("C-c C-a" . embark-act))
-  (:map minibuffer-mode-map ("C-c C-e" . embark-export)))
-
 (use-package vertico
   :ensure t
   :custom
@@ -63,3 +57,12 @@
   :ensure t
   :config
   (setq completion-styles '(orderless flex)))
+
+(use-package embark
+  :ensure t
+  :bind
+  (("C-c C-a" . embark-act))
+  (:map minibuffer-mode-map ("C-c C-e" . embark-export)))
+
+(use-package wgrep
+  :ensure t)
