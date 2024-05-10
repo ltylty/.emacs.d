@@ -42,6 +42,7 @@
   :ensure t
   :defer t
   :config
+  (setq treemacs-show-cursor t)
   (treemacs-project-follow-mode t)
   (treemacs-follow-mode t))
 
