@@ -95,9 +95,6 @@
   "jj" 'avy-goto-word-1
   "jl" 'avy-goto-line
   "jw" 'ace-select-window
-  ;; "jrp" 'color-rg-search-symbol-in-project
-  ;; "jrd" 'color-rg-search-symbol
-  ;; "jrf" 'color-rg-search-symbol-in-current-file
   ;; project
   "pp" 'project-switch-project
   "pd" 'project-kill-buffers
