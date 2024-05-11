@@ -65,4 +65,8 @@
   (:map minibuffer-mode-map ("C-c C-e" . embark-export)))
 
 (use-package wgrep
-  :ensure t)
+  :ensure t
+  :bind
+  (:map grep-mode-map ("C-x C-q" . wgrep-change-to-wgrep-mode))
+  :config
+  (setq wgrep-auto-save-buffer t))
