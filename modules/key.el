@@ -89,8 +89,9 @@
   "sb" 'consult-bookmark
   "se" 'consult-flymake
   ;; git
-  "gg" 'magit
+  "gg" 'magit-status
   "gL" 'magit-log-buffer-file
+  "gd" 'vc-ediff
   ;; jump
   "jj" 'avy-goto-word-1
   "jl" 'avy-goto-line
