@@ -3,8 +3,10 @@
 (use-package eglot
   :custom
   (eglot-autoshutdown t)  ;; shutdown language server after closing last file
+  (eldoc-echo-area-use-multiline-p nil) ;; eldoc-documentation-function should only return a single line 
   :config
   (add-hook 'java-ts-mode-hook 'eglot-ensure)
+  (add-hook 'c-ts-mode-hook 'eglot-ensure)
   (add-hook 'python-ts-mode-hook 'eglot-ensure))
 
 (use-package treesit-auto

@@ -148,6 +148,7 @@
 (define-key minibuffer-local-map (kbd "C-w") 'evil-delete-backward-word)
 (define-key minibuffer-local-map (kbd "C-u") 'evil-delete-back-to-indentation)
 (define-key minibuffer-local-map (kbd "<escape>") 'keyboard-escape-quit)
+(define-key evil-normal-state-map (kbd "<escape>") 'evil-ex-nohighlight)
 
 (global-set-key (kbd "M-,") 'evil-jump-backward)
 (global-set-key (kbd "C-M-,") 'evil-jump-forward)
