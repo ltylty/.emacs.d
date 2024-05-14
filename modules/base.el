@@ -61,7 +61,7 @@
 (use-package embark
   :ensure t
   :bind
-  (("C-c C-a" . embark-act))
+  (("C-c a" . embark-act))
   (:map minibuffer-mode-map ("C-c C-e" . embark-export)))
 
 (use-package wgrep

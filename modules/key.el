@@ -107,6 +107,7 @@
   ;; open
   "oe" 'eshell
   "oo" '(lambda () (interactive) (browse-url default-directory))
+  "of" '(lambda () (interactive) (browse-url buffer-file-name))
   "od" 'dired
   "oD" 'dired-jump
   ;; help
