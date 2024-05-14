@@ -118,13 +118,6 @@
   ;; quit
   "qq" '("Quit" . save-buffers-kill-terminal))
 
-;; unbind evil key
-(eval-after-load "evil-maps"
-  (dolist (map '(evil-motion-state-map
-                 evil-normal-state-map))
-    (define-key (eval map) "q" nil)
-    (define-key (eval map) (kbd "RET") nil)))
-
 (add-hook 'buffer-list-update-hook '(lambda () (interactive) (keymap-set space-leader-map "m" (symbol-value (intern-soft (format "%s-map" major-mode))))))
 
 (defun exit-insert-state ()
@@ -138,12 +131,12 @@
 (add-hook 'evil-insert-state-exit-hook  #'exit-insert-state)
 (evil-define-key '(normal motion visual) global-map "gh" #'evil-first-non-blank)
 (evil-define-key '(normal motion visual) global-map "gl" #'evil-end-of-line)
-(evil-define-key '(normal motion visual) global-map "gr" #'xref-find-references)
+(evil-define-key 'normal global-map "gr" #'xref-find-references)
+(evil-define-key 'normal global-map "q" #'quit-window)
+(evil-define-key 'normal global-map (kbd "RET") #'embark-dwim)
+(evil-define-key 'normal dired-mode-map (kbd "<backspace>") #'dired-up-directory)
 (evil-define-key 'insert eshell-mode-map (kbd "C-r") #'consult-history)
 (evil-define-key 'insert shell-mode-map (kbd "C-r") #'consult-history)
-(evil-define-key 'normal org-mode-map (kbd "RET") #'org-open-at-point)
-(evil-define-key 'normal markdown-mode-map (kbd "RET") #'markdown-follow-thing-at-point)
-(evil-define-key 'normal dired-mode-map (kbd "<backspace>") #'dired-up-directory)
 
 (define-key minibuffer-local-map (kbd "C-v") 'yank)
 (define-key minibuffer-local-map (kbd "C-w") 'evil-delete-backward-word)
