@@ -120,6 +120,15 @@
 
 (add-hook 'buffer-list-update-hook '(lambda () (interactive) (keymap-set space-leader-map "m" (symbol-value (intern-soft (format "%s-map" major-mode))))))
 
+;; unbind evil key
+;; (eval-after-load "evil-maps"
+;;     (define-key evil-motion-state-map (kbd "RET") nil))
+
+;; (eval-after-load "evil-maps"
+;;   (dolist (map '(evil-motion-state-map
+;;                  evil-normal-state-map))
+;;     (define-key (eval map) (kbd "RET") nil)))
+
 (defun exit-insert-state ()
   (cua-mode -1)
   (corfu-quit)
@@ -132,8 +141,10 @@
 (evil-define-key '(normal motion visual) global-map "gh" #'evil-first-non-blank)
 (evil-define-key '(normal motion visual) global-map "gl" #'evil-end-of-line)
 (evil-define-key 'normal global-map "gr" #'xref-find-references)
-(evil-define-key 'normal global-map "q" #'quit-window)
-(evil-define-key 'normal global-map (kbd "RET") #'embark-dwim)
+(evil-define-key 'normal special-mode-map "q" #'quit-window)
+(evil-define-key 'normal text-mode-map (kbd "RET") #'embark-dwim)
+(evil-define-key 'normal prog-mode-map (kbd "RET") #'embark-dwim)
+(define-key evil-motion-state-map (kbd "RET") nil)
 (evil-define-key 'normal dired-mode-map (kbd "<backspace>") #'dired-up-directory)
 (evil-define-key 'insert eshell-mode-map (kbd "C-r") #'consult-history)
 (evil-define-key 'insert shell-mode-map (kbd "C-r") #'consult-history)
