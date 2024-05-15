@@ -5,14 +5,20 @@
   (eglot-autoshutdown t)  ;; shutdown language server after closing last file
   (eldoc-echo-area-use-multiline-p nil) ;; eldoc-documentation-function should only return a single line 
   :config
-  (add-to-list
-   'eglot-server-programs
-   '(java-ts-mode .
-      ("jdtls"
-      "-XX:+UseG1GC"
-      "--jvm-arg=-javaagent:c:/Users/Administrator/.m2/repository/org/projectlombok/lombok/1.18.24/lombok-1.18.24.jar")))
+  ;; (add-to-list
+  ;;  'eglot-server-programs
+  ;;  '(java-ts-mode .
+  ;;     ("jdtls"
+  ;;     "-XX:+UseG1GC"
+  ;;     "--jvm-arg=-javaagent:c:/Users/Administrator/.m2/repository/org/projectlombok/lombok/1.18.24/lombok-1.18.24.jar")))
   (add-hook 'java-ts-mode-hook 'eglot-ensure)
   (add-hook 'python-ts-mode-hook 'eglot-ensure))
+
+(unless (package-installed-p 'eglot-java-lombok)
+     (package-vc-install "https://github.com/ltylty/eglot-java-lombok"))
+(require 'eglot-java-lombok)
+(setq eglot-java-lombok/enabled t)
+(eglot-java-lombok/init)
 
 (use-package treesit-auto
   :ensure t
