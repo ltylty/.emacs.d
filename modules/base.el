@@ -5,13 +5,10 @@
 (fset 'yes-or-no-p 'y-or-n-p)
 (setq org-log-done 'time)
 
-(use-package which-key
-  :ensure t
-  :config
-  (which-key-mode))
+(use-package which-key :ensure t 
+  :hook (after-init . which-key-mode))
 
-(use-package avy
-  :ensure t)
+(use-package avy :ensure t)
 
 (use-package consult
   :ensure t
@@ -33,12 +30,11 @@
   :init
   (vertico-mode))
 
-(use-package marginalia
-  :ensure t
-  :config
-  (marginalia-mode))
+(use-package marginalia :ensure t
+  :hook (after-init . marginalia-mode))
 
 (use-package corfu
+  :defer 1
   :ensure t
   :custom
   (corfu-cycle t)
@@ -50,23 +46,27 @@
   (global-corfu-mode))
 
 (use-package cape
+  :defer 1
   :ensure t
   :init
   (add-to-list 'completion-at-point-functions #'cape-dabbrev)
   (add-to-list 'completion-at-point-functions #'cape-file))
 
 (use-package orderless
+  :defer 1
   :ensure t
   :config
   (setq completion-styles '(orderless flex)))
 
 (use-package embark
+  :defer 1
   :ensure t
   :bind
   (("C-c a" . embark-act))
   (:map minibuffer-mode-map ("C-c C-e" . embark-export)))
 
 (use-package wgrep
+  :defer 1
   :ensure t
   :bind
   (:map grep-mode-map ("C-x C-q" . wgrep-change-to-wgrep-mode))
