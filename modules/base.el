@@ -10,8 +10,7 @@
 
 (use-package avy :ensure t)
 
-(use-package consult
-  :ensure t
+(use-package consult :ensure t
   :init
   ;; Use Consult to select xref locations with preview
   (setq xref-show-xrefs-function #'consult-xref
@@ -23,8 +22,7 @@
     (add-to-list 'process-coding-system-alist '("[rR][gG]" . (utf-8 . gbk-dos)))
     (setq consult-async-input-debounce 0.8)))
 
-(use-package vertico
-  :ensure t
+(use-package vertico :ensure t
   :custom
   (vertico-cycle t)
   :init
@@ -33,9 +31,7 @@
 (use-package marginalia :ensure t
   :hook (after-init . marginalia-mode))
 
-(use-package corfu
-  :defer 1
-  :ensure t
+(use-package corfu :ensure t :defer 1
   :custom
   (corfu-cycle t)
   (corfu-auto t)
@@ -45,29 +41,21 @@
   :init
   (global-corfu-mode))
 
-(use-package cape
-  :defer 1
-  :ensure t
+(use-package cape :ensure t :defer 1
   :init
   (add-to-list 'completion-at-point-functions #'cape-dabbrev)
   (add-to-list 'completion-at-point-functions #'cape-file))
 
-(use-package orderless
-  :defer 1
-  :ensure t
+(use-package orderless :ensure t :defer 1
   :config
   (setq completion-styles '(orderless flex)))
 
-(use-package embark
-  :defer 1
-  :ensure t
+(use-package embark :ensure t :defer 1
   :bind
   (("C-c a" . embark-act))
   (:map minibuffer-mode-map ("C-c C-e" . embark-export)))
 
-(use-package wgrep
-  :defer 1
-  :ensure t
+(use-package wgrep :ensure t :defer 1
   :bind
   (:map grep-mode-map ("C-x C-q" . wgrep-change-to-wgrep-mode))
   :config
