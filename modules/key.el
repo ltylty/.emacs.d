@@ -62,7 +62,7 @@
   "bi" 'ibuffer
   "bd" 'evil-delete-buffer
   "bl" 'evil-switch-to-windows-last-buffer
-  "bx" '(lambda () (interactive) (switch-to-buffer "*scratch*"))
+  "bx" #'(lambda () (interactive) (switch-to-buffer "*scratch*"))
   ;; window
   "wd" 'evil-window-delete
   "ww" 'evil-window-next
@@ -78,12 +78,12 @@
   "0" 'treemacs-select-window
   ;; file
   "ff" 'find-file
-  "fd" '(lambda () (interactive) (consult-fd default-directory))
+  "fd" #'(lambda () (interactive) (consult-fd default-directory))
   "fs" 'save-buffer
   "fr" 'recentf
   ;; search
   "ss" 'consult-line
-  "sd" '(lambda () (interactive) (consult-ripgrep default-directory))
+  "sd" #'(lambda () (interactive) (consult-ripgrep default-directory))
   "si" 'consult-imenu
   "so" 'consult-outline
   "sb" 'consult-bookmark
@@ -106,8 +106,8 @@
   "pt" 'treemacs
   ;; open
   "oe" 'eshell
-  "oo" '(lambda () (interactive) (browse-url default-directory))
-  "of" '(lambda () (interactive) (browse-url buffer-file-name))
+  "oo" #'(lambda () (interactive) (browse-url default-directory))
+  "of" #'(lambda () (interactive) (browse-url buffer-file-name))
   "od" 'dired
   "oD" 'dired-jump
   ;; help
@@ -118,7 +118,7 @@
   ;; quit
   "qq" '("Quit" . save-buffers-kill-terminal))
 
-(add-hook 'buffer-list-update-hook '(lambda () (interactive) (keymap-set space-leader-map "m" (symbol-value (intern-soft (format "%s-map" major-mode))))))
+(add-hook 'buffer-list-update-hook #'(lambda () (interactive) (keymap-set space-leader-map "m" (symbol-value (intern-soft (format "%s-map" major-mode))))))
 
 (define-key evil-motion-state-map (kbd "RET") nil)
 (evil-define-key 'normal text-mode-map (kbd "RET") #'embark-dwim)
