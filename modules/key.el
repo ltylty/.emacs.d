@@ -39,7 +39,7 @@
   :init
   (global-evil-visualstar-mode))
 
-(use-package evil-multiedit :ensure t
+(use-package evil-multiedit :ensure t :defer 1
   :after evil
   :config
   (evil-multiedit-default-keybinds))
@@ -112,6 +112,7 @@
   "hf" 'describe-function
   "hv" 'describe-variable
   "hm" 'describe-mode
+  "hp" 'describe-package
   ;; quit
   "qq" '("Quit" . save-buffers-kill-terminal))
 
