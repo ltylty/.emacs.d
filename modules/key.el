@@ -128,6 +128,30 @@
 (evil-define-key 'normal prog-mode-map (kbd "RET") #'embark-dwim)
 (evil-define-key 'normal special-mode-map "q" #'quit-window)
 
+(define-key minibuffer-local-map (kbd "C-v") 'yank)
+(define-key minibuffer-local-map (kbd "C-w") 'evil-delete-backward-word)
+(define-key minibuffer-local-map (kbd "C-u") 'evil-delete-back-to-indentation)
+(define-key minibuffer-local-map (kbd "<escape>") 'keyboard-escape-quit)
+
+(global-set-key (kbd "M-,") 'evil-jump-backward)
+(global-set-key (kbd "C-M-,") 'evil-jump-forward)
+
+; Overload shifts so that they don't lose the selection
+(define-key evil-visual-state-map (kbd ">") 'evil-shift-right-visual)
+(define-key evil-visual-state-map (kbd "<") 'evil-shift-left-visual)
+
+(defun evil-shift-left-visual ()
+  (interactive)
+  (evil-shift-left (region-beginning) (region-end))
+  (evil-normal-state)
+  (evil-visual-restore))
+
+(defun evil-shift-right-visual ()
+  (interactive)
+  (evil-shift-right (region-beginning) (region-end))
+  (evil-normal-state)
+  (evil-visual-restore))
+
 (defun exit-insert-state ()
   (cua-mode -1)
   (corfu-quit)
@@ -138,33 +162,10 @@
 (add-hook 'evil-insert-state-entry-hook #'entry-insert-state)
 (add-hook 'evil-insert-state-exit-hook  #'exit-insert-state)
 (advice-add 'evil-force-normal-state :before #'evil-ex-nohighlight)
+
 (evil-define-key '(normal motion visual) global-map "gh" #'evil-first-non-blank)
 (evil-define-key '(normal motion visual) global-map "gl" #'evil-end-of-line)
 (evil-define-key 'normal global-map "gr" #'xref-find-references)
 (evil-define-key 'normal dired-mode-map (kbd "<backspace>") #'dired-up-directory)
 (evil-define-key 'insert eshell-mode-map (kbd "C-r") #'consult-history)
 (evil-define-key 'insert shell-mode-map (kbd "C-r") #'consult-history)
-
-(define-key minibuffer-local-map (kbd "C-v") 'yank)
-(define-key minibuffer-local-map (kbd "C-w") 'evil-delete-backward-word)
-(define-key minibuffer-local-map (kbd "C-u") 'evil-delete-back-to-indentation)
-(define-key minibuffer-local-map (kbd "<escape>") 'keyboard-escape-quit)
-
-(global-set-key (kbd "M-,") 'evil-jump-backward)
-(global-set-key (kbd "C-M-,") 'evil-jump-forward)
-
-; Overload shifts so that they don't lose the selection
-(define-key evil-visual-state-map (kbd ">") 'djoyner/evil-shift-right-visual)
-(define-key evil-visual-state-map (kbd "<") 'djoyner/evil-shift-left-visual)
-
-(defun djoyner/evil-shift-left-visual ()
-  (interactive)
-  (evil-shift-left (region-beginning) (region-end))
-  (evil-normal-state)
-  (evil-visual-restore))
-
-(defun djoyner/evil-shift-right-visual ()
-  (interactive)
-  (evil-shift-right (region-beginning) (region-end))
-  (evil-normal-state)
-  (evil-visual-restore))
