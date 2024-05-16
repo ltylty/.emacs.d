@@ -49,6 +49,7 @@
 
 (use-package git-gutter
   :ensure t
+  :defer 1
   :init
   (global-git-gutter-mode +1))
 
@@ -71,12 +72,14 @@
   :ensure t)
 
 (use-package dumb-jump
+  :defer 1
   :ensure t
   :config
   (add-hook 'xref-backend-functions #'dumb-jump-xref-activate))
 
 (use-package highlight-thing
   :ensure t
+  :defer 1
   :config
   (setq highlight-thing-exclude-thing-under-point t)
   (custom-set-faces
