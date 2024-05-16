@@ -31,7 +31,7 @@
 (use-package marginalia :ensure t
   :hook (after-init . marginalia-mode))
 
-(use-package corfu :ensure t :defer 1
+(use-package corfu :ensure t
   :custom
   (corfu-cycle t)
   (corfu-auto t)
@@ -41,21 +41,21 @@
   :init
   (global-corfu-mode))
 
-(use-package cape :ensure t :defer 1
+(use-package cape :ensure t
   :init
   (add-to-list 'completion-at-point-functions #'cape-dabbrev)
   (add-to-list 'completion-at-point-functions #'cape-file))
 
-(use-package orderless :ensure t :defer 1
+(use-package orderless :ensure t
   :config
   (setq completion-styles '(orderless flex)))
 
-(use-package embark :ensure t :defer 1
+(use-package embark :ensure t
   :bind
   (("C-c a" . embark-act))
   (:map minibuffer-mode-map ("C-c C-e" . embark-export)))
 
-(use-package wgrep :ensure t :defer 1
+(use-package wgrep :ensure t
   :bind
   (:map grep-mode-map ("C-x C-q" . wgrep-change-to-wgrep-mode))
   :config
