@@ -152,3 +152,19 @@
 
 (global-set-key (kbd "M-,") 'evil-jump-backward)
 (global-set-key (kbd "C-M-,") 'evil-jump-forward)
+
+; Overload shifts so that they don't lose the selection
+(define-key evil-visual-state-map (kbd ">") 'djoyner/evil-shift-right-visual)
+(define-key evil-visual-state-map (kbd "<") 'djoyner/evil-shift-left-visual)
+
+(defun djoyner/evil-shift-left-visual ()
+  (interactive)
+  (evil-shift-left (region-beginning) (region-end))
+  (evil-normal-state)
+  (evil-visual-restore))
+
+(defun djoyner/evil-shift-right-visual ()
+  (interactive)
+  (evil-shift-right (region-beginning) (region-end))
+  (evil-normal-state)
+  (evil-visual-restore))
