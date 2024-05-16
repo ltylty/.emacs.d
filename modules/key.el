@@ -14,11 +14,6 @@
   (evil-select-search-module 'evil-search-module 'evil-search)
   (evil-mode))
   
-(use-package evil-surround :ensure t
-  :after evil
-  :init
-  (global-evil-surround-mode 1))
-
 (use-package evil-textobj-line :ensure t
   :after evil)
 
@@ -33,6 +28,11 @@
 	  ("“" . "”")))
   (define-key evil-inner-text-objects-map "q" 'evil-textobj-anyblock-inner-block)
   (define-key evil-outer-text-objects-map "q" 'evil-textobj-anyblock-a-block))
+
+(use-package evil-surround :ensure t
+  :after evil
+  :init
+  (global-evil-surround-mode 1))
 
 (use-package evil-visualstar :ensure t
   :after evil
