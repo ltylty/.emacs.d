@@ -1,5 +1,5 @@
-(add-hook 'prog-mode-hook 'electric-pair-mode) ;括号的配对
-(add-hook 'prog-mode-hook 'hs-minor-mode) ;代码的折叠
+(add-hook 'prog-mode-hook 'electric-pair-mode) ;括号配对
+(add-hook 'prog-mode-hook 'hs-minor-mode) ;代码折叠
 
 (use-package ediff :defer t
   :hook
