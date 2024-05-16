@@ -5,14 +5,14 @@
   (eglot-autoshutdown t)  ;; shutdown language server after closing last file
   (eldoc-echo-area-use-multiline-p nil) ;; eldoc-documentation-function should only return a single line 
   :config
-  (add-hook 'java-ts-mode-hook 'eglot-ensure)
-  (add-hook 'python-ts-mode-hook 'eglot-ensure))
-
-(unless (package-installed-p 'eglot-java-lombok)
+  (defun eglot-java-prepare ()
+    (unless (package-installed-p 'eglot-java-lombok)
      (package-vc-install "https://github.com/ltylty/eglot-java-lombok"))
-(require 'eglot-java-lombok)
-(setq eglot-java-lombok/enabled t)
-(eglot-java-lombok/init)
+    (require 'eglot-java-lombok)
+    (eglot-java-lombok/init))
+
+  (add-hook 'java-ts-mode-hook 'eglot-java-prepare)
+  (add-hook 'python-ts-mode-hook 'eglot-ensure))
 
 (use-package treesit-auto
   :ensure t
