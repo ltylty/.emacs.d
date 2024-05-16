@@ -13,3 +13,5 @@
 (load-file (expand-file-name "modules/base.el" user-emacs-directory))
 (load-file (expand-file-name "modules/dev.el" user-emacs-directory))
 (load-file (expand-file-name "modules/key.el" user-emacs-directory))
+
+(setq initial-scratch-message (emacs-init-time))
