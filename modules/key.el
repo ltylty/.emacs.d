@@ -1,5 +1,4 @@
-(use-package evil
-  :ensure t
+(use-package evil :ensure t
   :init
   (setq evil-disable-insert-state-bindings t)
   (setq evil-undo-system 'undo-redo)
@@ -15,18 +14,15 @@
   (evil-select-search-module 'evil-search-module 'evil-search)
   (evil-mode))
   
-(use-package evil-surround
-  :ensure t
+(use-package evil-surround :ensure t :defer 1
   :after evil
   :init
   (global-evil-surround-mode 1))
 
-(use-package evil-textobj-line
-  :ensure t
+(use-package evil-textobj-line :ensure t :defer 1
   :after evil)
 
-(use-package evil-textobj-anyblock
-  :ensure t
+(use-package evil-textobj-anyblock :ensure t :defer 1
   :after evil
   :config
   (setq evil-textobj-anyblock-blocks
@@ -38,14 +34,12 @@
   (define-key evil-inner-text-objects-map "q" 'evil-textobj-anyblock-inner-block)
   (define-key evil-outer-text-objects-map "q" 'evil-textobj-anyblock-a-block))
 
-(use-package evil-visualstar
-  :ensure t
+(use-package evil-visualstar :ensure t :defer 1
   :after evil
   :init
   (global-evil-visualstar-mode))
 
-(use-package evil-multiedit
-  :ensure t
+(use-package evil-multiedit :ensure t :defer 1
   :after evil
   :config
   (evil-multiedit-default-keybinds))
