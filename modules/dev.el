@@ -33,7 +33,7 @@
   :config
   (global-treesit-auto-mode))
 
-(use-package project-tab-groups :ensure
+(use-package project-tab-groups :ensure t
   :config
   (project-tab-groups-mode 1))
 
