@@ -44,8 +44,8 @@
   (corfu-cycle t)
   (corfu-auto t)
   (corfu-auto-prefix 1)
-  (corfu-quit-at-boundary t)
   (corfu-quit-no-match t) 
+  (corfu-preselect 'prompt)
   :init
   (global-corfu-mode))
 
