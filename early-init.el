@@ -10,4 +10,4 @@
         (horizontal-scroll-bars)
         (vertical-scroll-bars)))
 
-(setq gc-cons-threshold most-positive-fixnum)
+(setq gc-cons-threshold 33554432)
