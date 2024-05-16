@@ -12,7 +12,7 @@
   :custom
   (project-switch-commands 'project-dired))
 
-(use-package eglot
+(use-package eglot :defer t
   :custom
   (eglot-autoshutdown t)  ;; shutdown language server after closing last file
   (eldoc-echo-area-use-multiline-p nil) ;; eldoc-documentation-function should only return a single line 
@@ -57,7 +57,7 @@
   (treemacs-project-follow-mode t)
   (treemacs-follow-mode t))
 
-(use-package treemacs-evil :defer t
+(use-package treemacs-evil
   :after (treemacs evil)
   :ensure t)
 
