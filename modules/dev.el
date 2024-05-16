@@ -1,4 +1,5 @@
-(add-hook 'prog-mode-hook 'electric-pair-mode)
+(add-hook 'prog-mode-hook 'electric-pair-mode) ;括号的配对
+(add-hook 'prog-mode-hook 'hs-minor-mode) ;代码的折叠
 
 (use-package eglot
   :custom
@@ -10,7 +11,6 @@
      (package-vc-install "https://github.com/ltylty/eglot-java-lombok"))
     (require 'eglot-java-lombok)
     (eglot-java-lombok/init))
-
   (add-hook 'java-ts-mode-hook 'eglot-java-prepare)
   (add-hook 'python-ts-mode-hook 'eglot-ensure))
 

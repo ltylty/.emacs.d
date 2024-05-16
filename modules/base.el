@@ -1,4 +1,5 @@
 (recentf-mode)
+(global-hl-line-mode)
 (winner-mode)
 (fset 'yes-or-no-p 'y-or-n-p)
 (setq org-log-done 'time)
