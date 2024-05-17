@@ -19,13 +19,6 @@
   :hook
   (((java-ts-mode python-ts-mode) . eglot-ensure)))
 
-(with-eval-after-load 'eglot
-  (with-eval-after-load 'java-ts-mode  
-    (unless (package-installed-p 'eglot-java-lombok)
-      (package-vc-install "https://github.com/ltylty/eglot-java-lombok"))
-    (require 'eglot-java-lombok)
-    (eglot-java-lombok/init)))
-
 (use-package treesit-auto :ensure t :defer 1
   :custom
   (treesit-auto-install 'prompt)
