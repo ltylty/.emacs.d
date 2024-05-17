@@ -139,13 +139,11 @@
 ; Overload shifts so that they don't lose the selection
 (define-key evil-visual-state-map (kbd ">") 'evil-shift-right-visual)
 (define-key evil-visual-state-map (kbd "<") 'evil-shift-left-visual)
-
 (defun evil-shift-left-visual ()
   (interactive)
   (evil-shift-left (region-beginning) (region-end))
   (evil-normal-state)
   (evil-visual-restore))
-
 (defun evil-shift-right-visual ()
   (interactive)
   (evil-shift-right (region-beginning) (region-end))
