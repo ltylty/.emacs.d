@@ -10,4 +10,6 @@
         (horizontal-scroll-bars)
         (vertical-scroll-bars)))
 
-(setq gc-cons-threshold 33554432)
+;; 优化 Emacs 的启动速度
+(setq gc-cons-threshold most-positive-fixnum)
+(add-hook 'after-init-hook #'(lambda () (setq gc-cons-threshold 800000)))
