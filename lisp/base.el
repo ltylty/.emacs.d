@@ -55,6 +55,8 @@
   (("C-c a" . embark-act))
   (:map minibuffer-mode-map ("C-c C-e" . embark-export)))
 
+(use-package embark-consult :ensure t)
+
 (use-package wgrep :ensure t
   :bind
   (:map grep-mode-map ("C-x C-q" . wgrep-change-to-wgrep-mode))
