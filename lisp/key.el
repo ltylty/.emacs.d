@@ -8,6 +8,7 @@
   (setq evil-want-C-w-delete t)
   (setq evil-want-C-i-jump nil)
   (setq evil-shift-width 2)
+  (setq evil-symbol-word-search t)
   :config
   (setq evil-emacs-state-modes '(ediff-mode))
   (add-hook 'with-editor-mode-hook 'evil-insert-state)
