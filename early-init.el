@@ -9,3 +9,5 @@
         (tool-bar-lines . 0)
         (horizontal-scroll-bars)
         (vertical-scroll-bars)))
+
+(setq gc-cons-threshold 33554432)

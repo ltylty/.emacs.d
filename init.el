@@ -14,4 +14,4 @@
 (load-file (expand-file-name "modules/dev.el" user-emacs-directory))
 (load-file (expand-file-name "modules/key.el" user-emacs-directory))
 
-(setq initial-scratch-message (emacs-init-time))
+(setq initial-scratch-message (concat "emacs startup in " (emacs-init-time)))
