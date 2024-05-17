@@ -16,9 +16,8 @@
   :custom
   (eglot-autoshutdown t)  ;; shutdown language server after closing last file
   (eldoc-echo-area-use-multiline-p nil) ;; eldoc-documentation-function should only return a single line 
-  :config
-  (add-hook 'java-ts-mode-hook 'eglot-ensure)
-  (add-hook 'python-ts-mode-hook 'eglot-ensure))
+  :hook
+  (((java-ts-mode python-ts-mode) . eglot-ensure)))
 
 (with-eval-after-load 'eglot
   (with-eval-after-load 'java-ts-mode  
@@ -27,13 +26,13 @@
     (require 'eglot-java-lombok)
     (eglot-java-lombok/init)))
 
-(use-package treesit-auto :ensure t :defer t
+(use-package treesit-auto :ensure t :defer 1
   :custom
   (treesit-auto-install 'prompt)
   :config
   (global-treesit-auto-mode))
 
-(use-package project-tab-groups :ensure t :defer t
+(use-package project-tab-groups :ensure t :after project
   :config
   (project-tab-groups-mode 1))
 
@@ -43,7 +42,7 @@
   (setq magit-log-margin '(t "%Y-%m-%d %H:%M:%S " magit-log-margin-width t 18))
   (setq magit-ediff-dwim-show-on-hunks t))
 
-(use-package git-gutter :ensure t
+(use-package git-gutter :ensure t :defer 1
   :init
   (global-git-gutter-mode +1))
 
@@ -61,11 +60,11 @@
   :after (treemacs evil)
   :ensure t)
 
-(use-package dumb-jump :ensure t :defer t
+(use-package dumb-jump :ensure t :defer 1
   :config
   (add-hook 'xref-backend-functions #'dumb-jump-xref-activate))
 
-(use-package highlight-thing :ensure t :defer t
+(use-package highlight-thing :ensure t :defer 1
   :config
   (setq highlight-thing-exclude-thing-under-point t)
   (custom-set-faces
