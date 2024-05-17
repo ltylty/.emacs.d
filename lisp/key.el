@@ -40,11 +40,6 @@
   :init
   (global-evil-visualstar-mode))
 
-;; (use-package evil-multiedit :ensure t :defer 1
-;;   :after evil
-;;   :config
-;;   (evil-multiedit-default-keybinds))
-
 (unless (package-installed-p 'macrursors)
   (package-vc-install "https://github.com/corytertel/macrursors"))
 (require 'macrursors)
@@ -53,10 +48,8 @@
     (add-hook 'macrursors-post-finish-hook mode))
 (global-set-key (kbd "C-;") 'macrursors-mark-all-lines-or-instances)
 (define-key evil-visual-state-map "R" 'macrursors-mark-all-lines-or-instances)
-(define-key evil-normal-state-map (kbd "M-d") 'macrursors-mark-next-instance-of)
-(define-key evil-visual-state-map (kbd "M-d") 'macrursors-mark-next-instance-of)
-(define-key evil-normal-state-map (kbd "M-D") 'macrursors-mark-previous-instance-of)
-(define-key evil-visual-state-map (kbd "M-D") 'macrursors-mark-previous-instance-of)
+(evil-define-key '(normal visual) global-map (kbd "M-d") 'macrursors-mark-next-instance-of)
+(evil-define-key '(normal visual) global-map (kbd "M-D") 'macrursors-mark-previous-instance-of)
 
 ;; space leader key
 (define-prefix-command 'space-leader-map)
