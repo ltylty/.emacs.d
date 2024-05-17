@@ -40,10 +40,29 @@
   :init
   (global-evil-visualstar-mode))
 
-(use-package evil-multiedit :ensure t :defer 1
-  :after evil
-  :config
-  (evil-multiedit-default-keybinds))
+;; (use-package evil-multiedit :ensure t :defer 1
+;;   :after evil
+;;   :config
+;;   (evil-multiedit-default-keybinds))
+
+(unless (package-installed-p 'macrursors)
+  (package-vc-install "https://github.com/corytertel/macrursors"))
+(require 'markmacro)
+(dolist (mode '(corfu-mode))
+    (add-hook 'macrursors-pre-finish-hook mode)
+    (add-hook 'macrursors-post-finish-hook mode))
+(define-prefix-command 'macrursors-mark-map)
+(global-set-key (kbd "C-;") 'macrursors-mark-map)
+(define-key macrursors-mark-map (kbd "C-;") #'macrursors-mark-all-lines-or-instances)
+(define-key macrursors-mark-map (kbd "l") #'macrursors-mark-all-lists)
+(define-key macrursors-mark-map (kbd "s") #'macrursors-mark-all-symbols)
+(define-key macrursors-mark-map (kbd "e") #'macrursors-mark-all-sexps)
+(define-key macrursors-mark-map (kbd "f") #'macrursors-mark-all-defuns)
+(define-key macrursors-mark-map (kbd "n") #'macrursors-mark-all-numbers)
+(define-key macrursors-mark-map (kbd ".") #'macrursors-mark-all-sentences)
+(define-key macrursors-mark-map (kbd "r") #'macrursors-mark-all-lines)
+(define-key evil-normal-state-map (kbd "C-n") 'macrursors-mark-next-instance-of)
+(define-key evil-normal-state-map (kbd "C-p") 'macrursors-mark-previous-instance-of)
 
 ;; space leader key
 (define-prefix-command 'space-leader-map)
