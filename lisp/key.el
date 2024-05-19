@@ -43,7 +43,7 @@
 (use-package evil-multiedit :ensure t
   :after evil
   :config
-  (setq iedit-overlay-priority 2)
+  (setq iedit-overlay-priority 2) ;; higher than highlight-thing, lower than region.
   (evil-multiedit-default-keybinds))
 
 ;; space leader key
