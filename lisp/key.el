@@ -15,11 +15,9 @@
   (evil-select-search-module 'evil-search-module 'evil-search)
   (evil-mode))
   
-(use-package evil-textobj-line :ensure t
-  :after evil)
+(use-package evil-textobj-line :ensure t :after evil)
 
-(use-package evil-textobj-anyblock :ensure t
-  :after evil
+(use-package evil-textobj-anyblock :ensure t :after evil
   :config
   (setq evil-textobj-anyblock-blocks
         '(("'" . "'")
@@ -30,18 +28,15 @@
   (define-key evil-inner-text-objects-map "q" 'evil-textobj-anyblock-inner-block)
   (define-key evil-outer-text-objects-map "q" 'evil-textobj-anyblock-a-block))
 
-(use-package evil-surround :ensure t
-  :after evil
+(use-package evil-surround :ensure t :after evil
   :init
   (global-evil-surround-mode 1))
 
-(use-package evil-visualstar :ensure t
-  :after evil
+(use-package evil-visualstar :ensure t :after evil
   :init
   (global-evil-visualstar-mode))
 
-(use-package evil-multiedit :ensure t
-  :after evil
+(use-package evil-multiedit :ensure t :after evil
   :config
   (setq iedit-overlay-priority 2) ;; higher than highlight-thing, lower than region.
   (evil-multiedit-default-keybinds))
