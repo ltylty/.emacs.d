@@ -50,9 +50,7 @@
   (treemacs-project-follow-mode t)
   (treemacs-follow-mode t))
 
-(use-package treemacs-evil
-  :after (treemacs evil)
-  :ensure t)
+(use-package treemacs-evil :ensure t :after (treemacs evil))
 
 (use-package dumb-jump :ensure t :defer 1
   :config

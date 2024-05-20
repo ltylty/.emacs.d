@@ -128,7 +128,7 @@
 (global-set-key (kbd "M-,") 'evil-jump-backward)
 (global-set-key (kbd "C-M-,") 'evil-jump-forward)
 
-; Overload shifts so that they don't lose the selection
+; evil define key
 (define-key evil-visual-state-map (kbd ">") 'evil-shift-right-visual)
 (define-key evil-visual-state-map (kbd "<") 'evil-shift-left-visual)
 (defun evil-shift-left-visual ()
