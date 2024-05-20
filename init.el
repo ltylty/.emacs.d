@@ -2,8 +2,7 @@
                          ("melpa" . "https://mirrors.ustc.edu.cn/elpa/melpa/")
                          ("nongnu" . "https://mirrors.ustc.edu.cn/elpa/nongnu/")))
 
-(use-package ef-themes
-  :ensure t
+(use-package ef-themes :ensure t
   :config
   (load-theme 'ef-maris-dark :no-confirm))
 
@@ -16,3 +15,6 @@
 (load-file (expand-file-name "lisp/extra.el" user-emacs-directory))
 
 (setq initial-scratch-message (concat "enjoy coding *^____^* emacs startup in " (emacs-init-time)))
+
+(use-package gcmh :ensure t 
+  :hook (after-init . gcmh-mode))

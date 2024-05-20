@@ -1,3 +1,4 @@
+(setq gc-cons-threshold most-positive-fixnum)
 (setq inhibit-startup-message t)
 (setq custom-file (make-temp-file "emacs-custom"))
 (setq-default frame-title-format '("%f    [" mode-name "]"))
@@ -9,7 +10,3 @@
         (tool-bar-lines . 0)
         (horizontal-scroll-bars)
         (vertical-scroll-bars)))
-
-;; 优化 Emacs 的启动速度
-(setq gc-cons-threshold most-positive-fixnum)
-(add-hook 'after-init-hook #'(lambda () (setq gc-cons-threshold 800000)))
