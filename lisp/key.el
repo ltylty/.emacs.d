@@ -17,14 +17,13 @@
   
 (use-package evil-textobj-line :ensure t :after evil)
 
+(use-package evil-textobj-entire :ensure t :after evil
+  :config
+  (define-key evil-outer-text-objects-map "g" 'evil-entire-entire-buffer)
+  (define-key evil-inner-text-objects-map "g" 'evil-entire-entire-buffer))
+
 (use-package evil-textobj-anyblock :ensure t :after evil
   :config
-  (setq evil-textobj-anyblock-blocks
-        '(("'" . "'")
-	  ("\"" . "\"")
-	  ("`" . "`")
-	  ("‘" . "’")
-	  ("“" . "”")))
   (define-key evil-inner-text-objects-map "q" 'evil-textobj-anyblock-inner-block)
   (define-key evil-outer-text-objects-map "q" 'evil-textobj-anyblock-a-block))
 
@@ -154,7 +153,7 @@
 (advice-add 'evil-force-normal-state :before #'evil-ex-nohighlight)
 
 (evil-define-key '(normal motion visual) global-map "gh" #'evil-first-non-blank)
-(evil-define-key '(normal motion visual) global-map "gl" #'evil-end-of-line)
+(evil-define-key '(normal motion visual) global-map "gl" #'evil-last-non-blank)
 (evil-define-key 'normal global-map "gr" #'xref-find-references)
 (evil-define-key 'normal dired-mode-map (kbd "<backspace>") #'dired-up-directory)
 (evil-define-key 'insert eshell-mode-map (kbd "C-r") #'consult-history)
