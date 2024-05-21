@@ -27,6 +27,11 @@
   (define-key evil-inner-text-objects-map "q" 'evil-textobj-anyblock-inner-block)
   (define-key evil-outer-text-objects-map "q" 'evil-textobj-anyblock-a-block))
 
+(use-package evil-textobj-tree-sitter :ensure t
+  :config
+  (define-key evil-outer-text-objects-map "f" (evil-textobj-tree-sitter-get-textobj "function.outer"))
+  (define-key evil-inner-text-objects-map "f" (evil-textobj-tree-sitter-get-textobj "function.inner")))
+
 (use-package evil-surround :ensure t :after evil
   :init
   (global-evil-surround-mode 1))
