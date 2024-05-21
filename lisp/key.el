@@ -87,9 +87,6 @@
   "gg" 'magit-status
   "gL" 'magit-log-buffer-file
   "gd" 'vc-ediff
-  ;; code
-  "cc" 'eglot
-  "cd" 'eglot-shutdown
   ;; jump
   "jj" 'avy-goto-word-1
   "jl" 'avy-goto-line
