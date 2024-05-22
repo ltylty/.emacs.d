@@ -105,6 +105,7 @@
   "of" #'(lambda () (interactive) (browse-url buffer-file-name))
   "od" 'dired
   "oD" 'dired-jump
+  "ol" 'ielm
   ;; help
   "hk" 'describe-key
   "hf" 'describe-function
