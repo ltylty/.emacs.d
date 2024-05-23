@@ -65,4 +65,4 @@
   (custom-set-faces
     '(highlight-thing ((t (:background "dark slate gray" :foreground "white")))))
   :hook
-  (((sql-mode) . highlight-thing-mode)))
+  (((sql-mode conf-mode) . highlight-thing-mode)))
