@@ -11,4 +11,6 @@
 (dolist (mode '(corfu-mode))
     (add-hook 'macrursors-pre-finish-hook mode)
     (add-hook 'macrursors-post-finish-hook mode))
-(global-set-key (kbd "C-;") 'macrursors-mark-all-lines-or-instances)
+(define-key evil-normal-state-map (kbd "C-;") 'macrursors-mark-all-lines-or-instances)
+(define-key evil-normal-state-map (kbd "M-p") 'macrursors-mark-previous-instance-of)
+(define-key evil-normal-state-map (kbd "M-n") 'macrursors-mark-next-instance-of)

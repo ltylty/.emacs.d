@@ -16,6 +16,9 @@
   :custom
   (eglot-autoshutdown t)  ;; shutdown language server after closing last file
   (eldoc-echo-area-use-multiline-p nil) ;; eldoc-documentation-function should only return a single line 
+  :config
+  (custom-set-faces
+    '(eglot-highlight-symbol-face ((t (:background "dark slate gray" :foreground "white")))))
   :hook
   (((java-ts-mode python-ts-mode) . eglot-ensure)))
 
@@ -56,9 +59,10 @@
   :config
   (add-hook 'xref-backend-functions #'dumb-jump-xref-activate))
 
-(use-package highlight-thing :ensure t :defer 1
+(use-package highlight-thing :ensure t :defer t
   :config
   (setq highlight-thing-exclude-thing-under-point t)
   (custom-set-faces
     '(highlight-thing ((t (:background "dark slate gray" :foreground "white")))))
-  (add-hook 'prog-mode-hook 'highlight-thing-mode))
+  :hook
+  (((sql-mode) . highlight-thing-mode)))
