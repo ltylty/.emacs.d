@@ -78,18 +78,17 @@
   "fr" 'recentf
   ;; search
   "ss" 'consult-line
-  "sd" #'(lambda () (interactive) (consult-ripgrep default-directory))
+  ;; "sd" #'(lambda () (interactive) (consult-ripgrep default-directory))
+  "sd" 'color-rg-search-symbol
+  "sf" 'color-rg-search-symbol-in-current-file
+  "sp" 'color-rg-search-symbol-in-project
+  "sD" 'color-rg-search-input
+  "sF" 'color-rg-search-input-in-current-file
+  "sP" 'color-rg-search-input-in-project
   "si" 'consult-imenu
   "so" 'consult-outline
   "sb" 'consult-bookmark
   "se" 'consult-flymake
-  ;; rg
-  "rd" 'color-rg-search-symbol
-  "rf" 'color-rg-search-symbol-in-current-file
-  "rp" 'color-rg-search-symbol-in-project
-  "rD" 'color-rg-search-input
-  "rF" 'color-rg-search-input-in-current-file
-  "rP" 'color-rg-search-input-in-project
   ;; git
   "gg" 'magit-status
   "gL" 'magit-log-buffer-file
