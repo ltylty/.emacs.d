@@ -14,3 +14,9 @@
 (define-key evil-normal-state-map (kbd "C-;") 'macrursors-mark-all-lines-or-instances)
 (define-key evil-normal-state-map (kbd "M-p") 'macrursors-mark-previous-instance-of)
 (define-key evil-normal-state-map (kbd "M-n") 'macrursors-mark-next-instance-of)
+
+(unless (package-installed-p 'color-rg)
+     (package-vc-install "https://github.com/manateelazycat/color-rg"))
+(require 'color-rg)
+(when (eq system-type 'windows-nt)
+  (setq color-rg-command-prefix "powershell"))

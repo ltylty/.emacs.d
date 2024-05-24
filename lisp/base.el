@@ -14,13 +14,13 @@
   :init
   ;; Use Consult to select xref locations with preview
   (setq xref-show-xrefs-function #'consult-xref
-        xref-show-definitions-function #'consult-xref)
-  :config
-  (when (eq system-type 'windows-nt)
-    ;; 解决Windows下 consult-ripgrep 乱码和卡死
-    (add-to-list 'process-coding-system-alist '("[gG][rR][eE][pP]" . (utf-8 . gbk-dos)))
-    (add-to-list 'process-coding-system-alist '("[rR][gG]" . (utf-8 . gbk-dos)))
-    (setq consult-async-input-debounce 0.8)))
+        xref-show-definitions-function #'consult-xref))
+  ;; :config
+  ;; (when (eq system-type 'windows-nt)
+  ;;   ;; 解决Windows下 consult-ripgrep 乱码和卡死
+  ;;   (add-to-list 'process-coding-system-alist '("[gG][rR][eE][pP]" . (utf-8 . gbk-dos)))
+  ;;   (add-to-list 'process-coding-system-alist '("[rR][gG]" . (utf-8 . gbk-dos)))
+  ;;   (setq consult-async-input-debounce 0.8)))
 
 (use-package vertico :ensure t
   :custom

@@ -10,7 +10,7 @@
   (setq evil-shift-width 2)
   (setq evil-symbol-word-search t)
   :config
-  (setq evil-emacs-state-modes '(ediff-mode))
+  (setq evil-emacs-state-modes '(ediff-mode color-rg-mode))
   (add-hook 'with-editor-mode-hook 'evil-insert-state)
   (evil-select-search-module 'evil-search-module 'evil-search)
   (evil-mode))
@@ -83,6 +83,13 @@
   "so" 'consult-outline
   "sb" 'consult-bookmark
   "se" 'consult-flymake
+  ;; rg
+  "rd" 'color-rg-search-symbol
+  "rf" 'color-rg-search-symbol-in-current-file
+  "rp" 'color-rg-search-symbol-in-project
+  "rD" 'color-rg-search-input
+  "rF" 'color-rg-search-input-in-current-file
+  "rP" 'color-rg-search-input-in-project
   ;; git
   "gg" 'magit-status
   "gL" 'magit-log-buffer-file
