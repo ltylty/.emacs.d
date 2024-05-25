@@ -150,15 +150,15 @@
   (evil-normal-state)
   (evil-visual-restore))
 
-(defun exit-insert-state ()
+(defun entry-normal-state ()
   (cua-mode -1)
-  (corfu-quit)
   (setq org-support-shift-select nil))
 (defun entry-insert-state ()
   (cua-mode 1)
   (setq org-support-shift-select 'always))
+(add-hook 'evil-normal-state-entry-hook #'entry-normal-state)
 (add-hook 'evil-insert-state-entry-hook #'entry-insert-state)
-(add-hook 'evil-insert-state-exit-hook  #'exit-insert-state)
+(add-hook 'evil-insert-state-exit-hook #'corfu-quit)
 (advice-add 'evil-force-normal-state :before #'evil-ex-nohighlight)
 
 (evil-define-key '(normal motion visual) global-map "gh" #'evil-first-non-blank)
