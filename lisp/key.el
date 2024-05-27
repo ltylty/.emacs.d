@@ -167,3 +167,7 @@
 (evil-define-key 'normal dired-mode-map (kbd "<backspace>") #'dired-up-directory)
 (evil-define-key 'insert eshell-mode-map (kbd "C-r") #'consult-history)
 (evil-define-key 'insert shell-mode-map (kbd "C-r") #'consult-history)
+
+(define-key evil-normal-state-map (kbd "C-;") 'macrursors-mark-all-lines-or-instances)
+(define-key evil-normal-state-map (kbd "M-p") 'macrursors-mark-previous-line)
+(define-key evil-normal-state-map (kbd "M-n") 'macrursors-mark-next-line)
