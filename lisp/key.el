@@ -52,6 +52,8 @@
 
 (evil-define-key nil space-leader-map
   (kbd "SPC") 'execute-extended-command
+  (kbd "RET") 'consult-bookmark
+  "0" 'treemacs-select-window
   ;; buffer
   "bb" 'consult-buffer
   "bi" 'ibuffer
@@ -70,7 +72,6 @@
   "wl" 'evil-window-right
   "wu" 'winner-undo
   "wr" 'winner-redo
-  "0" 'treemacs-select-window
   ;; file
   "ff" 'find-file
   "fd" #'(lambda () (interactive) (consult-fd default-directory))
@@ -78,7 +79,6 @@
   "fr" 'recentf
   ;; search
   "ss" 'consult-line
-  ;; "sd" #'(lambda () (interactive) (consult-ripgrep default-directory))
   "sd" 'color-rg-search-symbol
   "sf" 'color-rg-search-symbol-in-current-file
   "sp" 'color-rg-search-symbol-in-project
@@ -87,8 +87,8 @@
   "sP" 'color-rg-search-input-in-project
   "si" 'consult-imenu
   "so" 'consult-outline
-  "sb" 'consult-bookmark
-  "se" 'consult-flymake
+  ;; code
+  "ce" 'consult-flymake
   ;; git
   "gg" 'magit-status
   "gL" 'magit-log-buffer-file
@@ -168,6 +168,6 @@
 (evil-define-key 'insert eshell-mode-map (kbd "C-r") #'consult-history)
 (evil-define-key 'insert shell-mode-map (kbd "C-r") #'consult-history)
 
-(define-key evil-normal-state-map (kbd "C-;") 'macrursors-mark-all-lines-or-instances)
+(global-set-key (kbd "C-;") 'macrursors-mark-all-lines-or-instances)
 (define-key evil-normal-state-map (kbd "M-p") 'macrursors-mark-previous-line)
 (define-key evil-normal-state-map (kbd "M-n") 'macrursors-mark-next-line)
