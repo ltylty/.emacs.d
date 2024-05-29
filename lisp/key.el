@@ -136,6 +136,10 @@
 (global-set-key (kbd "M-,") 'evil-jump-backward)
 (global-set-key (kbd "C-M-,") 'evil-jump-forward)
 
+(global-set-key (kbd "C-;") 'macrursors-mark-all-lines-or-instances)
+(define-key evil-normal-state-map (kbd "M-p") 'macrursors-mark-previous-line)
+(define-key evil-normal-state-map (kbd "M-n") 'macrursors-mark-next-line)
+
 ; evil define key
 (define-key evil-visual-state-map (kbd ">") 'evil-shift-right-visual)
 (define-key evil-visual-state-map (kbd "<") 'evil-shift-left-visual)
@@ -159,6 +163,7 @@
   (setq org-support-shift-select 'always))
 (add-hook 'evil-insert-state-entry-hook #'entry-insert-state)
 (add-hook 'evil-insert-state-exit-hook #'exit-insert-state)
+(add-hook 'evil-visual-state-entry-hook (lambda () (cua-mode -1))) 
 (advice-add 'evil-force-normal-state :before #'evil-ex-nohighlight)
 
 (evil-define-key '(normal motion visual) global-map "gh" #'evil-first-non-blank)
@@ -167,7 +172,3 @@
 (evil-define-key 'normal dired-mode-map (kbd "<backspace>") #'dired-up-directory)
 (evil-define-key 'insert eshell-mode-map (kbd "C-r") #'consult-history)
 (evil-define-key 'insert shell-mode-map (kbd "C-r") #'consult-history)
-
-(global-set-key (kbd "C-;") 'macrursors-mark-all-lines-or-instances)
-(define-key evil-normal-state-map (kbd "M-p") 'macrursors-mark-previous-line)
-(define-key evil-normal-state-map (kbd "M-n") 'macrursors-mark-next-line)
