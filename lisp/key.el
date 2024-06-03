@@ -79,12 +79,12 @@
   "fr" 'recentf
   ;; search
   "ss" 'consult-line
-  "sd" 'color-rg-search-symbol
-  "sf" 'color-rg-search-symbol-in-current-file
-  "sp" 'color-rg-search-symbol-in-project
-  "sD" 'color-rg-search-input
-  "sF" 'color-rg-search-input-in-current-file
-  "sP" 'color-rg-search-input-in-project
+  "sD" 'color-rg-search-symbol
+  "sF" 'color-rg-search-symbol-in-current-file
+  "sP" 'color-rg-search-symbol-in-project
+  "sd" 'color-rg-search-input
+  "sf" 'color-rg-search-input-in-current-file
+  "sp" 'color-rg-search-input-in-project
   "si" 'consult-imenu
   "so" 'consult-outline
   ;; code
