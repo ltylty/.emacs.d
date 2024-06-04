@@ -41,8 +41,10 @@
   (global-evil-visualstar-mode))
 
 (use-package evil-multiedit :ensure t :after evil
-  :config
+  :init
+  (setq iedit-toggle-key-default nil)
   (setq iedit-overlay-priority 2) ;; higher than highlight-thing, lower than region.
+  :config
   (evil-multiedit-default-keybinds))
 
 ;; space leader key
