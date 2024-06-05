@@ -20,7 +20,7 @@
   (custom-set-faces
     '(eglot-highlight-symbol-face ((t (:background "dark slate gray" :foreground "white")))))
   :hook
-  (((java-ts-mode python-ts-mode) . eglot-ensure)))
+  (((python-ts-mode) . eglot-ensure)))
 
 (use-package treesit-auto :ensure t :defer 1
   :custom
@@ -68,3 +68,10 @@
     '(highlight-thing ((t (:background "dark slate gray" :foreground "white")))))
   :hook
   (((sql-mode conf-mode) . highlight-thing-mode)))
+
+;; (use-package gtags-mode :ensure t :defer t
+;;   :hook (((java-ts-mode) . gtags-mode)))
+
+(use-package ggtags :ensure t :defer t
+  :init (setq ggtags-use-sqlite3 t)
+  :hook (((java-ts-mode) . ggtags-mode)))
