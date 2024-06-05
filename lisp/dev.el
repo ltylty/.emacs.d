@@ -68,10 +68,3 @@
     '(highlight-thing ((t (:background "dark slate gray" :foreground "white")))))
   :hook
   (((sql-mode conf-mode) . highlight-thing-mode)))
-
-;; (use-package gtags-mode :ensure t :defer t
-;;   :hook (((java-ts-mode) . gtags-mode)))
-
-(use-package ggtags :ensure t :defer t
-  :init (setq ggtags-use-sqlite3 t)
-  :hook (((java-ts-mode) . ggtags-mode)))
