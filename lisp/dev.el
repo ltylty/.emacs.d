@@ -57,9 +57,9 @@
 (use-package treemacs-magit :ensure t :after (treemacs magit))
 (use-package treemacs-tab-bar :ensure t :after (treemacs tab-bar))
 
-(use-package dumb-jump :ensure t :defer 1
-  :config
-  (add-hook 'xref-backend-functions #'dumb-jump-xref-activate))
+;; (use-package dumb-jump :ensure t :defer 1
+;;   :config
+;;   (add-hook 'xref-backend-functions #'dumb-jump-xref-activate))
 
 (use-package highlight-thing :ensure t :defer t
   :config
@@ -73,6 +73,7 @@
   :init
   (require 'citre-config)
   :config
+  (setq xref-prompt-for-identifier nil)
   (setq
    citre-default-create-tags-file-location 'global-cache
    citre-gtags-args nil
