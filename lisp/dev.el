@@ -57,10 +57,6 @@
 (use-package treemacs-magit :ensure t :after (treemacs magit))
 (use-package treemacs-tab-bar :ensure t :after (treemacs tab-bar))
 
-;; (use-package dumb-jump :ensure t :defer 1
-;;   :config
-;;   (add-hook 'xref-backend-functions #'dumb-jump-xref-activate))
-
 (use-package highlight-thing :ensure t :defer t
   :config
   (setq highlight-thing-exclude-thing-under-point t)
