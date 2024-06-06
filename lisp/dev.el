@@ -74,4 +74,4 @@
    citre-default-create-tags-file-location 'global-cache
    citre-gtags-args nil
    citre-edit-ctags-options-manually nil
-   citre-auto-enable-citre-mode-modes '(prog-mode)))
+   citre-auto-enable-citre-mode-modes '(java-ts-mode)))
