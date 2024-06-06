@@ -68,3 +68,12 @@
     '(highlight-thing ((t (:background "dark slate gray" :foreground "white")))))
   :hook
   (((sql-mode conf-mode) . highlight-thing-mode)))
+
+(use-package citre :ensure t :defer t
+  :init
+  (require 'citre-config)
+  :config
+  (setq
+   citre-default-create-tags-file-location 'global-cache
+   citre-gtags-args nil
+   citre-auto-enable-citre-mode-modes '(prog-mode)))

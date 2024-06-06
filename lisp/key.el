@@ -168,7 +168,7 @@
 
 (evil-define-key '(normal motion visual) global-map "gh" #'evil-first-non-blank)
 (evil-define-key '(normal motion visual) global-map "gl" #'evil-last-non-blank)
-(evil-define-key 'normal global-map "gr" #'xref-find-references)
+(evil-define-key 'normal global-map "gr" #'citre-jump-to-reference)
 (evil-define-key 'normal dired-mode-map (kbd "<backspace>") #'dired-up-directory)
 (evil-define-key 'insert eshell-mode-map (kbd "C-r") #'consult-history)
 (evil-define-key 'insert eshell-mode-map (kbd "C-w") #'evil-delete-backward-word)
