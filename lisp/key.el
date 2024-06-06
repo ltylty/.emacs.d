@@ -90,6 +90,7 @@
   ;; code
   "ce" 'consult-flymake
   "cug" 'citre-global-update-database
+  "cuc" 'citre-update-this-tags-file
   ;; git
   "gg" 'magit-status
   "gL" 'magit-log-buffer-file
