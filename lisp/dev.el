@@ -72,6 +72,6 @@
   (setq xref-prompt-for-identifier nil)
   (setq
    citre-default-create-tags-file-location 'global-cache
-   citre-gtags-args nil
+   citre-gtags-args '("--compact")
    citre-edit-ctags-options-manually nil
    citre-auto-enable-citre-mode-modes '(java-ts-mode)))
