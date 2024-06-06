@@ -1,9 +1,11 @@
+(setopt use-short-answers t)
+(setq org-log-done 'time)
+(setq recentf-max-saved-items 500)
 (recentf-mode)
 (global-hl-line-mode)
 (winner-mode)
 (save-place-mode)
-(fset 'yes-or-no-p 'y-or-n-p)
-(setq org-log-done 'time)
+(global-auto-revert-mode)
 
 (use-package which-key :ensure t 
   :hook (after-init . which-key-mode))
