@@ -48,7 +48,6 @@
 
 (use-package treemacs :ensure t :defer t
   :config
-  (setq treemacs-show-cursor t)
   (setq treemacs-is-never-other-window t)
   (treemacs-project-follow-mode t)
   (treemacs-follow-mode t))
