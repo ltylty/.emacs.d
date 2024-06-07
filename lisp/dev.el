@@ -38,7 +38,7 @@
   (setq magit-log-margin '(t "%Y-%m-%d %H:%M:%S " magit-log-margin-width t 18))
   (setq magit-ediff-dwim-show-on-hunks t))
 
-(use-package git-gutter :ensure t :defer 1
+(use-package git-gutter :ensure t :after project
   :init
   (global-git-gutter-mode +1))
 
@@ -56,13 +56,13 @@
 (use-package treemacs-magit :ensure t :after (treemacs magit))
 (use-package treemacs-tab-bar :ensure t :after (treemacs tab-bar))
 
-(use-package highlight-thing :ensure t :defer t
+(use-package highlight-thing :ensure t :after project
   :config
   (setq highlight-thing-exclude-thing-under-point t)
   (custom-set-faces
     '(highlight-thing ((t (:background "dark slate gray" :foreground "white")))))
-  :hook
-  (((sql-mode conf-mode) . highlight-thing-mode)))
+  (setq highlight-thing-excluded-major-modes '(python-ts-mode))
+  (add-hook 'prog-mode-hook 'highlight-thing-mode))
 
 (use-package citre :ensure t :defer t
   :init
