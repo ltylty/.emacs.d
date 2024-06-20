@@ -41,7 +41,11 @@
 (use-package diff-hl :ensure t :after project
   :custom (diff-hl-draw-borders nil)
   :init
-  (global-diff-hl-mode))
+  (global-diff-hl-mode)
+  :config
+  (with-eval-after-load 'magit
+      (add-hook 'magit-pre-refresh-hook #'diff-hl-magit-pre-refresh)
+      (add-hook 'magit-post-refresh-hook #'diff-hl-magit-post-refresh)))
 
 (use-package markdown-mode :ensure t :defer t)
 
