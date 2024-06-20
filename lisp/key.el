@@ -121,6 +121,7 @@
   "hm" 'describe-mode
   "hp" 'describe-package
   ;; quit
+  "qr" 'restart-emacs
   "qq" '("Quit" . save-buffers-kill-terminal))
 
 (add-hook 'buffer-list-update-hook #'(lambda () (interactive) (keymap-set space-leader-map "m" (symbol-value (intern-soft (format "%s-map" major-mode))))))
