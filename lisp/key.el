@@ -137,10 +137,7 @@
 
 (global-set-key (kbd "M-,") 'evil-jump-backward)
 (global-set-key (kbd "C-M-,") 'evil-jump-forward)
-
 (global-set-key (kbd "C-;") 'macrursors-mark-all-lines-or-instances)
-(define-key evil-normal-state-map (kbd "M-p") 'macrursors-mark-previous-line)
-(define-key evil-normal-state-map (kbd "M-n") 'macrursors-mark-next-line)
 
 ; evil define key
 (define-key evil-visual-state-map (kbd ">") 'evil-shift-right-visual)
