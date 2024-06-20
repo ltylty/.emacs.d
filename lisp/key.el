@@ -163,7 +163,7 @@
   (setq org-support-shift-select 'always))
 (add-hook 'evil-insert-state-entry-hook #'entry-insert-state)
 (add-hook 'evil-insert-state-exit-hook #'exit-insert-state)
-(add-hook 'evil-visual-state-entry-hook (lambda () (cua-mode -1))) 
+(add-hook 'evil-visual-state-entry-hook #'exit-insert-state) 
 (advice-add 'evil-force-normal-state :before #'evil-ex-nohighlight)
 
 (evil-define-key '(normal motion visual) global-map "gh" #'evil-first-non-blank)
