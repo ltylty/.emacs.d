@@ -38,9 +38,10 @@
   (setq magit-log-margin '(t "%Y-%m-%d %H:%M:%S " magit-log-margin-width t 18))
   (setq magit-ediff-dwim-show-on-hunks t))
 
-(use-package git-gutter :ensure t :after project
+(use-package diff-hl :ensure t :after project
+  :custom (diff-hl-draw-borders nil)
   :init
-  (global-git-gutter-mode +1))
+  (global-diff-hl-mode))
 
 (use-package markdown-mode :ensure t :defer t)
 
