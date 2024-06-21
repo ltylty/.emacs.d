@@ -51,8 +51,9 @@
 (keymap-set evil-normal-state-map "SPC" 'space-leader-map)
 
 (evil-define-key nil space-leader-map
-  (kbd "SPC") 'evil-execute-in-emacs-state
+  (kbd "SPC") 'execute-extended-command
   (kbd "RET") 'consult-bookmark
+  "m" 'evil-execute-in-emacs-state
   "0" 'treemacs-select-window
   ;; buffer
   "bb" 'consult-buffer
@@ -123,8 +124,6 @@
   ;; quit
   "qr" 'restart-emacs
   "qq" '("Quit" . save-buffers-kill-terminal))
-
-(add-hook 'buffer-list-update-hook #'(lambda () (interactive) (keymap-set space-leader-map "m" (symbol-value (intern-soft (format "%s-map" major-mode))))))
 
 (define-key evil-motion-state-map (kbd "RET") nil)
 (evil-define-key 'normal text-mode-map (kbd "RET") #'embark-dwim)
