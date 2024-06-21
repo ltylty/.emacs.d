@@ -18,7 +18,7 @@
   (eglot-autoshutdown t)  ;; shutdown language server after closing last file
   (eldoc-echo-area-use-multiline-p nil) ;; eldoc-documentation-function should only return a single line 
   :custom-face
-  (eglot-highlight-symbol-face ((t (:inherit nil :weight bold :foreground "#cab27f"))))
+  (eglot-highlight-symbol-face ((t (:inherit nil :weight bold :foreground "yellow3"))))
   :hook
   (((python-ts-mode) . eglot-ensure)))
 
