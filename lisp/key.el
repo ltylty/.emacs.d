@@ -51,7 +51,7 @@
 (keymap-set evil-normal-state-map "SPC" 'space-leader-map)
 
 (evil-define-key nil space-leader-map
-  (kbd "SPC") 'execute-extended-command
+  (kbd "SPC") 'evil-execute-in-emacs-state
   (kbd "RET") 'consult-bookmark
   "0" 'treemacs-select-window
   ;; buffer
