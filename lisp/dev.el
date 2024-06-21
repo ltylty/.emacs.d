@@ -62,12 +62,9 @@
 
 (use-package highlight-thing :ensure t :after project
   :custom-face
-  (highlight-thing ((t (:background "dark slate gray"))))
+  (highlight-thing ((t (:inherit nil :background "dark slate gray"))))
   :config
   (setq highlight-thing-exclude-thing-under-point t)
-  ;; (custom-set-faces
-  ;;   '(highlight-thing ((t (:background "dark slate gray")))))
-  ;; (setq highlight-thing-excluded-major-modes '(python-ts-mode))
   (add-hook 'prog-mode-hook 'highlight-thing-mode))
 
 (use-package citre :ensure t :defer t
