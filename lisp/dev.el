@@ -17,9 +17,8 @@
   :custom
   (eglot-autoshutdown t)  ;; shutdown language server after closing last file
   (eldoc-echo-area-use-multiline-p nil) ;; eldoc-documentation-function should only return a single line 
-  :config
-  (custom-set-faces
-    '(eglot-highlight-symbol-face ((t (:background "dark slate gray" :foreground "white")))))
+  :custom-face
+  (eglot-highlight-symbol-face ((t (:underline t :weight bold))))
   :hook
   (((python-ts-mode) . eglot-ensure)))
 
@@ -62,11 +61,13 @@
 (use-package treemacs-tab-bar :ensure t :after (treemacs tab-bar))
 
 (use-package highlight-thing :ensure t :after project
+  :custom-face
+  (highlight-thing ((t (:background "dark slate gray"))))
   :config
   (setq highlight-thing-exclude-thing-under-point t)
-  (custom-set-faces
-    '(highlight-thing ((t (:background "dark slate gray" :foreground "white")))))
-  (setq highlight-thing-excluded-major-modes '(python-ts-mode))
+  ;; (custom-set-faces
+  ;;   '(highlight-thing ((t (:background "dark slate gray")))))
+  ;; (setq highlight-thing-excluded-major-modes '(python-ts-mode))
   (add-hook 'prog-mode-hook 'highlight-thing-mode))
 
 (use-package citre :ensure t :defer t
