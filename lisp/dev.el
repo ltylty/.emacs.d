@@ -53,6 +53,7 @@
 (use-package treemacs :ensure t :defer t
   :config
   (setq treemacs-is-never-other-window t)
+  (setq treemacs-collapse-dirs 10)
   (treemacs-project-follow-mode t)
   (treemacs-follow-mode t))
 
