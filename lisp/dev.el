@@ -58,7 +58,12 @@
 
 (use-package treemacs-evil :ensure t :after (treemacs evil))
 (use-package treemacs-magit :ensure t :after (treemacs magit))
-(use-package treemacs-tab-bar :ensure t :after (treemacs tab-bar))
+
+(use-package treemacs-tab-bar :ensure t :after (treemacs)
+  :config (treemacs-set-scope-type 'Tabs))
+
+(use-package treemacs-icons-dired :ensure t
+  :hook (dired-mode . treemacs-icons-dired-enable-once))
 
 (use-package highlight-thing :ensure t :after project
   :custom-face
