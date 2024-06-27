@@ -6,8 +6,6 @@
 (winner-mode)
 (save-place-mode)
 (global-auto-revert-mode)
-(setq auto-save-timeout 1)
-(auto-save-visited-mode)
 
 (use-package which-key :ensure t 
   :hook (after-init . which-key-mode))
@@ -62,3 +60,6 @@
 (use-package orderless :ensure t
   :config
   (setq completion-styles '(orderless flex)))
+
+(use-package undo-fu-session :ensure t
+  :hook (after-init . undo-fu-session-global-mode))
