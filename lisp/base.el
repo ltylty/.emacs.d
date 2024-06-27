@@ -1,5 +1,4 @@
 (setopt use-short-answers t)
-(setq-default indicate-empty-lines t)
 (setq org-log-done 'time)
 (setq recentf-max-saved-items 500)
 (recentf-mode)
@@ -7,7 +6,6 @@
 (winner-mode)
 (save-place-mode)
 (global-auto-revert-mode)
-(setq auto-save-interval 1)
 (setq auto-save-timeout 1)
 (auto-save-visited-mode)
 
