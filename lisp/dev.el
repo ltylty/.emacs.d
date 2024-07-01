@@ -52,7 +52,10 @@
 
 (use-package treemacs :ensure t :defer t
   :config
-  (setq treemacs-is-never-other-window t))
+  (setq treemacs-is-never-other-window t)
+  (setq treemacs-collapse-dirs 10)
+  (treemacs-project-follow-mode t)
+  (treemacs-follow-mode t))
 
 (use-package treemacs-evil :ensure t :after (treemacs evil))
 (use-package treemacs-magit :ensure t :after (treemacs magit))
@@ -80,3 +83,13 @@
    citre-gtags-args '("--compact")
    citre-edit-ctags-options-manually nil
    citre-auto-enable-citre-mode-modes '(java-ts-mode sql-mode)))
+
+(use-package popper :ensure t :defer 1
+  :init
+  (setq popper-window-height 0.5)
+  (setq popper-reference-buffers
+        '("^\\*eshell.*\\*$" eshell-mode ;eshell as a popup
+          help-mode
+          compilation-mode))
+  (popper-mode +1)
+  (popper-echo-mode +1))
