@@ -52,10 +52,7 @@
 
 (use-package treemacs :ensure t :defer t
   :config
-  (setq treemacs-is-never-other-window t)
-  (setq treemacs-collapse-dirs 10)
-  ;; (treemacs-project-follow-mode t)
-  (treemacs-follow-mode t))
+  (setq treemacs-is-never-other-window t))
 
 (use-package treemacs-evil :ensure t :after (treemacs evil))
 (use-package treemacs-magit :ensure t :after (treemacs magit))
