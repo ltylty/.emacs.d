@@ -54,7 +54,7 @@
   :config
   (setq treemacs-is-never-other-window t)
   (setq treemacs-collapse-dirs 10)
-  (treemacs-project-follow-mode t)
+  ;; (treemacs-project-follow-mode t)
   (treemacs-follow-mode t))
 
 (use-package treemacs-evil :ensure t :after (treemacs evil))
@@ -82,4 +82,4 @@
    citre-default-create-tags-file-location 'global-cache
    citre-gtags-args '("--compact")
    citre-edit-ctags-options-manually nil
-   citre-auto-enable-citre-mode-modes '(java-ts-mode)))
+   citre-auto-enable-citre-mode-modes '(java-ts-mode sql-mode)))
