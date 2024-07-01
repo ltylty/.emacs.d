@@ -56,18 +56,7 @@
   :config
   (setq treemacs-is-never-other-window t)
   (setq treemacs-collapse-dirs 10)
-  (treemacs-follow-mode t)
-  (defun treemacs-project-toggle ()
-    "Toggle and add the current project to treemacs if not already added."
-    (interactive)
-    (if (eq (treemacs-current-visibility) 'visible)
-	(delete-window (treemacs-get-local-window))
-      (let ((path (project-root (project-current t)))
-	    (name (project-name (project-current t))))
-	(unless (treemacs-current-workspace)
-	  (treemacs--find-workspace))
-	(treemacs-do-add-project-to-workspace path name)
-	(treemacs-select-window)))))
+  (treemacs-follow-mode t))
 
 (use-package treemacs-evil :ensure t :after (treemacs evil))
 (use-package treemacs-magit :ensure t :after (treemacs magit))
