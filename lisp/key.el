@@ -79,6 +79,7 @@
   "fd" #'(lambda () (interactive) (consult-fd default-directory))
   "fs" 'save-buffer
   "fr" 'recentf
+  "ft" 'treemacs
   ;; search
   "ss" 'consult-line
   "sD" 'color-rg-search-symbol
@@ -108,7 +109,7 @@
   "pf" 'project-find-file
   "pb" 'project-switch-to-buffer
   "ps" 'consult-ripgrep
-  "pt" 'treemacs-add-and-display-current-project
+  "pt" 'treemacs-create-workspace-from-project
   ;; open
   "oe" 'eshell
   "oo" #'(lambda () (interactive) (browse-url default-directory))
