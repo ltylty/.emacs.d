@@ -109,7 +109,6 @@
   "pf" 'project-find-file
   "pb" 'project-switch-to-buffer
   "ps" 'consult-ripgrep
-  "pt" 'treemacs-add-and-display-current-project
   ;; open
   "oe" 'eshell
   "oo" #'(lambda () (interactive) (browse-url default-directory))
