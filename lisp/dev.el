@@ -11,7 +11,15 @@
 
 (use-package project :defer t
   :custom
-  (project-switch-commands 'project-dired))
+  (project-switch-commands 'open-project-and-switch-treemacs-workspace)
+  :config
+  (defun open-project-and-switch-treemacs-workspace ()
+    (interactive)
+    (project-dired)
+    (let* ((current-project-name (project-name (project-current t)))
+	   (workspace (or (treemacs--find-workspace-by-name current-project-name)
+			  (treemacs-tab-bar--create-workspace current-project-name))))
+      (treemacs-do-switch-workspace workspace))))
 
 (use-package eglot :defer t
   :custom
@@ -60,6 +68,7 @@
 
 (use-package treemacs-evil :ensure t :after (treemacs evil))
 (use-package treemacs-magit :ensure t :after (treemacs magit))
+(use-package treemacs-tab-bar :ensure t :after project)
 
 (use-package treemacs-icons-dired :ensure t
   :hook (dired-mode . treemacs-icons-dired-enable-once))
