@@ -82,12 +82,8 @@
   "ft" 'treemacs
   ;; search
   "ss" 'consult-line
-  "sD" 'color-rg-search-symbol
-  "sF" 'color-rg-search-symbol-in-current-file
-  "sP" 'color-rg-search-symbol-in-project
-  "sd" 'color-rg-search-input
-  "sf" 'color-rg-search-input-in-current-file
-  "sp" 'color-rg-search-input-in-project
+  "sd" #'(lambda () (interactive) (consult-ripgrep default-directory))
+  "sp" 'consult-ripgrep
   "si" 'consult-imenu
   "so" 'consult-outline
   ;; code
@@ -108,7 +104,6 @@
   "pl" 'tab-switch
   "pf" 'project-find-file
   "pb" 'project-switch-to-buffer
-  "ps" 'consult-ripgrep
   "pta" 'treemacs-add-and-display-current-project
   "ptc" 'treemacs-collapse-all-projects
   ;; open
