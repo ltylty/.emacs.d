@@ -30,6 +30,12 @@
 
 (use-package project-tab-groups :ensure t :after project
   :config
+  (defun tab-bar-tab-name-current-project ()
+    (let ((project (project-current)))
+      (if project
+          (project-name project)
+	(tab-bar-tab-name-current))))
+  (setq tab-bar-tab-name-function #'tab-bar-tab-name-current-project)
   (project-tab-groups-mode 1))
 
 (use-package magit :ensure t :defer t
@@ -61,8 +67,8 @@
 (use-package treemacs-evil :ensure t :after (treemacs evil))
 (use-package treemacs-magit :ensure t :after (treemacs magit))
 
-(use-package treemacs-icons-dired :ensure t
-  :hook (dired-mode . treemacs-icons-dired-enable-once))
+(use-package treemacs-tab-bar :ensure t :after (treemacs)
+  :config (treemacs-set-scope-type 'Tabs))
 
 (use-package highlight-thing :ensure t :after project
   :custom-face
