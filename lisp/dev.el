@@ -34,7 +34,7 @@
     (let ((project (project-current)))
       (if project
           (project-name project)
-	(tab-bar-tab-name-current))))
+	"Default")))
   (setq tab-bar-tab-name-function #'tab-bar-tab-name-current-project)
   (project-tab-groups-mode 1))
 
