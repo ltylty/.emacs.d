@@ -101,11 +101,10 @@
   ;; project
   "pp" 'project-switch-project
   "pd" 'project-kill-buffers
-  "pl" 'tab-switch
+  "ps" 'tab-switch
+  "pl" 'tab-recent
   "pf" 'project-find-file
   "pb" 'project-switch-to-buffer
-  "pta" 'treemacs-add-and-display-current-project
-  "ptc" 'treemacs-collapse-all-projects
   ;; open
   "oe" 'eshell
   "oo" #'(lambda () (interactive) (browse-url default-directory))
