@@ -62,6 +62,8 @@
   :config
   (setq treemacs-is-never-other-window t)
   (setq treemacs-collapse-dirs 10)
+  (treemacs-git-mode 'deferred)
+  (treemacs-git-commit-diff-mode t)
   (treemacs-follow-mode t))
 
 (use-package treemacs-evil :ensure t :after (treemacs evil))
