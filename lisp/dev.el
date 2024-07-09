@@ -22,7 +22,7 @@
   :hook
   (((python-ts-mode) . eglot-ensure)))
 
-(use-package treesit-auto :ensure t :defer 1
+(use-package treesit-auto :ensure t :after project
   :custom
   (treesit-auto-install 'prompt)
   :config
