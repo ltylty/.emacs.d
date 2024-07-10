@@ -57,9 +57,8 @@
 (use-package json-mode :ensure t :defer t)
 
 (use-package treemacs :ensure t :defer t
-  :init
-  (setq treemacs-follow-after-init t)
   :config
+  (setq treemacs-follow-after-init t)
   (setq treemacs-is-never-other-window t)
   (setq treemacs-collapse-dirs 10)
   (treemacs-git-mode 'deferred)
