@@ -66,7 +66,6 @@
   (treemacs-follow-mode t))
 
 (use-package treemacs-evil :ensure t :after (treemacs evil))
-(use-package treemacs-magit :ensure t :after (treemacs magit))
 
 (use-package treemacs-tab-bar :ensure t :after (treemacs)
   :config (treemacs-set-scope-type 'Tabs))
