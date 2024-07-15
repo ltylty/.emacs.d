@@ -30,12 +30,6 @@
 
 (use-package project-tab-groups :ensure t :after project
   :config
-  (defun tab-bar-tab-name-current-project ()
-    (let ((project (project-current)))
-      (if project
-          (project-name project)
-	"Default")))
-  (setq tab-bar-tab-name-function #'tab-bar-tab-name-current-project)
   (project-tab-groups-mode 1))
 
 (use-package magit :ensure t :defer t
@@ -56,20 +50,7 @@
 
 (use-package json-mode :ensure t :defer t)
 
-(use-package treemacs :ensure t :defer t
-  :config
-  (setq treemacs-follow-after-init t)
-  (setq treemacs-is-never-other-window t)
-  (setq treemacs-collapse-dirs 10)
-  (treemacs-git-mode 'deferred)
-  (treemacs-git-commit-diff-mode t)
-  (treemacs-follow-mode t))
-
-(use-package treemacs-evil :ensure t :after (treemacs evil))
-(use-package treemacs-magit :ensure t :after (treemacs magit))
-
-(use-package treemacs-tab-bar :ensure t :after (treemacs)
-  :config (treemacs-set-scope-type 'Tabs))
+(use-package dired-sidebar :ensure t :defer t)
 
 (use-package highlight-thing :ensure t :after project
   :custom-face

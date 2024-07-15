@@ -55,7 +55,7 @@
   (kbd "SPC") 'execute-extended-command
   (kbd "RET") 'consult-bookmark
   "m" 'evil-execute-in-emacs-state
-  "0" 'treemacs-select-window
+  "0" 'dired-sidebar-toggle-sidebar
   ;; buffer
   "bb" 'consult-buffer
   "bi" 'ibuffer
@@ -79,7 +79,6 @@
   "fd" #'(lambda () (interactive) (consult-fd default-directory))
   "fs" 'save-buffer
   "fr" 'recentf
-  "ft" 'treemacs
   ;; search
   "ss" 'consult-line
   "sd" #'(lambda () (interactive) (consult-ripgrep default-directory))
@@ -109,8 +108,7 @@
   "oe" 'eshell
   "oo" #'(lambda () (interactive) (browse-url default-directory))
   "of" #'(lambda () (interactive) (browse-url buffer-file-name))
-  "od" 'dired
-  "oD" 'dired-jump
+  "od" 'dired-jump
   "ol" 'ielm
   ;; help
   "hk" 'describe-key
@@ -123,6 +121,7 @@
   "qq" '("Quit" . save-buffers-kill-terminal))
 
 (define-key evil-motion-state-map (kbd "RET") nil)
+(define-key evil-normal-state-map [mouse-2] nil)
 (evil-define-key 'normal text-mode-map (kbd "RET") #'embark-dwim)
 (evil-define-key 'normal prog-mode-map (kbd "RET") #'embark-dwim)
 (evil-define-key 'normal special-mode-map "q" #'quit-window)
