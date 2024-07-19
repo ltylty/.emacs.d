@@ -7,8 +7,8 @@
 (save-place-mode)
 (savehist-mode)
 (global-auto-revert-mode)
-(global-highlight-changes-mode)
 
+(global-highlight-changes-mode)
 (add-hook 'after-save-hook (lambda ()
                              (if highlight-changes-mode
                                  (progn
