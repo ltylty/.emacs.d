@@ -5,9 +5,17 @@
 (global-hl-line-mode)
 (winner-mode)
 (save-place-mode)
+(savehist-mode)
 (global-auto-revert-mode)
+(global-highlight-changes-mode)
 
-(use-package which-key :ensure t 
+(add-hook 'after-save-hook (lambda ()
+                             (if highlight-changes-mode
+                                 (progn
+                                   (call-interactively 'highlight-changes-mode)
+                                   (call-interactively 'highlight-changes-mode)))))
+
+(use-package which-key :ensure t
   :hook (after-init . which-key-mode))
 
 (use-package avy :ensure t)
@@ -46,7 +54,7 @@
   (corfu-cycle t)
   (corfu-auto t)
   (corfu-auto-prefix 1)
-  (corfu-quit-no-match t) 
+  (corfu-quit-no-match t)
   (corfu-preselect 'prompt)
   :init
   (global-corfu-mode))
@@ -64,5 +72,5 @@
 (use-package undo-fu-session :ensure t :defer t
   :hook (after-init . undo-fu-session-global-mode))
 
-(use-package doom-modeline :ensure t :defer t
-  :hook (after-init . doom-modeline-mode))
+;; (use-package doom-modeline :ensure t :defer t
+;;   :hook (after-init . doom-modeline-mode))
