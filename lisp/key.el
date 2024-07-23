@@ -75,6 +75,8 @@
   "wl" 'evil-window-right
   "wu" 'winner-undo
   "wr" 'winner-redo
+  "w>" 'evil-window-increase-width
+  "w<" 'evil-window-decrease-width
   ;; file
   "ff" 'find-file
   "fd" #'(lambda () (interactive) (consult-fd default-directory))
