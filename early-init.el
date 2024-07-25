@@ -2,7 +2,7 @@
 (setq inhibit-startup-message t)
 (setq initial-major-mode 'fundamental-mode)
 (setq custom-file (make-temp-file "emacs-custom"))
-(setq-default frame-title-format '("%f    [" mode-name "]"))
+(setq-default frame-title-format '("%f    [" mode-name "]" (:eval (if (buffer-modified-p) " ✍️"))))
 (prefer-coding-system 'utf-8)
 
 (setq default-frame-alist

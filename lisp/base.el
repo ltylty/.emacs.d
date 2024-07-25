@@ -7,6 +7,7 @@
 (save-place-mode)
 (savehist-mode)
 (global-auto-revert-mode)
+(auto-save-visited-mode t)
 
 (use-package which-key :ensure t
   :hook (after-init . which-key-mode))
@@ -64,15 +65,3 @@
 
 (use-package undo-fu-session :ensure t :defer t
   :hook (after-init . undo-fu-session-global-mode))
-
-(use-package hilit-chg
-  :custom-face
-  (highlight-changes-delete ((t (:underline nil)))) 
-  :config
-  (global-highlight-changes-mode)
-  (defun clear-highlight-changes-after-save()
-    (if highlight-changes-mode
-        (progn
-          (call-interactively 'highlight-changes-mode)
-          (call-interactively 'highlight-changes-mode))))
-  (add-hook 'after-save-hook 'clear-highlight-changes-after-save))
