@@ -39,6 +39,10 @@
   :init
   (global-evil-visualstar-mode))
 
+(use-package evil-anzu :ensure t :after evil
+  :init
+  (global-anzu-mode +1))
+
 (use-package evil-multiedit :ensure t :after evil
   :init
   (setq iedit-toggle-key-default nil)
@@ -90,6 +94,8 @@
   "so" 'consult-outline
   ;; code
   "ce" 'consult-flymake
+  "cf" 'eglot-format
+  "cr" 'eglot-rename
   "cug" 'citre-global-update-database
   "cuc" 'citre-update-this-tags-file
   ;; git
