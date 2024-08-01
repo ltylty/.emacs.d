@@ -12,7 +12,7 @@
   (add-hook 'with-editor-mode-hook 'evil-insert-state)
   (evil-select-search-module 'evil-search-module 'evil-search)
   (evil-mode))
-  
+
 (use-package evil-textobj-line :ensure t :after evil)
 
 (use-package evil-textobj-entire :ensure t :after evil
@@ -102,6 +102,8 @@
   "gg" 'magit-status
   "gL" 'magit-log-buffer-file
   "gd" 'vc-ediff
+  "gp" 'magit-blob-previous
+  "gn" 'magit-blob-next
   ;; jump
   "jj" 'avy-goto-word-1
   "jl" 'avy-goto-line
@@ -166,7 +168,7 @@
   (setq org-support-shift-select 'always))
 (add-hook 'evil-insert-state-entry-hook #'entry-insert-state)
 (add-hook 'evil-insert-state-exit-hook #'exit-insert-state)
-(add-hook 'evil-visual-state-entry-hook #'exit-insert-state) 
+(add-hook 'evil-visual-state-entry-hook #'exit-insert-state)
 (advice-add 'evil-force-normal-state :before #'evil-ex-nohighlight)
 
 (evil-define-key '(normal motion visual) global-map "gh" #'evil-first-non-blank)
