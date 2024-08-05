@@ -88,8 +88,8 @@
   "fr" 'recentf
   ;; search
   "ss" 'consult-line
-  "sd" #'(lambda () (interactive) (consult-ripgrep default-directory))
-  "sp" 'consult-ripgrep
+  "sd" 'deadgrep-here
+  "sp" 'deadgrep
   "si" 'consult-imenu
   "so" 'consult-outline
   ;; code
@@ -115,6 +115,7 @@
   "pl" 'tab-recent
   "pf" 'project-find-file
   "pb" 'project-switch-to-buffer
+  "ps" 'consult-ripgrep
   ;; open
   "oe" 'eshell
   "oo" #'(lambda () (interactive) (browse-url default-directory))
