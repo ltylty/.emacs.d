@@ -8,7 +8,7 @@
   (setq evil-shift-width 2)
   (setq evil-symbol-word-search t)
   :config
-  (setq evil-emacs-state-modes '(ediff-mode))
+  (setq evil-emacs-state-modes '(ediff-mode color-rg-mode))
   (add-hook 'with-editor-mode-hook 'evil-insert-state)
   (evil-select-search-module 'evil-search-module 'evil-search)
   (evil-mode))
@@ -88,8 +88,8 @@
   "fr" 'recentf
   ;; search
   "ss" 'consult-line
-  "sd" 'deadgrep-here
-  "sp" 'deadgrep
+  "sd" 'color-rg-search-input
+  "sp" 'color-rg-search-input-in-project
   "si" 'consult-imenu
   "so" 'consult-outline
   ;; code
