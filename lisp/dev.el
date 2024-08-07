@@ -69,3 +69,14 @@
    citre-gtags-args '("--compact")
    citre-edit-ctags-options-manually nil
    citre-auto-enable-citre-mode-modes '(java-ts-mode sql-mode)))
+
+(use-package deadgrep :ensure t :defer 1
+  :bind
+  (:map deadgrep-mode-map ("C-x C-q" . wgrep-change-to-wgrep-mode))
+  :config
+  (defun deadgrep-here (search-term)
+    "Start deadgrep from the current working directory."
+    (interactive (list (deadgrep--read-search-term)))
+    (deadgrep search-term default-directory)))
+
+(use-package wgrep-deadgrep :ensure t :defer t)
