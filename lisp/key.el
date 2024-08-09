@@ -92,6 +92,7 @@
   "sp" 'deadgrep
   "si" 'consult-imenu
   "so" 'consult-outline
+  "sm" 'consult-global-mark
   ;; code
   "ce" 'consult-flymake
   "cf" 'eglot-format
