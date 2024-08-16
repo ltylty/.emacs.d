@@ -59,17 +59,6 @@
   (setq highlight-thing-exclude-thing-under-point t)
   (add-hook 'prog-mode-hook 'highlight-thing-mode))
 
-;; (use-package citre :ensure t :defer t
-;;   :init
-;;   (require 'citre-config)
-;;   :config
-;;   (setq xref-prompt-for-identifier nil)
-;;   (setq
-;;    citre-default-create-tags-file-location 'global-cache
-;;    citre-gtags-args '("--compact")
-;;    citre-edit-ctags-options-manually nil
-;;    citre-auto-enable-citre-mode-modes '(java-ts-mode sql-mode)))
-
 (use-package gtags-mode :ensure t :after project
   :config
   (setq xref-prompt-for-identifier nil)
