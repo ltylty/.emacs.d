@@ -2,9 +2,7 @@
                          ("melpa" . "https://mirrors.ustc.edu.cn/elpa/melpa/")
                          ("nongnu" . "https://mirrors.ustc.edu.cn/elpa/nongnu/")))
 
-(use-package ef-themes :ensure t
-  :config
-  (load-theme 'ef-maris-dark :no-confirm))
+(load-theme 'modus-vivendi-tinted t)
 
 (when (member "Maple Mono SC NF" (font-family-list))
   (set-face-attribute 'default nil :font "Maple Mono SC NF"))
@@ -14,7 +12,5 @@
 (load-file (expand-file-name "lisp/extra.el" user-emacs-directory))
 (load-file (expand-file-name "lisp/key.el" user-emacs-directory))
 
-(use-package gcmh :ensure t 
-  :hook (after-init . gcmh-mode))
-
 (setq initial-scratch-message (concat "enjoy coding *^____^* emacs startup in " (emacs-init-time)))
+(setq gc-cons-threshold (* 100 1024 1024))

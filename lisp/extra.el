@@ -1,6 +1,6 @@
-(unless (package-installed-p 'macrursors)
-  (package-vc-install "https://github.com/corytertel/macrursors"))
 (use-package macrursors :defer t
+  :vc (:url "https://github.com/corytertel/macrursors"
+       :branch "main")
   :bind
   (("C-;" . macrursors-mark-all-lines-or-instances))
   :config

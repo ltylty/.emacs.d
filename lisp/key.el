@@ -88,8 +88,8 @@
   "fr" 'recentf
   ;; search
   "ss" 'consult-line
-  "sd" 'deadgrep-here
-  "sp" 'deadgrep
+  "sd" #'(lambda () (interactive) (consult-ripgrep default-directory))
+  "sp" 'consult-ripgrep
   "si" 'consult-imenu
   "so" 'consult-outline
   "sm" 'consult-global-mark
@@ -123,6 +123,8 @@
   "of" #'(lambda () (interactive) (browse-url buffer-file-name))
   "od" 'dired-jump
   "ol" 'ielm
+  ;; toggle
+  "tl" 'toggle-truncate-lines
   ;; help
   "hk" 'describe-key
   "hf" 'describe-function

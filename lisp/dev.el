@@ -11,7 +11,8 @@
 
 (use-package project :defer t
   :custom
-  (project-switch-commands 'project-dired))
+  (project-switch-commands 'project-dired)
+  (project-mode-line t))
 
 (use-package eglot :defer t
   :custom
@@ -34,8 +35,8 @@
 
 (use-package magit :ensure t :defer t
   :config
-  (setq magit-status-margin '(t "%Y-%m-%d %H:%M:%S " magit-log-margin-width t 18))
-  (setq magit-log-margin '(t "%Y-%m-%d %H:%M:%S " magit-log-margin-width t 18))
+  ;; (setq magit-status-margin '(t "%Y-%m-%d %H:%M:%S " magit-log-margin-width t 18))
+  ;; (setq magit-log-margin '(t "%Y-%m-%d %H:%M:%S " magit-log-margin-width t 18))
   (setq magit-ediff-dwim-show-on-hunks t))
 
 (use-package diff-hl :ensure t :after project
@@ -63,13 +64,3 @@
   :config
   (setq xref-prompt-for-identifier nil)
   (gtags-mode))
-
-(use-package deadgrep :ensure t :defer t
-  :commands (deadgrep deadgrep--read-search-term)
-  :bind
-  (:map deadgrep-mode-map ("C-x C-q" . wgrep-change-to-wgrep-mode)))
-(use-package wgrep-deadgrep :ensure t :defer t)
-(defun deadgrep-here (search-term)
-    "Start deadgrep from the current working directory."
-    (interactive (list (deadgrep--read-search-term)))
-    (deadgrep search-term default-directory))

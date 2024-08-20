@@ -8,9 +8,7 @@
 (savehist-mode)
 (global-auto-revert-mode)
 (auto-save-visited-mode t)
-
-(use-package which-key :ensure t
-  :hook (after-init . which-key-mode))
+(which-key-mode)
 
 (use-package avy :ensure t)
 
@@ -50,6 +48,7 @@
   (corfu-auto-prefix 1)
   (corfu-quit-no-match t)
   (corfu-preselect 'prompt)
+  (text-mode-ispell-word-completion nil)
   :init
   (global-corfu-mode))
 
