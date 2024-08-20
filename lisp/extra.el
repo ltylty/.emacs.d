@@ -1,6 +1,5 @@
 (use-package macrursors :defer t
-  :vc (:url "https://github.com/corytertel/macrursors"
-       :branch "main")
+  :vc (:url "https://github.com/corytertel/macrursors" :branch "main")
   :bind
   (("C-;" . macrursors-mark-all-lines-or-instances))
   :config

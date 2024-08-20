@@ -7,9 +7,7 @@
 (setq inhibit-startup-message t)
 (setq initial-major-mode 'fundamental-mode)
 (setq custom-file (make-temp-file "emacs-custom"))
-(setq-default frame-title-format '(("  GC: " (:eval (number-to-string gcs-done)) " - " (:eval (number-to-string gc-elapsed)) "s")
-				   "  %f" 
-				   (:eval (if (buffer-modified-p) "  ✍️"))))
+(setq-default frame-title-format '("  %f" (:eval (if (buffer-modified-p) "  ✍️"))))
 (prefer-coding-system 'utf-8)
 
 (setq default-frame-alist
