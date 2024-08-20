@@ -2,5 +2,6 @@
 *~
 !/init.el
 !/early-init.el
+!/README.md
 !/lisp
 !/eshell/alias
