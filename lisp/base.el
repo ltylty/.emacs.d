@@ -10,9 +10,9 @@
 (auto-save-visited-mode t)
 (which-key-mode)
 
-(use-package avy :ensure t)
+(use-package avy :ensure t :defer t)
 
-(use-package consult :ensure t
+(use-package consult :ensure t :defer t
   :init
   (setq consult-async-input-debounce 1.0)
   ;; Use Consult to select xref locations with preview
@@ -41,7 +41,7 @@
   :config
   (setq wgrep-auto-save-buffer t))
 
-(use-package corfu :ensure t
+(use-package corfu :ensure t :defer t
   :custom
   (corfu-cycle t)
   (corfu-auto t)
@@ -52,7 +52,7 @@
   :init
   (global-corfu-mode))
 
-(use-package cape :ensure t
+(use-package cape :ensure t :after corfu
   :init
   (add-to-list 'completion-at-point-functions #'cape-dabbrev)
   (add-to-list 'completion-at-point-functions #'cape-file)
