@@ -28,14 +28,14 @@
 (use-package marginalia :ensure t
   :hook (after-init . marginalia-mode))
 
-(use-package embark :ensure t
+(use-package embark :ensure t :defer t
   :bind
   (("C-c a" . embark-act))
   (:map minibuffer-mode-map ("C-c C-e" . embark-export)))
 
-(use-package embark-consult :ensure t)
+(use-package embark-consult :ensure t :after (embark consult))
 
-(use-package wgrep :ensure t
+(use-package wgrep :ensure t :defer t
   :bind
   (:map grep-mode-map ("C-x C-q" . wgrep-change-to-wgrep-mode))
   :config
