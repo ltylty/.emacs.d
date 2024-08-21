@@ -19,13 +19,12 @@
   (setq xref-show-xrefs-function #'consult-xref
         xref-show-definitions-function #'consult-xref))
 
-(use-package vertico :ensure t
+(use-package vertico :ensure t :defer t
   :custom
   (vertico-cycle t)
-  :init
-  (vertico-mode))
+  :hook (after-init . vertico-mode))
 
-(use-package marginalia :ensure t
+(use-package marginalia :ensure t :defer t
   :hook (after-init . marginalia-mode))
 
 (use-package embark :ensure t :defer t
