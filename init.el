@@ -4,9 +4,6 @@
 
 (load-theme 'modus-vivendi-tinted t)
 
-(when (member "Maple Mono SC NF" (font-family-list))
-  (set-face-attribute 'default nil :font "Maple Mono SC NF"))
-
 (load-file (expand-file-name "lisp/base.el" user-emacs-directory))
 (load-file (expand-file-name "lisp/dev.el" user-emacs-directory))
 (load-file (expand-file-name "lisp/extra.el" user-emacs-directory))
