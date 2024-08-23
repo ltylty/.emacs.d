@@ -4,7 +4,7 @@
 
 (prefer-coding-system 'utf-8)
 (setq inhibit-startup-message t)
-(setq initial-major-mode 'org-mode)
+(setq initial-major-mode 'fundamental-mode)
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (setq-default frame-title-format '("  %f" (:eval (if (buffer-modified-p) "  ✍️"))))
 

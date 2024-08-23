@@ -28,9 +28,9 @@
   :config
   (global-treesit-auto-mode))
 
-(use-package project-tab-groups :ensure t :after project
-  :config
-  (project-tab-groups-mode 1))
+;; (use-package project-tab-groups :ensure t :after project
+;;   :config
+;;   (project-tab-groups-mode 1))
 
 (use-package magit :ensure t :defer t
   :config
