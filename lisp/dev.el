@@ -1,6 +1,7 @@
 (add-hook 'prog-mode-hook 'electric-pair-mode) ;括号配对
 (add-hook 'prog-mode-hook 'hs-minor-mode) ;代码折叠
 (add-hook 'prog-mode-hook 'display-line-numbers-mode) ;显示行号
+(add-hook 'prog-mode-hook 'etags-regen-mode) ;自动生成TAGS
 
 (use-package ediff :defer t
   :hook
@@ -52,8 +53,3 @@
   :config
   (setq highlight-thing-exclude-thing-under-point t)
   (add-hook 'prog-mode-hook 'highlight-thing-mode))
-
-(use-package gtags-mode :ensure t :after project
-  :config
-  (setq xref-prompt-for-identifier nil)
-  (gtags-mode))
