@@ -61,6 +61,7 @@
   "m" 'evil-execute-in-emacs-state
   "0" 'dired-sidebar-toggle-sidebar
   "u" 'universal-argument
+  "x" ctl-x-map
   ;; buffer
   "bb" 'consult-buffer
   "bi" 'ibuffer

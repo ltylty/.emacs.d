@@ -11,8 +11,7 @@
 
 (use-package project :defer t
   :custom
-  (project-switch-commands 'project-dired)
-  (project-mode-line t))
+  (project-switch-commands 'project-dired))
 
 (use-package eglot :defer t
   :custom
