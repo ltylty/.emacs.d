@@ -89,8 +89,8 @@
   "fr" 'recentf
   ;; search
   "ss" 'consult-line
-  "sd" #'(lambda () (interactive) (consult-ripgrep default-directory))
-  "sp" 'consult-ripgrep
+  "sd" #'(lambda () (interactive) (consult-ripgrep default-directory (thing-at-point 'symbol)))
+  "sp" #'(lambda () (interactive) (consult-ripgrep nil (thing-at-point 'symbol)))
   "si" 'consult-imenu
   "so" 'consult-outline
   "sm" 'consult-global-mark
@@ -113,19 +113,20 @@
   ;; project
   "pp" 'project-switch-project
   "pd" 'project-kill-buffers
-  "ps" 'tab-switch
-  "pl" 'tab-recent
   "pf" 'project-find-file
   "pb" 'project-switch-to-buffer
   "ps" 'consult-ripgrep
+  ;; tab
+  "ts" 'tab-switch
+  "tl" 'tab-recent
+  "tp" 'tab-previous
+  "tn" 'tab-next
   ;; open
   "oe" 'eshell
   "oo" #'(lambda () (interactive) (browse-url default-directory))
   "of" #'(lambda () (interactive) (browse-url buffer-file-name))
   "od" 'dired-jump
   "ol" 'ielm
-  ;; toggle
-  "tl" 'toggle-truncate-lines
   ;; help
   "hk" 'describe-key
   "hf" 'describe-function

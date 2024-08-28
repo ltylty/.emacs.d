@@ -59,7 +59,7 @@
 
 (use-package orderless :ensure t
   :config
-  (setq completion-styles '(basic orderless flex)))
+  (setq completion-styles '(basic orderless)))
 
 (use-package undo-fu-session :ensure t :defer t
   :hook (after-init . undo-fu-session-global-mode))
