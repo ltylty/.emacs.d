@@ -1,14 +1,14 @@
-(setopt use-short-answers t)
-(setq org-log-done 'time)
-(setq recentf-max-saved-items 500)
 (recentf-mode)
 (global-hl-line-mode)
 (winner-mode)
 (save-place-mode)
 (savehist-mode)
 (global-auto-revert-mode)
-(auto-save-visited-mode t)
+(auto-save-visited-mode)
 (which-key-mode)
+(setopt use-short-answers t)
+(setq org-log-done 'time)
+(setq recentf-max-saved-items 500)
 
 (use-package avy :ensure t :defer t)
 
