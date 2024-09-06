@@ -40,15 +40,15 @@
   :config
   (setq wgrep-auto-save-buffer t))
 
-(use-package company :ensure t
+(use-package company :ensure t :defer t
+  :hook (after-init . global-company-mode)
   :config
   (setq company-backends '((company-capf company-dabbrev-code))
 	company-minimum-prefix-length 1
 	company-dabbrev-code-ignore-case t
 	company-dabbrev-code-modes t
 	company-dabbrev-code-everywhere t
-	company-dabbrev-code-completion-styles '(basic flex))
-  (global-company-mode 1))
+	company-dabbrev-code-completion-styles '(basic flex)))
 
 (use-package orderless :ensure t
   :config
