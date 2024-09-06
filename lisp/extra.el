@@ -3,6 +3,6 @@
   :bind
   (("C-;" . macrursors-mark-all-lines-or-instances))
   :config
-  (dolist (mode '(corfu-mode))
+  (dolist (mode '(company-mode))
     (add-hook 'macrursors-pre-finish-hook mode)
     (add-hook 'macrursors-post-finish-hook mode)))

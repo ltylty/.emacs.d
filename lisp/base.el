@@ -40,22 +40,15 @@
   :config
   (setq wgrep-auto-save-buffer t))
 
-(use-package corfu :ensure t :defer t
-  :custom
-  (corfu-cycle t)
-  (corfu-auto t)
-  (corfu-auto-prefix 1)
-  (corfu-quit-no-match t)
-  (corfu-preselect 'prompt)
-  (text-mode-ispell-word-completion nil)
-  :init
-  (global-corfu-mode))
-
-(use-package cape :ensure t :after corfu
-  :init
-  (add-to-list 'completion-at-point-functions #'cape-dabbrev)
-  (add-to-list 'completion-at-point-functions #'cape-file)
-  (add-to-list 'completion-at-point-functions #'cape-keyword))
+(use-package company :ensure t
+  :config
+  (setq company-backends '((company-capf company-dabbrev-code))
+	company-minimum-prefix-length 1
+	company-dabbrev-code-ignore-case t
+	company-dabbrev-code-modes t
+	company-dabbrev-code-everywhere t
+	company-dabbrev-code-completion-styles '(basic flex))
+  (global-company-mode 1))
 
 (use-package orderless :ensure t
   :config
