@@ -112,10 +112,9 @@
   "jw" 'ace-select-window
   ;; project
   "pp" 'project-switch-project
-  "pd" 'project-kill-buffers
+  "pk" 'project-kill-buffers
   "pf" 'project-find-file
   "pb" 'project-switch-to-buffer
-  "ps" 'consult-ripgrep
   ;; tab
   "ts" 'tab-switch
   "tl" 'tab-recent
