@@ -67,7 +67,7 @@
   "bi" 'ibuffer
   "bd" 'evil-delete-buffer
   "bl" 'evil-switch-to-windows-last-buffer
-  "bx" #'(lambda () (interactive) (switch-to-buffer (generate-new-buffer-name "scratch")))
+  "bx" #'(lambda () (interactive) (switch-to-buffer "*scratch*"))
   ;; window
   "wd" 'evil-window-delete
   "ww" 'evil-window-next
