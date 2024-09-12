@@ -14,7 +14,7 @@
 
 (use-package consult :ensure t :defer t
   :init
-  (setq consult-async-input-debounce 1.0)
+  (setq consult-async-input-debounce 0.5)
   ;; Use Consult to select xref locations with preview
   (setq xref-show-xrefs-function #'consult-xref
         xref-show-definitions-function #'consult-xref))

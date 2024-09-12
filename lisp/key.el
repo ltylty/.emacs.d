@@ -93,7 +93,7 @@
   "sp" #'(lambda () (interactive) (consult-ripgrep nil (thing-at-point 'symbol)))
   "si" 'consult-imenu
   "so" 'consult-outline
-  "sm" 'consult-global-mark
+  "sm" 'consult-mark
   ;; code
   "ce" 'consult-flymake
   "cf" 'eglot-format
