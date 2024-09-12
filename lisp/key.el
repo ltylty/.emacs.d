@@ -31,23 +31,22 @@
   (define-key evil-inner-text-objects-map "q" 'evil-textobj-anyblock-inner-block)
   (define-key evil-outer-text-objects-map "q" 'evil-textobj-anyblock-a-block))
 
-(use-package evil-surround :ensure t :after evil
+(use-package evil-surround :ensure t :after evil :defer t
   :init
   (global-evil-surround-mode 1))
 
-(use-package evil-visualstar :ensure t :after evil
+(use-package evil-visualstar :ensure t :after evil :defer t
   :init
   (global-evil-visualstar-mode))
 
-(use-package evil-anzu :ensure t :after evil
+(use-package evil-anzu :ensure t :after evil :defer 1
   :init
   (global-anzu-mode +1))
 
-(use-package evil-multiedit :ensure t :after evil
-  :init
+(use-package evil-multiedit :ensure t :after evil :defer 1
+  :config
   (setq iedit-toggle-key-default nil)
   (setq iedit-overlay-priority 2) ;; higher than highlight-thing, lower than region.
-  :config
   (evil-multiedit-default-keybinds))
 
 ;; space leader key
