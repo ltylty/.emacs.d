@@ -149,7 +149,15 @@
 (global-set-key (kbd "M-,") 'evil-jump-backward)
 (global-set-key (kbd "C-M-,") 'evil-jump-forward)
 
-; evil define key
+(evil-define-key '(normal motion visual) global-map "gh" #'evil-first-non-blank)
+(evil-define-key '(normal motion visual) global-map "gl" #'evil-last-non-blank)
+(evil-define-key 'normal global-map "gr" #'xref-find-references)
+(evil-define-key 'normal dired-mode-map (kbd "<backspace>") #'dired-up-directory)
+(evil-define-key 'normal dired-mode-map (kbd "i") #'dired-subtree-cycle)
+(evil-define-key 'insert eshell-mode-map (kbd "C-r") #'consult-history)
+(evil-define-key 'insert eshell-mode-map (kbd "C-w") #'evil-delete-backward-word)
+(evil-define-key 'insert eshell-mode-map (kbd "C-u") #'eshell-kill-input)
+
 (define-key evil-visual-state-map (kbd ">") 'evil-shift-right-visual)
 (define-key evil-visual-state-map (kbd "<") 'evil-shift-left-visual)
 (defun evil-shift-left-visual ()
@@ -173,13 +181,5 @@
 (add-hook 'evil-insert-state-entry-hook #'entry-insert-state)
 (add-hook 'evil-insert-state-exit-hook #'exit-insert-state)
 (add-hook 'evil-visual-state-entry-hook #'exit-insert-state)
-(advice-add 'evil-force-normal-state :before #'evil-ex-nohighlight)
 
-(evil-define-key '(normal motion visual) global-map "gh" #'evil-first-non-blank)
-(evil-define-key '(normal motion visual) global-map "gl" #'evil-last-non-blank)
-(evil-define-key 'normal global-map "gr" #'xref-find-references)
-(evil-define-key 'normal dired-mode-map (kbd "<backspace>") #'dired-up-directory)
-(evil-define-key 'normal dired-mode-map (kbd "i") #'dired-subtree-cycle)
-(evil-define-key 'insert eshell-mode-map (kbd "C-r") #'consult-history)
-(evil-define-key 'insert eshell-mode-map (kbd "C-w") #'evil-delete-backward-word)
-(evil-define-key 'insert eshell-mode-map (kbd "C-u") #'eshell-kill-input)
+(advice-add 'evil-force-normal-state :before #'evil-ex-nohighlight)
