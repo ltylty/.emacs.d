@@ -7,10 +7,8 @@
     (add-hook 'macrursors-pre-finish-hook mode)
     (add-hook 'macrursors-post-finish-hook mode)))
 
-(defun region-or-symbol-at-point-str ()
-  "Returns string of selected region or symbol at point"
-  (if (use-region-p)
-      (progn
-        (deactivate-mark)
-	(buffer-substring-no-properties (region-beginning) (region-end)))
-    (substring-no-properties (thing-at-point 'symbol))))
+(defun selected-region-or-symbol-at-point ()
+  "Return the selected region, otherwise return the symbol at point."
+  (if (region-active-p)
+      (buffer-substring-no-properties (region-beginning) (region-end))
+    (thing-at-point 'symbol t)))

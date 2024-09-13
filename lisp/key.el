@@ -88,8 +88,8 @@
   "fr" 'recentf
   ;; search
   "ss" 'consult-line
-  "sd" #'(lambda () (interactive) (consult-ripgrep default-directory (region-or-symbol-at-point-str)))
-  "sp" #'(lambda () (interactive) (consult-ripgrep nil (region-or-symbol-at-point-str)))
+  "sd" #'(lambda () (interactive) (consult-ripgrep default-directory (selected-region-or-symbol-at-point)))
+  "sp" #'(lambda () (interactive) (consult-ripgrep nil (selected-region-or-symbol-at-point)))
   "si" 'consult-imenu
   "so" 'consult-outline
   "sm" 'consult-mark
