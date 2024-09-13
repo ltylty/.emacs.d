@@ -180,7 +180,6 @@
 (evil-define-key 'normal global-map "gr" #'xref-find-references)
 (evil-define-key 'normal dired-mode-map (kbd "<backspace>") #'dired-up-directory)
 (evil-define-key 'normal dired-mode-map (kbd "i") #'dired-subtree-cycle)
-(evil-define-key 'normal dired-sidebar-mode-map (kbd "<backspace>") #'dired-sidebar-up-directory)
 (evil-define-key 'insert eshell-mode-map (kbd "C-r") #'consult-history)
 (evil-define-key 'insert eshell-mode-map (kbd "C-w") #'evil-delete-backward-word)
 (evil-define-key 'insert eshell-mode-map (kbd "C-u") #'eshell-kill-input)
