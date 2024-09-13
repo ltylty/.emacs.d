@@ -9,6 +9,4 @@
 
 (defun selected-region-or-symbol-at-point ()
   "Return the selected region, otherwise return the symbol at point."
-  (if (region-active-p)
-      (buffer-substring-no-properties (region-beginning) (region-end))
-    (thing-at-point 'symbol t)))
+    (seq-some #'thing-at-point '(region symbol)))
