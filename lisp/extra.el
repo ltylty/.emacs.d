@@ -9,4 +9,8 @@
 
 (defun selected-region-or-symbol-at-point ()
   "Return the selected region, otherwise return the symbol at point."
-    (seq-some #'thing-at-point '(region symbol)))
+  (let (search-term)
+    (setq search-term
+          (seq-some #'thing-at-point '(region symbol)))
+    (if (use-region-p) (deactivate-mark))    
+    search-term))
