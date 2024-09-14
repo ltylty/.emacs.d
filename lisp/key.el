@@ -111,7 +111,7 @@
   "jw" 'ace-select-window
   ;; project
   "pp" 'project-switch-project
-  "pk" 'project-kill-buffers
+  "pk" #'(lambda () (interactive) (project-kill-buffers) (tab-close))
   "pf" 'project-find-file
   "pb" 'project-switch-to-buffer
   ;; tab
