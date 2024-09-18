@@ -5,8 +5,9 @@
 (prefer-coding-system 'utf-8)
 (setq inhibit-startup-message t)
 (setq initial-major-mode 'fundamental-mode)
-(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (setq-default frame-title-format '("  %f" (:eval (if (buffer-modified-p) "  ✍️"))))
+(setq custom-file (concat user-emacs-directory "custom.el"))
+(when (file-exists-p custom-file) (load custom-file))
 
 (add-to-list 'default-frame-alist
 	     '(font . "Maple Mono SC NF"))
