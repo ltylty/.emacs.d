@@ -52,11 +52,11 @@
 	company-dabbrev-code-ignore-case t
 	company-dabbrev-code-modes t
 	company-dabbrev-code-everywhere t
-	company-dabbrev-code-completion-styles '(basic flex)))
+	company-dabbrev-code-completion-styles '(substring flex)))
 
 (use-package orderless :ensure t
   :config
-  (setq completion-styles '(basic orderless flex)))
+  (setq completion-styles '(substring orderless flex)))
 
 (use-package undo-fu-session :ensure t :defer t
   :hook (after-init . undo-fu-session-global-mode))
