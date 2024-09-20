@@ -4,7 +4,7 @@
 
 (use-package ediff :defer t
   :hook
-  ((ediff-quit . winner-undo))
+  (ediff-quit . winner-undo)
   :config
   (setq ediff-window-setup-function 'ediff-setup-windows-plain
 	ediff-split-window-function 'split-window-horizontally))
@@ -20,7 +20,7 @@
   :custom-face
   (eglot-highlight-symbol-face ((t (:inherit nil :weight bold :foreground "yellow3"))))
   :hook
-  (((python-ts-mode) . eglot-ensure)))
+  ((python-ts-mode) . eglot-ensure))
 
 (use-package treesit-auto :ensure t :after project
   :custom
