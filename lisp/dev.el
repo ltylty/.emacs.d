@@ -55,7 +55,15 @@
   (setq highlight-thing-exclude-thing-under-point t)
   (add-hook 'prog-mode-hook 'highlight-thing-mode))
 
-(use-package dumb-jump :ensure t :after project
+(use-package citre :ensure t :defer t
+  :init
+  (require 'citre-config)
   :config
-  (setq dumb-jump-prefer-searcher 'rg)
-  (add-hook 'xref-backend-functions #'dumb-jump-xref-activate))
+  (setq xref-prompt-for-identifier nil)
+  (setq
+   citre-enable-imenu-integration nil
+   citre-enable-capf-integration nil
+   citre-default-create-tags-file-location 'global-cache
+   citre-gtags-args '("--compact")
+   citre-edit-ctags-options-manually nil
+   citre-auto-enable-citre-mode-modes '(java-ts-mode sql-mode)))

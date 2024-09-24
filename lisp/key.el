@@ -96,8 +96,8 @@
   "ce" 'consult-flymake
   "cf" 'eglot-format
   "cr" 'eglot-rename
-  "ctc" 'gtags-mode-create
-  "ctu" 'gtags-mode-update
+  "ctc" 'citre-update-this-tags-file
+  "ctg" 'citre-global-update-database
   ;; git
   "gg" 'magit-status
   "gL" 'magit-log-buffer-file
