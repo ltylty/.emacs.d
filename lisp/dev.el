@@ -46,7 +46,8 @@
 
 (use-package dired-sidebar :ensure t :defer t
   :config
-  (setq dired-subtree-cycle-depth 5))
+  (setq dired-subtree-cycle-depth 5)
+  (setq dired-sidebar-window-fixed nil))
 
 (use-package highlight-thing :ensure t :after project
   :custom-face
