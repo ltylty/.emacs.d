@@ -61,9 +61,9 @@
   (require 'citre-config)
   :config
   (setq xref-prompt-for-identifier nil)
+  (setq-default citre-enable-imenu-integration nil)
+  (setq-default citre-enable-capf-integration nil)
   (setq
-   citre-enable-imenu-integration nil
-   citre-enable-capf-integration nil
    citre-default-create-tags-file-location 'global-cache
    citre-gtags-args '("--compact")
    citre-edit-ctags-options-manually nil
