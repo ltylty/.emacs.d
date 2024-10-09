@@ -172,7 +172,6 @@
 
 (defun exit-insert-state ()
   (cua-mode -1)
-  (company-abort)
   (setq org-support-shift-select nil))
 (defun entry-insert-state ()
   (cua-mode 1)
