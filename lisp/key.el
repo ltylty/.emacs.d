@@ -13,7 +13,6 @@
   (setq evil-emacs-state-modes '(ediff-mode))
   (add-hook 'with-editor-mode-hook 'evil-insert-state)
   (evil-select-search-module 'evil-search-module 'evil-search)
-  ;; (evil-mode 1)
 
   ;; space leader key
   (define-prefix-command 'space-leader-map)
