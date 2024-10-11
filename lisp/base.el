@@ -59,10 +59,5 @@
   :config
   (setq completion-styles '(basic substring orderless flex)))
 
-(use-package undo-fu-session :ensure t :defer t
-  :hook (after-init . undo-fu-session-global-mode))
-
-(use-package doom-modeline :ensure t :defer t
-  :hook (after-init . doom-modeline-mode)
-  :config
-  (setq doom-modeline-icon nil))
+(use-package nyan-mode :ensure t :defer t
+  :hook (after-init . nyan-mode))
