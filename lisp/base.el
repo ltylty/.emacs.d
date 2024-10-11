@@ -55,7 +55,7 @@
 	company-dabbrev-code-everywhere t
 	company-dabbrev-code-completion-styles '(basic substring flex)))
 
-(use-package orderless :ensure t
+(use-package orderless :ensure t :after vertico
   :config
   (setq completion-styles '(basic substring orderless flex)))
 
