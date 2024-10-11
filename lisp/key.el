@@ -7,7 +7,6 @@
   (setq evil-want-keybinding nil)
   (setq evil-want-C-u-scroll t)
   (setq evil-want-C-i-jump nil)
-  (setq evil-shift-width 2)
   (setq evil-symbol-word-search t)
   :config
   (setq evil-emacs-state-modes '(ediff-mode))
