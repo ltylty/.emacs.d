@@ -144,14 +144,15 @@
   (add-hook 'evil-insert-state-exit-hook #'exit-insert-state)
   (add-hook 'evil-visual-state-entry-hook #'exit-insert-state)
 
-  (advice-add 'evil-force-normal-state :before #'evil-ex-nohighlight))
+  (advice-add 'evil-force-normal-state :before #'evil-ex-nohighlight)
 
-(use-package evil-textobj-line :ensure t :after evil)
-
-(use-package evil-textobj-entire :ensure t :after evil
-  :config
+  (evil-define-text-object evil-entire-entire-buffer (count &optional beg end type)
+    "Select entire buffer"
+    (evil-range (point-min) (point-max)))
   (define-key evil-outer-text-objects-map "g" 'evil-entire-entire-buffer)
   (define-key evil-inner-text-objects-map "g" 'evil-entire-entire-buffer))
+
+(use-package evil-textobj-line :ensure t :after evil)
 
 (use-package evil-textobj-anyblock :ensure t :after evil
   :config
