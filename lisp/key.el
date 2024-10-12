@@ -135,6 +135,7 @@
     (evil-visual-restore))
 
   (defun exit-insert-state ()
+    (company-abort)
     (cua-mode -1)
     (setq org-support-shift-select nil))
   (defun entry-insert-state ()

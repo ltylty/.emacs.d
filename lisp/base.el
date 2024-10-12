@@ -47,7 +47,6 @@
 (use-package company :ensure t :defer t
   :hook (after-init . global-company-mode)
   :config
-  (define-key company-active-map [escape] 'company-abort)
   (setq company-backends '((company-capf company-dabbrev-code))
 	company-minimum-prefix-length 1
 	company-dabbrev-code-ignore-case t
