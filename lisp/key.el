@@ -134,16 +134,15 @@
     (evil-normal-state)
     (evil-visual-restore))
 
-  (defun exit-insert-state ()
-    (company-abort)
-    (cua-mode -1)
-    (setq org-support-shift-select nil))
   (defun entry-insert-state ()
     (cua-mode 1)
     (setq org-support-shift-select 'always))
+  (defun exit-insert-state ()
+    (cua-mode -1)
+    (setq org-support-shift-select nil))
   (add-hook 'evil-insert-state-entry-hook #'entry-insert-state)
-  (add-hook 'evil-insert-state-exit-hook #'exit-insert-state)
-  (add-hook 'evil-visual-state-entry-hook #'exit-insert-state)
+  (add-hook 'evil-normal-state-entry-hook #'exit-insert-state)
+  (add-hook 'evil-insert-state-exit-hook #'company-abort)
 
   (advice-add 'evil-force-normal-state :before #'evil-ex-nohighlight)
 
