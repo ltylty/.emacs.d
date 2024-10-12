@@ -1,6 +1,5 @@
 (add-hook 'prog-mode-hook 'electric-pair-mode) ;括号配对
 (add-hook 'prog-mode-hook 'hs-minor-mode) ;代码折叠
-(add-hook 'prog-mode-hook 'display-line-numbers-mode) ;显示行号
 
 (use-package ediff :defer t
   :hook
