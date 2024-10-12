@@ -1,5 +1,4 @@
 (recentf-mode)
-(global-hl-line-mode)
 (winner-mode)
 (save-place-mode)
 (savehist-mode)
