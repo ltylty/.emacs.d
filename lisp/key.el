@@ -88,7 +88,6 @@
     "oo" #'(lambda () (interactive) (browse-url default-directory))
     "of" #'(lambda () (interactive) (browse-url buffer-file-name))
     "od" 'dired-jump
-    "ol" 'ielm
     ;; help
     "hk" 'describe-key
     "hf" 'describe-function
