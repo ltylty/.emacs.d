@@ -24,6 +24,7 @@
     "m" 'evil-execute-in-emacs-state
     "0" 'dired-sidebar-toggle-sidebar
     "u" 'universal-argument
+    "a" 'embark-act
     "x" ctl-x-map
     ;; buffer
     "bb" 'consult-buffer

@@ -32,8 +32,9 @@
 
 (use-package embark :ensure t :defer t
   :bind
-  (("C-c a" . embark-act))
-  (:map minibuffer-mode-map ("C-c C-e" . embark-export)))
+  (:map minibuffer-mode-map
+	("C-c C-e" . embark-export)
+	("C-c C-a" . embark-act)))
 
 (use-package embark-consult :ensure t :after (embark consult))
 
