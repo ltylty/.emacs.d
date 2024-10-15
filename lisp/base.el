@@ -17,7 +17,7 @@
   (setq xref-show-xrefs-function #'consult-xref
         xref-show-definitions-function #'consult-xref)
   :config
-  (setq consult-async-input-debounce 0.5)
+  (setq consult-async-input-debounce 1)
   (consult-customize
    consult-line
    :default (selected-region-or-symbol-at-point)))
