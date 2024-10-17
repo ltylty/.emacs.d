@@ -11,4 +11,4 @@
 (setq initial-major-mode 'fundamental-mode)
 (setq-default frame-title-format '("  %f" (:eval (if (buffer-modified-p) "  ✍️"))))
 (setq-default mode-line-format (add-to-list 'mode-line-format '(:eval (if (buffer-modified-p) " ●" " ○"))))
-(setq default-frame-alist '((fullscreen . maximized) (font . "Maple Mono SC NF")))
+(setq default-frame-alist '((fullscreen . maximized)))
