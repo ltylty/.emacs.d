@@ -5,6 +5,7 @@
 (when (member "Maple Mono SC NF" (font-family-list))
   (set-face-attribute 'default nil :font "Maple Mono SC NF" :height 110))
 
+(setq backup-directory-alist `(("." . ,(concat user-emacs-directory "backups"))))
 (setq custom-file (concat user-emacs-directory "custom.el"))
 (when (file-exists-p custom-file) (load custom-file))
 
