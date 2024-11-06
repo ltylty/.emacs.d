@@ -53,8 +53,8 @@
     "fr" 'recentf
     ;; search
     "ss" 'consult-line
-    "sd" #'(lambda () (interactive) (consult-ripgrep default-directory (selected-region-or-symbol-at-point)))
-    "sp" #'(lambda () (interactive) (consult-ripgrep nil (selected-region-or-symbol-at-point)))
+    "sd" 'color-rg-search-input
+    "sp" 'color-rg-search-input-in-project
     "si" 'consult-imenu
     "so" 'consult-outline
     "sm" 'consult-mark
@@ -101,8 +101,9 @@
 
   (define-key evil-motion-state-map (kbd "RET") nil)
   (define-key evil-normal-state-map [mouse-2] nil)
-  (evil-define-key 'normal text-mode-map (kbd "RET") #'embark-dwim)
   (evil-define-key 'normal prog-mode-map (kbd "RET") #'embark-dwim)
+  (evil-define-key 'normal org-mode-map (kbd "RET") #'embark-dwim)
+  (evil-define-key 'normal markdown-mode-map (kbd "RET") #'embark-dwim)
   (evil-define-key 'normal special-mode-map "q" #'quit-window)
 
   (define-key minibuffer-local-map (kbd "C-v") 'yank)

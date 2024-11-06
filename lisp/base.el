@@ -15,12 +15,7 @@
   :init
   ;; Use Consult to select xref locations with preview
   (setq xref-show-xrefs-function #'consult-xref
-        xref-show-definitions-function #'consult-xref)
-  :config
-  (setq consult-async-input-debounce 1)
-  (consult-customize
-   consult-line
-   :default (selected-region-or-symbol-at-point)))
+        xref-show-definitions-function #'consult-xref))
 
 (use-package vertico :ensure t :defer t
   :custom
@@ -52,11 +47,11 @@
 	company-dabbrev-code-ignore-case t
 	company-dabbrev-code-modes t
 	company-dabbrev-code-everywhere t
-	company-dabbrev-code-completion-styles '(basic substring flex)))
+	company-dabbrev-code-completion-styles '(substring flex)))
 
 (use-package orderless :ensure t :after vertico
   :config
-  (setq completion-styles '(basic substring orderless flex)))
+  (setq completion-styles '(substring orderless flex)))
 
 (use-package undo-fu-session :ensure t :defer t
   :hook (after-init . undo-fu-session-global-mode))
