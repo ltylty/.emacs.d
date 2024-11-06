@@ -66,3 +66,8 @@
    citre-gtags-args '("--compact")
    citre-edit-ctags-options-manually nil
    citre-auto-enable-citre-mode-modes '(java-ts-mode sql-mode)))
+
+(use-package color-rg :after project
+  :vc (:url "https://github.com/manateelazycat/color-rg" :branch "main" :rev :newest)
+  :config
+  (setq color-rg-command-prefix "powershell"))

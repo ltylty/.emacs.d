@@ -1,13 +1,3 @@
-(use-package macrursors :defer t
-  :vc (:url "https://github.com/corytertel/macrursors" :branch "main" :rev :newest)
-  :bind
-  (("C-;" . macrursors-mark-all-lines-or-instances)))
-
-(use-package color-rg :after project
-  :vc (:url "https://github.com/manateelazycat/color-rg" :branch "main" :rev :newest)
-  :custom
-  (color-rg-command-prefix "powershell"))
-
 (defun insert-image-from-clipboard ()
   "Insert an image from the clipboard into the current org buffer."
   (interactive)
