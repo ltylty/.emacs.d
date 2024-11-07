@@ -15,9 +15,7 @@
   :init
   ;; Use Consult to select xref locations with preview
   (setq xref-show-xrefs-function #'consult-xref
-        xref-show-definitions-function #'consult-xref)
-  :config
-  (setq consult-async-input-throttle 2))
+        xref-show-definitions-function #'consult-xref))
 
 (use-package vertico :ensure t :defer t
   :custom
