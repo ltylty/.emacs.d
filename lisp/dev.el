@@ -67,7 +67,8 @@
    citre-edit-ctags-options-manually nil
    citre-auto-enable-citre-mode-modes '(java-ts-mode sql-mode)))
 
-;;(use-package color-rg :after project
-;;  :vc (:url "https://github.com/manateelazycat/color-rg" :branch "main" :rev :newest)
-;;  :config
-;;  (setq color-rg-command-prefix "powershell"))
+(unless (package-installed-p 'color-rg)
+  (package-vc-install "https://github.com/manateelazycat/color-rg"))
+(use-package color-rg :after project
+ :config
+ (setq color-rg-command-prefix "powershell"))

@@ -4,10 +4,12 @@
 (savehist-mode)
 (global-auto-revert-mode)
 (auto-save-visited-mode)
-;; (which-key-mode)
 (setopt use-short-answers t)
 (setq org-log-done 'time)
 (setq recentf-max-saved-items 500)
+
+(use-package which-key :ensure t
+  :hook (after-init . which-key-mode))
 
 (use-package avy :ensure t :defer t)
 
