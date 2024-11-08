@@ -79,7 +79,7 @@
     "pk" 'project-kill-buffers
     "pf" 'project-find-file
     "pb" 'project-switch-to-buffer
-    "ps" 'consult-ripgrep
+    "ps" 'consult-grep
     ;; tab
     "ts" 'tab-switch
     "tl" 'tab-recent
@@ -184,7 +184,7 @@
   (setq iedit-overlay-priority 2) ;; higher than highlight-thing, lower than region.
   (evil-multiedit-default-keybinds))
 
-(use-package macrursors :defer t
-  :vc (:url "https://github.com/corytertel/macrursors" :branch "main" :rev :newest)
-  :bind
-  (("C-;" . macrursors-mark-all-lines-or-instances)))
+;;(use-package macrursors :defer t
+;;  :vc (:url "https://github.com/corytertel/macrursors" :branch "main" :rev :newest)
+;;  :bind
+;;  (("C-;" . macrursors-mark-all-lines-or-instances)))

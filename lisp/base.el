@@ -4,7 +4,7 @@
 (savehist-mode)
 (global-auto-revert-mode)
 (auto-save-visited-mode)
-(which-key-mode)
+;; (which-key-mode)
 (setopt use-short-answers t)
 (setq org-log-done 'time)
 (setq recentf-max-saved-items 500)
