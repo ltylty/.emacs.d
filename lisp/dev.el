@@ -71,4 +71,5 @@
   (package-vc-install "https://github.com/manateelazycat/color-rg"))
 (use-package color-rg :after project
  :config
- (setq color-rg-command-prefix "powershell"))
+ (setq color-rg-search-ignore-rules nil)
+ (setq color-rg-search-no-ignore-file nil))
