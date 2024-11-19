@@ -18,10 +18,12 @@
   (keymap-set evil-motion-state-map "SPC" 'space-leader-map)
   (keymap-set evil-normal-state-map "SPC" 'space-leader-map)
 
+  (add-hook 'buffer-list-update-hook #'(lambda () (interactive) (keymap-set space-leader-map "m" (symbol-value (intern-soft (format "%s-map" major-mode))))))
+
   (evil-define-key nil space-leader-map
     (kbd "SPC") 'execute-extended-command
     (kbd "RET") 'consult-bookmark
-    "m" 'evil-execute-in-emacs-state
+    ;; "m" 'evil-execute-in-emacs-state
     "0" 'dired-sidebar-toggle-sidebar
     "u" 'universal-argument
     "a" 'embark-act
