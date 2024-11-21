@@ -13,7 +13,6 @@
   (add-hook 'with-editor-mode-hook 'evil-insert-state)
   (evil-select-search-module 'evil-search-module 'evil-search)
 
-  ;; space leader key
   (define-prefix-command 'space-leader-map)
   (keymap-set evil-motion-state-map "SPC" 'space-leader-map)
   (keymap-set evil-normal-state-map "SPC" 'space-leader-map)
@@ -26,7 +25,6 @@
   (evil-define-key nil space-leader-map
     (kbd "SPC") 'execute-extended-command
     (kbd "RET") 'consult-bookmark
-    ;; "m" 'evil-execute-in-emacs-state
     "m" 'transient-major-mode-map
     "0" 'dired-sidebar-toggle-sidebar
     "u" 'universal-argument
