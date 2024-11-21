@@ -20,6 +20,7 @@
 
   (defun transient-major-mode-map ()
     (interactive)
+    (message (format "transient %s-map" major-mode))
     (set-transient-map (symbol-value (intern-soft (format "%s-map" major-mode)))))
   
   (evil-define-key nil space-leader-map
