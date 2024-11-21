@@ -18,10 +18,15 @@
   (keymap-set evil-motion-state-map "SPC" 'space-leader-map)
   (keymap-set evil-normal-state-map "SPC" 'space-leader-map)
 
+  (defun transient-major-mode-map ()
+    (interactive)
+    (set-transient-map (symbol-value (intern-soft (format "%s-map" major-mode)))))
+  
   (evil-define-key nil space-leader-map
     (kbd "SPC") 'execute-extended-command
     (kbd "RET") 'consult-bookmark
-    "m" 'evil-execute-in-emacs-state
+    ;; "m" 'evil-execute-in-emacs-state
+    "m" 'transient-major-mode-map
     "0" 'dired-sidebar-toggle-sidebar
     "u" 'universal-argument
     "a" 'embark-act
