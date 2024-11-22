@@ -158,20 +158,11 @@
     "Select entire buffer"
     (evil-range (point-min) (point-max)))
   (define-key evil-outer-text-objects-map "g" 'evil-entire-entire-buffer)
-  (define-key evil-inner-text-objects-map "g" 'evil-entire-entire-buffer))
+  (define-key evil-inner-text-objects-map "g" 'evil-entire-entire-buffer)
+  (define-key evil-inner-text-objects-map "q" 'evil-inner-single-quote)
+  (define-key evil-outer-text-objects-map "q" 'evil-a-single-quote))
 
 (use-package evil-textobj-line :ensure t :after evil)
-
-(use-package evil-textobj-anyblock :ensure t :after evil
-  :config
-  (setq evil-textobj-anyblock-blocks
-        '(("'" . "'")
-	  ("\"" . "\"")
-	  ("`" . "`")
-	  ("‘" . "’")
-	  ("“" . "”")))
-  (define-key evil-inner-text-objects-map "q" 'evil-textobj-anyblock-inner-block)
-  (define-key evil-outer-text-objects-map "q" 'evil-textobj-anyblock-a-block))
 
 (use-package evil-surround :ensure t :after evil 
   :config (global-evil-surround-mode))
