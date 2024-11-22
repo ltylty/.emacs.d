@@ -40,8 +40,8 @@
     "wd" 'evil-window-delete
     "ww" 'evil-window-next
     "wm" 'delete-other-windows
-    "ws" 'evil-window-split
-    "wv" 'evil-window-vsplit
+    "w-" 'evil-window-split
+    "w|" 'evil-window-vsplit
     "wh" 'evil-window-left
     "wj" 'evil-window-down
     "wk" 'evil-window-up
