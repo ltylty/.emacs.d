@@ -144,10 +144,10 @@
   (cua-mode)
   (defun entry-insert-state ()
     (setq-local cua-mode t)
-    (setq-local org-support-shift-select 'always))
+    (when (derived-mode-p 'org-mode) (setq-local org-support-shift-select 'always)))
   (defun entry-nomal-state ()
-    (setq-local cua-mode nil) 
-    (setq-local org-support-shift-select nil))
+    (setq-local cua-mode nil)
+    (when (derived-mode-p 'org-mode) (setq-local org-support-shift-select nil)))
   (add-hook 'evil-insert-state-entry-hook #'entry-insert-state)
   (add-hook 'evil-normal-state-entry-hook #'entry-nomal-state)
   (add-hook 'evil-insert-state-exit-hook #'company-abort)
@@ -174,9 +174,10 @@
   :config (global-anzu-mode +1))
 
 (use-package evil-multiedit :ensure t :after evil
+  :custom-face
+  (iedit-occurrence ((t (:inherit link))))
   :config
   (setq iedit-toggle-key-default nil)
-  (setq iedit-overlay-priority 2) ;; higher than highlight-thing, lower than region.
   (evil-multiedit-default-keybinds))
 
 (use-package evil-mc :ensure t :after evil
