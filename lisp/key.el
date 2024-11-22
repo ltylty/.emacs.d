@@ -175,7 +175,7 @@
 
 (use-package evil-multiedit :ensure t :after evil
   :custom-face
-  (iedit-occurrence ((t (:inherit link))))
+  (iedit-occurrence ((t (:inherit underline))))
   :config
   (setq iedit-toggle-key-default nil)
   (evil-multiedit-default-keybinds))
