@@ -48,8 +48,6 @@
     "wl" 'evil-window-right
     "wu" 'winner-undo
     "wr" 'winner-redo
-    "wi" 'evil-window-increase-width
-    "wd" 'evil-window-decrease-width
     ;; file
     "ff" 'find-file
     "fd" #'(lambda () (interactive) (consult-fd default-directory))
