@@ -188,7 +188,8 @@
   (setq iedit-overlay-priority 2) ;; higher than highlight-thing, lower than region.
   (evil-multiedit-default-keybinds))
 
-(use-package macrursors :defer t
-  :vc (:url "https://github.com/corytertel/macrursors" :branch "main" :rev :newest)
-  :bind
-  (("C-;" . macrursors-mark-all-lines-or-instances)))
+(use-package evil-mc :ensure t :after evil
+  :custom
+  (evil-mc-cursors-keymap-prefix "gz")
+  :config
+  (global-evil-mc-mode  1))
