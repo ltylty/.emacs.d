@@ -48,8 +48,8 @@
     "wl" 'evil-window-right
     "wu" 'winner-undo
     "wr" 'winner-redo
-    "w>" 'evil-window-increase-width
-    "w<" 'evil-window-decrease-width
+    "wi" 'evil-window-increase-width
+    "wd" 'evil-window-decrease-width
     ;; file
     "ff" 'find-file
     "fd" #'(lambda () (interactive) (consult-fd default-directory))
@@ -86,9 +86,10 @@
     "ps" 'consult-ripgrep
     ;; tab
     "ts" 'tab-switch
-    "tl" 'tab-recent
-    "tp" 'tab-previous
-    "tn" 'tab-next
+    "td" 'tab-close
+    "tt" 'tab-recent
+    "th" 'tab-previous
+    "tl" 'tab-next
     ;; open
     "oe" 'eshell
     "oo" #'(lambda () (interactive) (browse-url default-directory))
