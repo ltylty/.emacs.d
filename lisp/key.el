@@ -83,8 +83,6 @@
     "pb" 'project-switch-to-buffer
     "ps" 'consult-ripgrep
     ;; tab
-    "ts" 'tab-switch
-    "td" 'tab-close
     "tt" 'tab-recent
     "th" 'tab-previous
     "tl" 'tab-next
