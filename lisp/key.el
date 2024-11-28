@@ -60,6 +60,7 @@
     "si" 'consult-imenu
     "so" 'consult-outline
     "sm" 'consult-mark
+    "st" 'fanyi-dwim
     ;; code
     "ce" 'consult-flymake
     "cf" 'eglot-format

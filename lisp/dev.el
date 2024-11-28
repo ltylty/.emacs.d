@@ -72,3 +72,5 @@
   :config
   (setq color-rg-search-ignore-rules nil)
   (setq color-rg-search-no-ignore-file nil))
+
+(use-package fanyi :ensure t :defer t)
