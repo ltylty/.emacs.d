@@ -6,8 +6,12 @@
 (auto-save-visited-mode)
 (which-key-mode)
 (setopt use-short-answers t)
-(setq org-log-done 'time)
 (setq recentf-max-saved-items 500)
+
+(use-package org :defer 1
+  :init
+  (setq org-modules-loaded t) ;; disable org-modules
+  (setq org-log-done 'time))
 
 (use-package avy :ensure t :defer t)
 
