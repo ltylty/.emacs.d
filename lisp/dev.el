@@ -23,7 +23,6 @@
 
 (use-package treesit-auto :ensure t :after project
   :config
-  (add-hook 'sql-mode-hook #'(lambda () (when (treesit-ready-p 'sql) (treesit-parser-create 'sql))))
   (global-treesit-auto-mode))
 
 (use-package magit :ensure t :defer t
