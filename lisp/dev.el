@@ -47,7 +47,7 @@
 
 (use-package highlight-thing :ensure t :after project
   :custom-face
-  (highlight-thing ((t (:inherit nil :background "dark slate gray"))))
+  (highlight-thing ((t (:inherit lazy-highlight))))
   :config
   (setq highlight-thing-exclude-thing-under-point t)
   (add-hook 'prog-mode-hook 'highlight-thing-mode))
