@@ -47,7 +47,7 @@
 
 (use-package highlight-thing :ensure t :after project
   :custom-face
-  (highlight-thing ((t (:inherit lazy-highlight))))
+  (highlight-thing ((t (:inherit isearch))))
   :config
   (setq highlight-thing-exclude-thing-under-point t)
   (add-hook 'prog-mode-hook 'highlight-thing-mode))
