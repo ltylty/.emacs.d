@@ -8,7 +8,7 @@
 (setopt use-short-answers t)
 (setq recentf-max-saved-items 500)
 
-(use-package org :defer 0.1
+(use-package org :defer t
   :init
   (setq org-modules-loaded t) ;; disable org-modules
   (setq org-log-done 'time))
