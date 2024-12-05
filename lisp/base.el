@@ -7,9 +7,9 @@
 (which-key-mode)
 
 (use-package recentf
-  :config
-  (setq recentf-max-saved-items 500)
-  (recentf-mode))
+  :custom
+  (recentf-max-saved-items 500)
+  :hook (after-init . recentf-mode))
 
 (use-package org :defer 0.1
   :init
