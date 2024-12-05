@@ -1,14 +1,17 @@
-(recentf-mode)
+(setopt use-short-answers t)
 (winner-mode)
 (save-place-mode)
 (savehist-mode)
 (global-auto-revert-mode)
 (auto-save-visited-mode)
 (which-key-mode)
-(setopt use-short-answers t)
-(setq recentf-max-saved-items 500)
 
-(use-package org :defer t
+(use-package recentf
+  :config
+  (setq recentf-max-saved-items 500)
+  (recentf-mode))
+
+(use-package org :defer 0.1
   :init
   (setq org-modules-loaded t) ;; disable org-modules
   (setq org-log-done 'time))
