@@ -8,7 +8,7 @@
 
 (use-package recentf
   :custom
-  (recentf-max-saved-items 500)
+  (recentf-max-saved-items 300)
   :hook (after-init . recentf-mode))
 
 (use-package org :defer 0.1

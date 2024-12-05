@@ -12,10 +12,6 @@
   :custom
   (project-switch-commands 'project-dired))
 
-(use-package flyspell :defer t
-  :hook
-  ((sql-mode) . flyspell-mode))
-
 (use-package eglot :defer t
   :custom
   (eglot-autoshutdown t)  ;; shutdown language server after closing last file
