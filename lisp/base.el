@@ -12,7 +12,7 @@
   :hook (after-init . recentf-mode))
 
 (use-package org :defer 0.1
-  :init
+  :config
   (setq org-modules-loaded t) ;; disable org-modules
   (setq org-log-done 'time))
 
