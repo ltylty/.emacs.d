@@ -85,8 +85,6 @@
     "ps" 'consult-ripgrep
     ;; tab
     "tt" 'tab-recent
-    "th" 'tab-previous
-    "tl" 'tab-next
     ;; open
     "oe" 'eshell
     "oo" #'(lambda () (interactive) (browse-url default-directory))
