@@ -8,6 +8,7 @@
   (setq evil-want-C-u-scroll t)
   (setq evil-want-C-i-jump nil)
   (setq evil-symbol-word-search t)
+  (setq evil-toggle-key "C-M-z")
   :config
   (setq evil-emacs-state-modes '(ediff-mode))
   (add-hook 'with-editor-mode-hook 'evil-insert-state)
@@ -114,6 +115,7 @@
 
   (global-set-key (kbd "M-,") 'evil-jump-backward)
   (global-set-key (kbd "C-M-,") 'evil-jump-forward)
+  (global-set-key (kbd "C-z") 'undo)
 
   (evil-define-key '(normal motion visual) global-map "gh" #'evil-first-non-blank)
   (evil-define-key '(normal motion visual) global-map "gl" #'evil-last-non-blank)
