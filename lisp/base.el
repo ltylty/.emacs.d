@@ -13,7 +13,7 @@
 
 (use-package org :defer 0.1
   :config
-  (setq org-modules-loaded t) ;; disable org-modules
+  (setq org-modules nil)
   (setq org-log-done 'time))
 
 (use-package avy :ensure t :defer t)
