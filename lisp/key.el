@@ -141,10 +141,10 @@
 
   (cua-mode)
   (defun entry-insert-state ()
-    (setq-local cua-mode t)
+    (setq-local cua-enable-cua-keys t)
     (when (derived-mode-p 'org-mode) (setq-local org-support-shift-select 'always)))
   (defun entry-nomal-state ()
-    (setq-local cua-mode nil)
+    (setq-local cua-enable-cua-keys nil)
     (when (derived-mode-p 'org-mode) (setq-local org-support-shift-select nil)))
   (add-hook 'evil-insert-state-entry-hook #'entry-insert-state)
   (add-hook 'evil-normal-state-entry-hook #'entry-nomal-state)
