@@ -108,7 +108,6 @@
   (evil-define-key 'normal markdown-mode-map (kbd "RET") #'embark-dwim)
   (evil-define-key 'normal special-mode-map "q" #'quit-window)
 
-  (define-key minibuffer-local-map (kbd "C-v") 'yank)
   (define-key minibuffer-local-map (kbd "C-w") 'evil-delete-backward-word)
   (define-key minibuffer-local-map (kbd "C-u") 'evil-delete-back-to-indentation)
   (define-key minibuffer-local-map (kbd "<escape>") 'keyboard-escape-quit)
@@ -147,6 +146,7 @@
     (setq-local cua-enable-cua-keys nil)
     (when (derived-mode-p 'org-mode) (setq-local org-support-shift-select nil)))
   (add-hook 'evil-insert-state-entry-hook #'entry-insert-state)
+  (add-hook 'evil-emacs-state-entry-hook #'entry-insert-state)
   (add-hook 'evil-normal-state-entry-hook #'entry-nomal-state)
   (add-hook 'evil-insert-state-exit-hook #'company-abort)
 
