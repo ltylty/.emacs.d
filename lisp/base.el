@@ -1,20 +1,21 @@
-(setopt use-short-answers t)
-(winner-mode)
-(save-place-mode)
-(savehist-mode)
-(global-auto-revert-mode)
-(auto-save-visited-mode)
-(which-key-mode)
-
-(use-package recentf
-  :custom
-  (recentf-max-saved-items 300)
-  :hook (after-init . recentf-mode))
+(run-with-idle-timer 1 nil 'idle-init-startup)
+(defun idle-init-startup()
+  (winner-mode)
+  (save-place-mode)
+  (savehist-mode)
+  (global-auto-revert-mode)
+  (auto-save-visited-mode)
+  (which-key-mode))
 
 (use-package org :defer 0.1
   :config
   (setq org-modules nil)
   (setq org-log-done 'time))
+
+(use-package recentf :defer t
+  :custom
+  (recentf-max-saved-items 300)
+  :hook (after-init . recentf-mode))
 
 (use-package avy :ensure t :defer t)
 
