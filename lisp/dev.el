@@ -21,7 +21,7 @@
   :hook
   ((python-ts-mode) . eglot-ensure))
 
-(use-package treesit-auto :ensure t :after (project dired)
+(use-package treesit-auto :ensure t :defer 1
   :config
   (global-treesit-auto-mode))
 
@@ -29,7 +29,7 @@
   :config
   (setq magit-ediff-dwim-show-on-hunks t))
 
-(use-package diff-hl :ensure t :after (project dired)
+(use-package diff-hl :ensure t :defer 1
   :custom (diff-hl-draw-borders nil)
   :config
   (global-diff-hl-mode)
@@ -45,14 +45,14 @@
   :config
   (setq dired-sidebar-window-fixed nil))
 
-(use-package highlight-thing :ensure t :after (project dired)
+(use-package highlight-thing :ensure t :defer 1
   :hook (prog-mode . highlight-thing-mode)
   :custom-face
   (highlight-thing ((t (:inherit isearch))))
   :config
   (setq highlight-thing-exclude-thing-under-point t))
 
-(use-package citre :ensure t :after (project dired)
+(use-package citre :ensure t :defer 1
   :init
   (require 'citre-config)
   :config
@@ -65,7 +65,7 @@
    citre-edit-ctags-options-manually nil
    citre-auto-enable-citre-mode-modes '(java-ts-mode sql-mode)))
 
-(use-package color-rg :after (project dired)
+(use-package color-rg :defer 1
   :vc (:url "https://github.com/manateelazycat/color-rg" :branch "main" :rev :newest)
   :config
   (setq color-rg-search-ignore-rules nil)
