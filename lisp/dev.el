@@ -52,11 +52,18 @@
   :config
   (setq highlight-thing-exclude-thing-under-point t))
 
+(use-package xref :defer t
+  :config
+  ;; always find references of symbol at point
+  (setq xref-prompt-for-identifier nil)
+  ;; Use Consult to select xref locations with preview
+  (setq xref-show-xrefs-function #'consult-xref
+	xref-show-definitions-function #'consult-xref))
+
 (use-package citre :ensure t :defer 1
   :init
   (require 'citre-config)
   :config
-  (setq xref-prompt-for-identifier nil)
   (setq-default citre-enable-imenu-integration nil)
   (setq-default citre-enable-capf-integration nil)
   (setq

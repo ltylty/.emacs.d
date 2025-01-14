@@ -19,11 +19,7 @@
 
 (use-package avy :ensure t :defer t)
 
-(use-package consult :ensure t :defer t
-  :init
-  ;; Use Consult to select xref locations with preview
-  (setq xref-show-xrefs-function #'consult-xref
-        xref-show-definitions-function #'consult-xref))
+(use-package consult :ensure t :defer t)
 
 (use-package vertico :ensure t :defer t
   :custom
