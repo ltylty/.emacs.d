@@ -172,8 +172,8 @@
   :config (global-anzu-mode +1))
 
 (use-package evil-multiedit :ensure t :after evil
-  :init
-  (setq iedit-toggle-key-default nil)  
+  :custom
+  (iedit-toggle-key-default nil)  
   :custom-face
   (iedit-occurrence ((t (:inherit underline))))
   :config

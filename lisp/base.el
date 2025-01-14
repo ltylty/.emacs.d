@@ -1,6 +1,5 @@
 (run-with-idle-timer 0.5 nil 'idle-init-startup)
 (defun idle-init-startup()
-  (message "idle-init-startup")
   (winner-mode)
   (save-place-mode)
   (savehist-mode)
