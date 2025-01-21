@@ -45,10 +45,6 @@
 
 (use-package company :ensure t :defer t
   :hook (after-init . global-company-mode)
-  :custom
-  (company-transformers '(company-sort-prefer-same-case-prefix 
-			  company-sort-by-occurrence
-                          company-sort-by-backend-importance))
   :config
   (setq company-backends '((:separate company-capf company-dabbrev-code))
 	company-global-modes '(not shell-mode)
@@ -56,7 +52,8 @@
 	company-dabbrev-code-ignore-case t
 	company-dabbrev-code-modes t
 	company-dabbrev-code-everywhere t
-	company-dabbrev-code-completion-styles '(substring flex)))
+	company-dabbrev-code-completion-styles '(substring flex))
+  (add-to-list 'company-transformers 'company-sort-prefer-same-case-prefix))
 
 (use-package orderless :ensure t :defer 0.1
   :config
