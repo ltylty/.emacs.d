@@ -5,6 +5,7 @@
   (savehist-mode)
   (global-auto-revert-mode)
   (auto-save-visited-mode)
+  (global-hl-line-mode)
   (which-key-mode))
 
 (use-package org :defer 0.1

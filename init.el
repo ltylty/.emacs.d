@@ -3,8 +3,8 @@
                          ("melpa" . "https://mirrors.ustc.edu.cn/elpa/melpa/")
                          ("nongnu" . "https://mirrors.ustc.edu.cn/elpa/nongnu/")))
 
-(when (member "Maple Mono SC NF" (font-family-list))
-  (set-face-attribute 'default nil :font "Maple Mono SC NF" :height 110))
+(when (member "Maple Mono NF CN" (font-family-list))
+  (set-face-attribute 'default nil :font "Maple Mono NF CN" :height 110))
 
 (when (member "Segoe UI Emoji" (font-family-list))
   (set-fontset-font t 'emoji (font-spec :family "Segoe UI Emoji")))
