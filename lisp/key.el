@@ -36,6 +36,7 @@
     "bi" 'ibuffer
     "bd" 'evil-delete-buffer
     "bl" 'evil-switch-to-windows-last-buffer
+    "br" 'revert-buffer
     "bx" #'(lambda () (interactive) (switch-to-buffer "*scratch*"))
     ;; window
     "wd" 'evil-window-delete
@@ -184,3 +185,8 @@
   (evil-mc-cursors-keymap-prefix "gz")
   :config
   (global-evil-mc-mode  1))
+
+(use-package mwim :ensure t :after evil
+  :config
+  (define-key evil-insert-state-map (kbd "<home>") 'mwim-beginning)
+  (define-key evil-insert-state-map (kbd "<end>") 'mwim-end))
