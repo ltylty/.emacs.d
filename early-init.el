@@ -9,7 +9,6 @@
 (prefer-coding-system 'utf-8)
 (setq inhibit-startup-message t)
 (setq initial-major-mode 'fundamental-mode)
-(setq-default frame-title-format '("  %f" (:eval (if (buffer-modified-p) "  ✍️"))))
-(setq-default mode-line-format (add-to-list 'mode-line-format '(:eval (if (buffer-modified-p) " 🔴" " ○"))))
+(setq-default frame-title-format '("%f"))
 (setopt use-short-answers t)
 (setq default-frame-alist '((fullscreen . maximized)))
