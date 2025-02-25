@@ -42,9 +42,13 @@
 
 (use-package json-mode :ensure t :defer t)
 
+(use-package nerd-icons-dired :ensure t :defer t
+  :hook (dired-mode . nerd-icons-dired-mode))
+
 (use-package dired-sidebar :ensure t :defer t
   :config
-  (setq dired-sidebar-window-fixed nil))
+  (setq dired-sidebar-window-fixed nil)
+  (setq dired-sidebar-theme 'nerd-icons))
 
 (use-package highlight-thing :ensure t :after project
   :hook (prog-mode . highlight-thing-mode)
