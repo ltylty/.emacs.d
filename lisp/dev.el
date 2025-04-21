@@ -48,6 +48,7 @@
 (use-package dired-sidebar :ensure t :defer t
   :config
   (setq dired-sidebar-window-fixed nil)
+  (setq dired-sidebar-resize-on-open nil)
   (setq dired-sidebar-should-follow-file t)
   (setq dired-sidebar-theme 'nerd-icons))
 
@@ -85,3 +86,17 @@
   (setq color-rg-search-no-ignore-file nil))
 
 (use-package fanyi :ensure t :defer t)
+
+(use-package copilot :ensure t :defer t
+  :hook (prog-mode . copilot-mode)
+  :bind (:map copilot-completion-map
+              ("<tab>" . 'copilot-accept-completion)
+              ("TAB" . 'copilot-accept-completion)
+              ("C-TAB" . 'copilot-accept-completion-by-word)
+              ("C-<tab>" . 'copilot-accept-completion-by-word)
+              ("C-n" . 'copilot-next-completion)
+              ("C-p" . 'copilot-previous-completion))
+  :config
+  (add-to-list 'copilot-indentation-alist '(prog-mode 2))
+  (add-to-list 'copilot-indentation-alist '(emacs-lisp-mode 2))
+  (add-to-list 'copilot-indentation-alist '(special-mode 2)))
