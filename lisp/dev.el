@@ -100,3 +100,8 @@
   (add-to-list 'copilot-indentation-alist '(prog-mode 2))
   (add-to-list 'copilot-indentation-alist '(emacs-lisp-mode 2))
   (add-to-list 'copilot-indentation-alist '(special-mode 2)))
+
+(use-package gptel :ensure t :defer t
+  :config
+  (setq gptel-model 'gpt-4o
+	gptel-backend (gptel-make-gh-copilot "Copilot")))
