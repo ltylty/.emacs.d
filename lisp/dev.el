@@ -106,6 +106,6 @@
   (setq gptel-model 'gpt-4o
 	gptel-backend (gptel-make-gh-copilot "Copilot")))
 
-(use-package aider :ensure t :defer t
-  :config
-  (setq aider-args '("--model" "gemini-exp" "--no-auto-accept-architect")))
+(use-package aider :ensure t :defer t ; 使用 use-package 来管理 aider 包，:ensure t 表示如果未安装则自动安装，:defer t 表示延迟加载
+  :config ; 包加载后的配置
+  (setq aider-args '("--model" "gemini-exp" "--no-auto-accept-architect"))) ; 设置 aider 的命令行参数，指定使用的模型为 "gemini-exp"，并且不自动接受架构师的建议
