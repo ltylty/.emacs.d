@@ -108,4 +108,5 @@
 
 (use-package aider :ensure t :defer t
   :config
+  ;; 配置 aider 使用 gemini-exp 模型
   (setq aider-args '("--model" "gemini-exp")))
