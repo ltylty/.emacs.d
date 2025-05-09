@@ -108,4 +108,4 @@
 
 (use-package aider :ensure t :defer t
   :config
-  (setq aider-args '("--model" "gemini-exp")))
+  (setq aider-args '("--model" "gemini-exp" "--no-auto-accept-architect")))
