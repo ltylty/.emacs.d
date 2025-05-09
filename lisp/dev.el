@@ -105,3 +105,7 @@
   :config
   (setq gptel-model 'gpt-4o
 	gptel-backend (gptel-make-gh-copilot "Copilot")))
+
+(use-package aider :ensure t :defer t
+  :config
+  (setq aider-args '("--model" "gemini-exp")))
