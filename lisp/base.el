@@ -47,7 +47,7 @@
 (use-package company :ensure t :defer t
   :hook (after-init . global-company-mode)
   :config
-  (setq company-backends '((:separate company-capf company-dabbrev-code))
+  (setq company-backends '((:separate company-capf company-dabbrev-code aidermacs-comint-mode))
 	company-global-modes '(not shell-mode eshell-mode)
 	company-minimum-prefix-length 1
 	company-dabbrev-code-ignore-case t

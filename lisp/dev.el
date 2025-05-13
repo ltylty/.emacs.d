@@ -101,11 +101,9 @@
   (add-to-list 'copilot-indentation-alist '(emacs-lisp-mode 2))
   (add-to-list 'copilot-indentation-alist '(special-mode 2)))
 
-(use-package gptel :ensure t :defer t
-  :config
-  (setq gptel-model 'gpt-4o
-	gptel-backend (gptel-make-gh-copilot "Copilot")))
-
-(use-package aider :ensure t :defer t
-  :config
-  (setq aider-args '("--model" "gemini-exp")))
+(use-package aidermacs :ensure t :defer t
+  :bind (("C-c a" . aidermacs-transient-menu))  
+  :custom
+  ; See the Configuration section below
+  (aidermacs-use-architect-mode t)
+  (aidermacs-default-model "gemini-exp"))

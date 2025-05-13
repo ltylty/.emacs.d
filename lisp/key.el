@@ -69,7 +69,7 @@
     "cr" 'eglot-rename
     "ctc" 'citre-update-this-tags-file
     "ctg" 'citre-global-update-database
-    "ca" 'aider-transient-menu
+    "ca" 'aidermacs-transient-menu
     ;; git
     "gg" 'magit-status
     "gL" 'magit-log-buffer-file
