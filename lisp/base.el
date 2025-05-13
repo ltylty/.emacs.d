@@ -48,13 +48,16 @@
   :hook (after-init . global-company-mode)
   :config
   (setq company-backends '((:separate company-capf company-dabbrev-code))
-	company-global-modes '(not shell-mode)
+	company-global-modes '(not shell-mode eshell-mode)
 	company-minimum-prefix-length 1
 	company-dabbrev-code-ignore-case t
 	company-dabbrev-code-modes t
 	company-dabbrev-code-everywhere t
 	company-dabbrev-code-completion-styles '(substring flex))
   (add-to-list 'company-transformers 'company-sort-prefer-same-case-prefix))
+
+(use-package completion-preview
+  :hook ((shell-mode . completion-preview-mode) (eshell-mode . completion-preview-mode)))
 
 (use-package orderless :ensure t :defer 0.1
   :config
