@@ -87,6 +87,10 @@
 
 (use-package fanyi :ensure t :defer t)
 
+(use-package sqlformat :ensure t :defer t
+  :bind (:map sql-mode-map
+              ("C-c C-f" . 'sqlformat)))
+
 (use-package copilot :ensure t :defer t
   :hook (prog-mode . copilot-mode)
   :bind (:map copilot-completion-map
@@ -104,6 +108,5 @@
 (use-package aidermacs :ensure t :defer t
   :bind (("C-c a" . aidermacs-transient-menu))  
   :custom
-  ; See the Configuration section below
   (aidermacs-use-architect-mode t)
   (aidermacs-default-model "gemini-exp"))
