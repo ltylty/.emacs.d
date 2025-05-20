@@ -109,4 +109,4 @@
   :bind (("C-c a" . aidermacs-transient-menu))  
   :custom
   (aidermacs-use-architect-mode t)
-  (aidermacs-default-model "gemini-exp"))
+  (aidermacs-default-model "openrouter/deepseek/deepseek-chat-v3-0324:free"))
