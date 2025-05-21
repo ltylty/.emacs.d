@@ -9,9 +9,9 @@
   (which-key-mode))
 
 (use-package org :defer 0.1
-  :config
-  (setq org-modules nil)
-  (setq org-log-done 'time))
+  :custom
+  (org-modules '(org-tempo))
+  (org-log-done 'time))
 
 (use-package recentf :defer t
   :custom
@@ -48,7 +48,7 @@
   :hook (after-init . global-company-mode)
   :config
   (setq company-backends '((:separate company-capf company-dabbrev-code))
-	company-global-modes '(not shell-mode eshell-mode aidermacs-comint-mode)
+	company-global-modes '(not shell-mode eshell-mode org-mode aidermacs-comint-mode)
 	company-minimum-prefix-length 1
 	company-dabbrev-code-ignore-case t
 	company-dabbrev-code-modes t

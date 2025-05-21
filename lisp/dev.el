@@ -91,12 +91,12 @@
   :bind (:map sql-mode-map
               ("C-c C-f" . 'sqlformat)))
 
-(use-package highlight-parentheses :ensure t :defer t
+(use-package highlight-parentheses :ensure t :after project
   :hook (prog-mode . highlight-parentheses-mode)
   :custom
   (highlight-parentheses-colors '("red" "green" "yellow" "purple" "orange")))
 
-(use-package copilot :ensure t :defer t
+(use-package copilot :ensure t :after project
   :hook (prog-mode . copilot-mode)
   :bind (:map copilot-completion-map
               ("<tab>" . 'copilot-accept-completion)
@@ -111,7 +111,6 @@
   (add-to-list 'copilot-indentation-alist '(special-mode 2)))
 
 (use-package aidermacs :ensure t :defer t
-  :bind (("C-c a" . aidermacs-transient-menu))  
   :custom
   (aidermacs-use-architect-mode t)
   (aidermacs-default-model "openrouter/deepseek/deepseek-chat-v3-0324:free"))
