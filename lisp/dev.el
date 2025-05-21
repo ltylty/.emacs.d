@@ -91,6 +91,11 @@
   :bind (:map sql-mode-map
               ("C-c C-f" . 'sqlformat)))
 
+(use-package highlight-parentheses :ensure t :defer t
+  :hook (prog-mode . highlight-parentheses-mode)
+  :custom
+  (highlight-parentheses-colors '("red" "green" "yellow" "purple" "orange")))
+
 (use-package copilot :ensure t :defer t
   :hook (prog-mode . copilot-mode)
   :bind (:map copilot-completion-map
