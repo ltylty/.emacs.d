@@ -89,9 +89,9 @@
 
 (use-package fanyi :ensure t :defer t)
 
-(use-package sqlformat :ensure t :after project
-  :bind (:map sql-mode-map
-              ("C-c C-f" . 'sqlformat)))
+(use-package sqlformat :ensure t :after sql
+  :config
+  (define-key sql-mode-map (kbd "C-c C-f") 'sqlformat))
 
 (use-package highlight-parentheses :ensure t :after project
   :hook (prog-mode . highlight-parentheses-mode)
