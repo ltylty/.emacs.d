@@ -22,9 +22,12 @@
   :hook
   ((python-ts-mode) . eglot-ensure))
 
-(use-package treesit-auto :ensure t :after project
+(use-package treesit :defer t
   :config
-  (global-treesit-auto-mode))
+  (setq major-mode-remap-alist
+	'((python-mode . python-ts-mode)
+	  (sh-mode . bash-ts-mode)
+          (java-mode . java-ts-mode))))
 
 (use-package magit :ensure t :defer t
   :config
