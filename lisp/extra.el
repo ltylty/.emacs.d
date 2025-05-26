@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 (defun insert-image-from-clipboard ()
   "Insert an image from the clipboard into the current org buffer."
   (interactive)

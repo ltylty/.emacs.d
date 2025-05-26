@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 (use-package evil :ensure t :defer t
   :hook
   (after-init . evil-mode)

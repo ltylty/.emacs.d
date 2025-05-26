@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 (add-hook 'prog-mode-hook 'electric-pair-mode) ;括号配对
 (add-hook 'prog-mode-hook 'hs-minor-mode) ;代码折叠
 
@@ -88,7 +89,7 @@
 
 (use-package fanyi :ensure t :defer t)
 
-(use-package sqlformat :ensure t :defer t
+(use-package sqlformat :ensure t :after project
   :bind (:map sql-mode-map
               ("C-c C-f" . 'sqlformat)))
 
