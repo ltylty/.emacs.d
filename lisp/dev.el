@@ -81,9 +81,10 @@
 
 (use-package color-rg :after project
   :vc (:url "https://github.com/manateelazycat/color-rg" :branch "main" :rev :newest)
-  :config
-  (setq color-rg-search-ignore-rules nil)
-  (setq color-rg-search-no-ignore-file nil))
+  :custom
+  (color-rg-mac-load-path-from-shell nil)
+  (color-rg-search-ignore-rules nil)
+  (color-rg-search-no-ignore-file nil))
 
 (use-package fanyi :ensure t :defer t)
 
