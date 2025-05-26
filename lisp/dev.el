@@ -113,5 +113,5 @@
 (use-package aidermacs :ensure t :defer t
   :custom
   (aidermacs-default-model "openrouter/qwen/qwen3-235b-a22b:free")
-  ;; (aidermacs-default-model "openrouter/deepseek/deepseek-chat-v3-0324:free")
+  (aidermacs-weak-model "openrouter/deepseek/deepseek-chat-v3-0324:free")
   (aidermacs-use-architect-mode t))
