@@ -1,6 +1,8 @@
 ;; -*- lexical-binding: t; -*-
-(run-with-idle-timer 0.5 nil 'idle-init-startup)
-(defun idle-init-startup()
+(use-package emacs :defer 0.5
+  :custom
+  (auto-save-visited-interval 1)
+  :config
   (winner-mode)
   (save-place-mode)
   (savehist-mode)
