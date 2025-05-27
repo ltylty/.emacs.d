@@ -26,7 +26,6 @@
   :config
   (setq major-mode-remap-alist
 	'((python-mode . python-ts-mode)
-	  (sh-mode . bash-ts-mode)
 	  (json-mode . json-ts-mode)
 	  (markdown-mode . markdown-ts-mode)
           (java-mode . java-ts-mode))))
