@@ -25,6 +25,14 @@
 
 (use-package consult :ensure t :defer t)
 
+(use-package xref :defer t
+  :config
+  ;; always find references of symbol at point
+  (setq xref-prompt-for-identifier nil)
+  ;; Use Consult to select xref locations with preview
+  (setq xref-show-xrefs-function #'consult-xref
+	xref-show-definitions-function #'consult-xref))
+
 (use-package vertico :ensure t :defer t
   :custom
   (vertico-cycle t)
