@@ -119,5 +119,4 @@
 (use-package aidermacs :ensure t :defer t
   :custom
   (aidermacs-default-model "openrouter/qwen/qwen3-235b-a22b:free")
-  (aidermacs-weak-model "openrouter/google/gemini-2.0-flash-exp:free")
   (aidermacs-use-architect-mode t))
