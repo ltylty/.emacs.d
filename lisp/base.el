@@ -67,7 +67,7 @@
 	company-dabbrev-code-completion-styles '(substring flex))
   (add-to-list 'company-transformers 'company-sort-prefer-same-case-prefix))
 
-(use-package completion-preview
+(use-package completion-preview :defer t
   :hook ((shell-mode . completion-preview-mode) (eshell-mode . completion-preview-mode)))
 
 (use-package orderless :ensure t :defer 0.1
