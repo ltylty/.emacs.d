@@ -53,8 +53,6 @@
 (use-package dired-sidebar :ensure t :defer t
   :config
   (setq dired-sidebar-window-fixed nil)
-  (setq dired-sidebar-resize-on-open nil)
-  (setq dired-sidebar-should-follow-file t)
   (setq dired-sidebar-theme 'nerd-icons))
 
 (use-package highlight-thing :ensure t :after project

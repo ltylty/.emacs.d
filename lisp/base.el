@@ -68,6 +68,7 @@
   (add-to-list 'company-transformers 'company-sort-prefer-same-case-prefix))
 
 (use-package completion-preview :defer t
+  :custom (completion-preview-minimum-symbol-length 2)
   :hook ((shell-mode . completion-preview-mode) (eshell-mode . completion-preview-mode)))
 
 (use-package orderless :ensure t :defer 0.1
