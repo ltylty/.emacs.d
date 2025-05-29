@@ -109,5 +109,4 @@
 (use-package aidermacs :ensure t :defer t
   :custom
   (aidermacs-default-model "openrouter/deepseek/deepseek-r1-0528:free")
-  (aidermacs-use-architect-mode t)
-  )
+  (aidermacs-use-architect-mode t))
