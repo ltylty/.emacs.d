@@ -1,7 +1,7 @@
 ;; -*- lexical-binding: t; -*-
 (use-package emacs :defer 0.5
   :custom
-  (auto-save-visited-interval 1)
+  (auto-save-visited-interval 2)
   :config
   (winner-mode)
   (save-place-mode)
