@@ -66,6 +66,7 @@
     "st" 'fanyi-dwim
     ;; code
     "ce" 'consult-flymake
+    "cc" 'eglot-code-actions
     "cf" 'eglot-format
     "cr" 'eglot-rename
     "ctc" 'citre-update-this-tags-file
