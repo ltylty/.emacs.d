@@ -72,7 +72,7 @@
    citre-default-create-tags-file-location 'global-cache
    citre-gtags-args '("--compact")
    citre-edit-ctags-options-manually nil
-   citre-auto-enable-citre-mode-modes '(java-ts-mode sql-mode)))
+   citre-auto-enable-citre-mode-modes '(sql-mode)))
 
 (use-package color-rg :after project
   :vc (:url "https://github.com/manateelazycat/color-rg" :branch "main" :rev :newest)
@@ -111,3 +111,11 @@
   (aidermacs-default-model "openrouter/deepseek/deepseek-r1-0528:free")
   (aidermacs-weak-model "openrouter/qwen/qwen3-235b-a22b:free")
   (aidermacs-use-architect-mode t))
+
+(use-package eglot-java :ensure t :defer t
+  :hook (java-ts-mode . eglot-java-mode))
+
+(use-package eglot-java-lombok :ensure t 
+  :vc (:url "https://github.com/ltylty/eglot-java-lombok" :branch "main" :rev :newest)
+  :config
+  (eglot-java-lombok/init))
