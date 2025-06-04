@@ -1,13 +1,14 @@
 ;; -*- lexical-binding: t; -*-
 (use-package emacs :defer 0.5
   :custom
-  (auto-save-visited-interval 2)
+  ;; (auto-save-visited-interval 2)
+  (dired-dwim-target t)
   :config
   (winner-mode)
   (save-place-mode)
   (savehist-mode)
   (global-auto-revert-mode)
-  (auto-save-visited-mode)
+  ;; (auto-save-visited-mode)
   (global-hl-line-mode)
   (which-key-mode))
 
@@ -58,14 +59,13 @@
 (use-package company :ensure t :defer t
   :hook (after-init . global-company-mode)
   :config
-  (setq company-backends '((:separate company-capf company-dabbrev-code))
+  (setq company-backends '((company-capf :with company-dabbrev-code))
 	company-global-modes '(not shell-mode eshell-mode org-mode aidermacs-comint-mode)
 	company-minimum-prefix-length 1
 	company-dabbrev-code-ignore-case t
 	company-dabbrev-code-modes t
 	company-dabbrev-code-everywhere t
-	company-dabbrev-code-completion-styles '(substring flex))
-  (add-to-list 'company-transformers 'company-sort-prefer-same-case-prefix))
+	company-dabbrev-code-completion-styles '(substring flex)))
 
 (use-package completion-preview :defer t
   :custom (completion-preview-minimum-symbol-length 2)

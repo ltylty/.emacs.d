@@ -78,19 +78,19 @@
   :custom
   (highlight-parentheses-colors '("red" "green" "yellow" "purple" "orange")))
 
-(use-package copilot :ensure t :after project
-  :hook (prog-mode . copilot-mode)
-  :bind (:map copilot-completion-map
-              ("<tab>" . 'copilot-accept-completion)
-              ("TAB" . 'copilot-accept-completion)
-              ("C-TAB" . 'copilot-accept-completion-by-word)
-              ("C-<tab>" . 'copilot-accept-completion-by-word)
-              ("C-n" . 'copilot-next-completion)
-              ("C-p" . 'copilot-previous-completion))
-  :config
-  (add-to-list 'copilot-indentation-alist '(prog-mode 2))
-  (add-to-list 'copilot-indentation-alist '(emacs-lisp-mode 2))
-  (add-to-list 'copilot-indentation-alist '(special-mode 2)))
+;; (use-package copilot :ensure t :after project
+;;   :hook (prog-mode . copilot-mode)
+;;   :bind (:map copilot-completion-map
+;;               ("<tab>" . 'copilot-accept-completion)
+;;               ("TAB" . 'copilot-accept-completion)
+;;               ("C-TAB" . 'copilot-accept-completion-by-word)
+;;               ("C-<tab>" . 'copilot-accept-completion-by-word)
+;;               ("C-n" . 'copilot-next-completion)
+;;               ("C-p" . 'copilot-previous-completion))
+;;   :config
+;;   (add-to-list 'copilot-indentation-alist '(prog-mode 2))
+;;   (add-to-list 'copilot-indentation-alist '(emacs-lisp-mode 2))
+;;   (add-to-list 'copilot-indentation-alist '(special-mode 2)))
 
 (use-package aidermacs :ensure t :defer t
   :custom
@@ -104,7 +104,8 @@
   (setq lsp-java-vmargs '("-XX:+UseParallelGC" "-XX:GCTimeRatio=4" "-XX:AdaptiveSizePolicyWeight=90" "-Dsun.zip.disableMemoryMapping=true" "-Xmx2G" "-Xms100m" "-javaagent:c:/Users/Administrator/AppData/Roaming/.emacs.d/lombok.jar"))
   (setq lsp-java-configuration-runtimes '[(:name "JavaSE-1.8"
 						 :path "C:/Program Files/Java/jdk1.8.0_201/"
-						 :default t)]))
+						 :default t)])
+  (advice-add 'lsp :before (lambda (&rest _args) (eval '(setf (lsp-session-server-id->folders (lsp-session)) (ht))))))
 
 (use-package treemacs :ensure t :defer t
   :config
