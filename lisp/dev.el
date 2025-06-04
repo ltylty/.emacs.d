@@ -13,15 +13,6 @@
   :custom
   (project-switch-commands 'project-dired))
 
-;; (use-package eglot :defer t
-;;   :custom
-;;   (eglot-autoshutdown t)  ;; shutdown language server after closing last file
-;;   (eldoc-echo-area-use-multiline-p nil) ;; eldoc-documentation-function should only return a single line
-;;   :custom-face
-;;   (eglot-highlight-symbol-face ((t (:inherit nil :weight bold :foreground "yellow3"))))
-;;   :hook
-;;   ((python-ts-mode) . eglot-ensure))
-
 (use-package treesit :defer t
   :config
   (setq major-mode-remap-alist
@@ -49,11 +40,6 @@
 
 (use-package nerd-icons-dired :ensure t :defer t
   :hook (dired-mode . nerd-icons-dired-mode))
-
-;; (use-package dired-sidebar :ensure t :defer t
-;;   :config
-;;   (setq dired-sidebar-window-fixed nil)
-;;   (setq dired-sidebar-theme 'nerd-icons))
 
 (use-package highlight-thing :ensure t :after project
   :hook (prog-mode . highlight-thing-mode)
@@ -112,19 +98,6 @@
   (aidermacs-weak-model "openrouter/qwen/qwen3-235b-a22b:free")
   (aidermacs-use-architect-mode t))
 
-;; (use-package eglot-java :ensure t :defer t
-;;   :hook (java-ts-mode . eglot-java-mode))
-
-;; (use-package eglot-java-lombok :ensure t :after eglot-java 
-;;   :vc (:url "https://github.com/ltylty/eglot-java-lombok" :branch "main" :rev :newest)
-;;   :config
-;;   (eglot-java-lombok/init))
-
-;; (setq-default eglot-workspace-configuration
-;; 	      '(:java (:configuration (runtimes
-;; 				       [(:name "JavaSE-1.8" :path "C:/Program Files/Java/jdk1.8.0_201" :default t)]))))
-
-
 (use-package lsp-java :ensure t :defer t
   :hook (java-ts-mode . lsp)
   :config
@@ -132,7 +105,6 @@
   (setq lsp-java-configuration-runtimes '[(:name "JavaSE-1.8"
 						 :path "C:/Program Files/Java/jdk1.8.0_201/"
 						 :default t)]))
-
 
 (use-package treemacs :ensure t :defer t
   :config

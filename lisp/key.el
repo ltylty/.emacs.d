@@ -56,6 +56,7 @@
     "fd" #'(lambda () (interactive) (consult-fd default-directory))
     "fs" 'save-buffer
     "fr" 'recentf
+    "ft" 'treemacs
     ;; search
     "ss" 'consult-line
     "sd" 'color-rg-search-input
@@ -65,10 +66,9 @@
     "sm" 'consult-mark
     "st" 'fanyi-dwim
     ;; code
-    "ce" 'consult-flymake
-    "cc" 'eglot-code-actions
-    "cf" 'eglot-format
-    "cr" 'eglot-rename
+    "cca" 'lsp-execute-code-action
+    "ccf" 'lsp-format-region
+    "ccr" 'lsp-rename
     "ctc" 'citre-update-this-tags-file
     "ctg" 'citre-global-update-database
     "ca" 'aidermacs-transient-menu
