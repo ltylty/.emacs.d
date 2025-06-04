@@ -10,6 +10,10 @@
 (when (member "Segoe UI Emoji" (font-family-list))
   (set-fontset-font t 'emoji (font-spec :family "Segoe UI Emoji")))
 
+(when (eq system-type 'darwin)
+  (setq mac-command-modifier 'meta)
+  (setq mac-option-modifier 'super))
+
 (setq backup-directory-alist `(("." . ,(concat user-emacs-directory "backups"))))
 (setq custom-file (concat user-emacs-directory "custom.el"))
 (when (file-exists-p custom-file) (load custom-file))
