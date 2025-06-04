@@ -28,7 +28,7 @@
     (kbd "SPC") 'execute-extended-command
     (kbd "RET") 'consult-bookmark
     "m" 'transient-major-mode-map
-    "0" 'dired-sidebar-toggle-sidebar
+    "0" 'treemacs-select-window
     "u" 'universal-argument
     "a" 'embark-act
     "x" ctl-x-map
