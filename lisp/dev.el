@@ -107,7 +107,7 @@
 (use-package eglot-java :ensure t :defer t
   :hook (java-mode . eglot-java-mode))
 
-(use-package eglot-java-lombok :ensure t 
+(use-package eglot-java-lombok :ensure t :defer t 
   :vc (:url "https://github.com/ltylty/eglot-java-lombok" :branch "main" :rev :newest)
   :config
   (eglot-java-lombok/init))
