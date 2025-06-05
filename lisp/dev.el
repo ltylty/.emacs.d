@@ -20,15 +20,7 @@
   :custom-face
   (eglot-highlight-symbol-face ((t (:inherit nil :weight bold :foreground "yellow3"))))
   :hook
-  ((python-ts-mode) . eglot-ensure))
-
-(use-package treesit :defer t
-  :config
-  (setq major-mode-remap-alist
-	'((python-mode . python-ts-mode)
-	  (json-mode . json-ts-mode)
-	  (markdown-mode . markdown-ts-mode)
-          (java-mode . java-ts-mode))))
+  ((python-mode) . eglot-ensure))
 
 (use-package magit :ensure t :defer t
   :config
@@ -113,7 +105,7 @@
   (aidermacs-use-architect-mode t))
 
 (use-package eglot-java :ensure t :defer t
-  :hook (java-ts-mode . eglot-java-mode))
+  :hook (java-mode . eglot-java-mode))
 
 (use-package eglot-java-lombok :ensure t 
   :vc (:url "https://github.com/ltylty/eglot-java-lombok" :branch "main" :rev :newest)

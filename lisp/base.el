@@ -1,14 +1,13 @@
 ;; -*- lexical-binding: t; -*-
 (use-package emacs :defer 0.5
   :custom
-  ;; (auto-save-visited-interval 2)
   (dired-dwim-target t)
   :config
   (winner-mode)
   (save-place-mode)
   (savehist-mode)
   (global-auto-revert-mode)
-  ;; (auto-save-visited-mode)
+  (auto-save-visited-mode)
   (global-hl-line-mode)
   (which-key-mode))
 
@@ -66,6 +65,10 @@
 	company-dabbrev-code-modes t
 	company-dabbrev-code-everywhere t
 	company-dabbrev-code-completion-styles '(substring flex)))
+
+;; With use-package:
+(use-package company-box :ensure t :defer t
+  :hook (company-mode . company-box-mode))
 
 (use-package completion-preview :defer t
   :custom (completion-preview-minimum-symbol-length 2)

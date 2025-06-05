@@ -65,9 +65,10 @@
     "sm" 'consult-mark
     "st" 'fanyi-dwim
     ;; code
-    "ce" 'consult-flymake
-    "cf" 'eglot-format
-    "cr" 'eglot-rename
+    "cce" 'consult-flymake
+    "ccf" 'eglot-format
+    "ccr" 'eglot-rename
+    "cca" 'eglot-code-actions
     "ctc" 'citre-update-this-tags-file
     "ctg" 'citre-global-update-database
     "ca" 'aidermacs-transient-menu
