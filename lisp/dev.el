@@ -13,6 +13,15 @@
   :custom
   (project-switch-commands 'project-dired))
 
+(use-package eglot :defer t
+  :custom
+  (eglot-autoshutdown t)  ;; shutdown language server after closing last file
+  (eldoc-echo-area-use-multiline-p nil) ;; eldoc-documentation-function should only return a single line
+  :custom-face
+  (eglot-highlight-symbol-face ((t (:inherit nil :weight bold :foreground "yellow3"))))
+  :hook
+  ((python-ts-mode) . eglot-ensure))
+
 (use-package treesit :defer t
   :config
   (setq major-mode-remap-alist
@@ -40,6 +49,11 @@
 
 (use-package nerd-icons-dired :ensure t :defer t
   :hook (dired-mode . nerd-icons-dired-mode))
+
+(use-package dired-sidebar :ensure t :defer t
+  :config
+  (setq dired-sidebar-window-fixed nil)
+  (setq dired-sidebar-theme 'nerd-icons))
 
 (use-package highlight-thing :ensure t :after project
   :hook (prog-mode . highlight-thing-mode)
@@ -78,19 +92,19 @@
   :custom
   (highlight-parentheses-colors '("red" "green" "yellow" "purple" "orange")))
 
-;; (use-package copilot :ensure t :after project
-;;   :hook (prog-mode . copilot-mode)
-;;   :bind (:map copilot-completion-map
-;;               ("<tab>" . 'copilot-accept-completion)
-;;               ("TAB" . 'copilot-accept-completion)
-;;               ("C-TAB" . 'copilot-accept-completion-by-word)
-;;               ("C-<tab>" . 'copilot-accept-completion-by-word)
-;;               ("C-n" . 'copilot-next-completion)
-;;               ("C-p" . 'copilot-previous-completion))
-;;   :config
-;;   (add-to-list 'copilot-indentation-alist '(prog-mode 2))
-;;   (add-to-list 'copilot-indentation-alist '(emacs-lisp-mode 2))
-;;   (add-to-list 'copilot-indentation-alist '(special-mode 2)))
+(use-package copilot :ensure t :after project
+  :hook (prog-mode . copilot-mode)
+  :bind (:map copilot-completion-map
+              ("<tab>" . 'copilot-accept-completion)
+              ("TAB" . 'copilot-accept-completion)
+              ("C-TAB" . 'copilot-accept-completion-by-word)
+              ("C-<tab>" . 'copilot-accept-completion-by-word)
+              ("C-n" . 'copilot-next-completion)
+              ("C-p" . 'copilot-previous-completion))
+  :config
+  (add-to-list 'copilot-indentation-alist '(prog-mode 2))
+  (add-to-list 'copilot-indentation-alist '(emacs-lisp-mode 2))
+  (add-to-list 'copilot-indentation-alist '(special-mode 2)))
 
 (use-package aidermacs :ensure t :defer t
   :custom
@@ -98,24 +112,10 @@
   (aidermacs-weak-model "openrouter/qwen/qwen3-235b-a22b:free")
   (aidermacs-use-architect-mode t))
 
-(use-package lsp-java :ensure t :defer t
-  :hook (java-ts-mode . lsp)
-  :config
-  (setq lsp-java-vmargs '("-XX:+UseParallelGC" "-XX:GCTimeRatio=4" "-XX:AdaptiveSizePolicyWeight=90" "-Dsun.zip.disableMemoryMapping=true" "-Xmx2G" "-Xms100m" "-javaagent:c:/Users/Administrator/AppData/Roaming/.emacs.d/lombok.jar"))
-  (setq lsp-java-configuration-runtimes '[(:name "JavaSE-1.8"
-						 :path "C:/Program Files/Java/jdk1.8.0_201/"
-						 :default t)])
-  (advice-add 'lsp :before (lambda (&rest _args) (eval '(setf (lsp-session-server-id->folders (lsp-session)) (ht))))))
+(use-package eglot-java :ensure t :defer t
+  :hook (java-ts-mode . eglot-java-mode))
 
-(use-package treemacs :ensure t :defer t
+(use-package eglot-java-lombok :ensure t 
+  :vc (:url "https://github.com/ltylty/eglot-java-lombok" :branch "main" :rev :newest)
   :config
-  (setq treemacs-follow-after-init t)
-  (setq treemacs-is-never-other-window t)
-  (setq treemacs-collapse-dirs 10)
-  (treemacs-git-mode 'deferred)
-  (treemacs-git-commit-diff-mode t)
-  (treemacs-project-follow-mode t)
-  (treemacs-follow-mode t))
-
-(use-package treemacs-evil :ensure t :after (treemacs evil))
-(use-package treemacs-magit :ensure t :after (treemacs magit))
+  (eglot-java-lombok/init))

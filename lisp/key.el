@@ -28,7 +28,7 @@
     (kbd "SPC") 'execute-extended-command
     (kbd "RET") 'consult-bookmark
     "m" 'transient-major-mode-map
-    "0" 'treemacs-select-window
+    "0" 'dired-sidebar-toggle-sidebar
     "u" 'universal-argument
     "a" 'embark-act
     "x" ctl-x-map
@@ -56,7 +56,6 @@
     "fd" #'(lambda () (interactive) (consult-fd default-directory))
     "fs" 'save-buffer
     "fr" 'recentf
-    "ft" 'treemacs
     ;; search
     "ss" 'consult-line
     "sd" 'color-rg-search-input
@@ -66,9 +65,9 @@
     "sm" 'consult-mark
     "st" 'fanyi-dwim
     ;; code
-    "cca" 'lsp-execute-code-action
-    "ccf" 'lsp-format-region
-    "ccr" 'lsp-rename
+    "ce" 'consult-flymake
+    "cf" 'eglot-format
+    "cr" 'eglot-rename
     "ctc" 'citre-update-this-tags-file
     "ctg" 'citre-global-update-database
     "ca" 'aidermacs-transient-menu
