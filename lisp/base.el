@@ -66,7 +66,6 @@
 	company-dabbrev-code-everywhere t
 	company-dabbrev-code-completion-styles '(substring flex)))
 
-;; With use-package:
 (use-package company-box :ensure t :defer t
   :hook (company-mode . company-box-mode))
 
