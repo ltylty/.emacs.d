@@ -70,8 +70,6 @@
     "cgi" 'eglot-find-implementation
     "crr" 'eglot-rename
     "cra" 'eglot-code-actions
-    "ctc" 'citre-update-this-tags-file
-    "ctg" 'citre-global-update-database
     "ca" 'aidermacs-transient-menu
     ;; git
     "gg" 'magit-status

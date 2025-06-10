@@ -99,3 +99,7 @@
   (aidermacs-default-model "openrouter/deepseek/deepseek-r1-0528:free")
   (aidermacs-weak-model "openrouter/qwen/qwen3-235b-a22b:free")
   (aidermacs-use-architect-mode t))
+
+(use-package dumb-jump :ensure t :defer t
+  :init
+  (add-hook 'xref-backend-functions #'dumb-jump-xref-activate))
