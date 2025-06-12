@@ -83,6 +83,4 @@
   :hook (after-init . nyan-mode))
 
 (use-package doom-modeline :ensure t :defer t
-  :hook (after-init . doom-modeline-mode)
-  :config
-  (setq doom-modeline-lsp-icon nil))
+  :hook (after-init . doom-modeline-mode))
