@@ -21,9 +21,6 @@
   (recentf-max-saved-items 300)
   :hook (after-init . recentf-mode))
 
-(use-package textsize :ensure t :defer t
-  :hook (after-init . textsize-mode))
-
 (use-package avy :ensure t :defer t)
 
 (use-package consult :ensure t :defer t
