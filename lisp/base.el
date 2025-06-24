@@ -1,5 +1,5 @@
 ;; -*- lexical-binding: t; -*-
-(use-package emacs :defer 0.5
+(use-package emacs :defer 0.1
   :custom
   (dired-dwim-target t)
   :config
@@ -11,7 +11,7 @@
   (global-hl-line-mode)
   (which-key-mode))
 
-(use-package org :defer 0.1
+(use-package org :defer 0.2
   :custom
   (org-modules '(org-tempo))
   (org-log-done 'time))
