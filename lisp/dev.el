@@ -78,7 +78,7 @@
 (use-package highlight-parentheses :ensure t :after project
   :hook (prog-mode . highlight-parentheses-mode)
   :custom
-  (highlight-parentheses-colors '("red" "green" "yellow" "purple" "orange")))
+  (highlight-parentheses-colors '("green" "yellow" "purple" "orange" "red")))
 
 (use-package copilot :ensure t :after project
   :hook (prog-mode . copilot-mode)
