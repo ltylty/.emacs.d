@@ -100,6 +100,7 @@
     "hv" 'describe-variable
     "hm" 'describe-mode
     "hp" 'describe-package
+    "h?" 'which-key-show-major-mode
     ;; quit
     "qr" 'restart-emacs
     "qq" '("Quit" . save-buffers-kill-terminal))

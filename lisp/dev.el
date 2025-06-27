@@ -98,8 +98,15 @@
   :custom
   (aidermacs-default-model "openrouter/deepseek/deepseek-r1-0528:free")
   (aidermacs-weak-model "openrouter/qwen/qwen3-235b-a22b:free")
-  (aidermacs-use-architect-mode t))
+  (aidermacs-default-chat-mode 'architect))
 
 (use-package dumb-jump :ensure t :defer t
   :init
   (add-hook 'xref-backend-functions #'dumb-jump-xref-activate))
+
+;; (use-package minuet :ensure t :defer t
+;;     :init
+;;     (add-hook 'prog-mode-hook #'minuet-auto-suggestion-mode)
+;;     :config
+;;     (setq minuet-provider 'openai-compatible)
+;;     (plist-put minuet-openai-compatible-options :model "deepseek/deepseek-chat-v3-0324:free"))
