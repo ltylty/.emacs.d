@@ -79,8 +79,9 @@
     "gn" 'magit-blob-next
     ;; jump
     "jj" 'avy-goto-word-1
-    "jl" 'avy-goto-line
     "jw" 'ace-select-window
+    "jh" 'evil-first-non-blank
+    "jl" 'evil-last-non-blank
     ;; project
     "pp" 'project-switch-project
     "pk" #'(lambda () (interactive) (project-kill-buffers) (tab-close))
@@ -120,27 +121,12 @@
   (global-set-key (kbd "C-M-,") 'evil-jump-forward)
   (global-set-key (kbd "C-z") 'undo)
 
-  (evil-define-key '(normal motion visual) global-map "gh" #'evil-first-non-blank)
-  (evil-define-key '(normal motion visual) global-map "gl" #'evil-last-non-blank)
   (evil-define-key 'normal global-map "gr" #'xref-find-references)
   (evil-define-key 'normal dired-mode-map (kbd "<backspace>") #'dired-up-directory)
   (evil-define-key 'normal dired-mode-map (kbd "i") #'dired-subtree-cycle)
   (evil-define-key 'insert eshell-mode-map (kbd "C-r") #'consult-history)
   (evil-define-key 'insert eshell-mode-map (kbd "C-w") #'evil-delete-backward-word)
   (evil-define-key 'insert eshell-mode-map (kbd "C-u") #'eshell-kill-input)
-
-  (define-key evil-visual-state-map (kbd ">") 'evil-shift-right-visual)
-  (define-key evil-visual-state-map (kbd "<") 'evil-shift-left-visual)
-  (defun evil-shift-left-visual ()
-    (interactive)
-    (evil-shift-left (region-beginning) (region-end))
-    (evil-normal-state)
-    (evil-visual-restore))
-  (defun evil-shift-right-visual ()
-    (interactive)
-    (evil-shift-right (region-beginning) (region-end))
-    (evil-normal-state)
-    (evil-visual-restore))
 
   (cua-mode)
   (defun entry-insert-state ()
