@@ -30,7 +30,7 @@
     "m" 'transient-major-mode-map
     "0" 'dired-sidebar-toggle-sidebar
     "u" 'universal-argument
-    "a" 'embark-act
+    "a" 'aidermacs-transient-menu 
     "x" ctl-x-map
     ;; buffer
     "bb" 'consult-buffer
@@ -67,10 +67,9 @@
     ;; code
     "ce" 'consult-flymake
     "cf" 'eglot-format
-    "cgi" 'eglot-find-implementation
-    "crr" 'eglot-rename
-    "cra" 'eglot-code-actions
-    "ca" 'aidermacs-transient-menu
+    "ci" 'eglot-find-implementation
+    "cr" 'eglot-rename
+    "ca" 'eglot-code-actions
     ;; git
     "gg" 'magit-status
     "gL" 'magit-log-buffer-file
@@ -80,8 +79,6 @@
     ;; jump
     "jj" 'avy-goto-word-1
     "jw" 'ace-select-window
-    "jh" 'evil-first-non-blank
-    "jl" 'evil-last-non-blank
     ;; project
     "pp" 'project-switch-project
     "pk" #'(lambda () (interactive) (project-kill-buffers) (tab-close))
@@ -96,6 +93,7 @@
     "of" #'(lambda () (interactive) (browse-url buffer-file-name))
     "od" 'dired-jump
     ;; help
+    "ha" 'embark-act
     "hk" 'describe-key
     "hf" 'describe-function
     "hv" 'describe-variable
@@ -121,6 +119,8 @@
   (global-set-key (kbd "C-M-,") 'evil-jump-forward)
   (global-set-key (kbd "C-z") 'undo)
 
+  (evil-define-key '(normal motion visual) global-map "gh" #'evil-first-non-blank)
+  (evil-define-key '(normal motion visual) global-map "gl" #'evil-last-non-blank)
   (evil-define-key 'normal global-map "gr" #'xref-find-references)
   (evil-define-key 'normal dired-mode-map (kbd "<backspace>") #'dired-up-directory)
   (evil-define-key 'normal dired-mode-map (kbd "i") #'dired-subtree-cycle)
