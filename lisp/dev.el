@@ -11,7 +11,9 @@
 
 (use-package project :defer t
   :custom
-  (project-switch-commands 'project-dired))
+  (project-switch-commands 'project-dired)
+  :config
+  (setq project-vc-extra-root-markers '(".dir-locals.el")))
 
 (use-package eglot :defer t
   :custom
@@ -55,8 +57,8 @@
   (setq dired-sidebar-window-fixed nil)
   (setq dired-sidebar-theme 'nerd-icons))
 
-(use-package highlight-thing :ensure t :after project
-  :hook (prog-mode . highlight-thing-mode)
+(use-package highlight-thing :ensure t :defer t
+  :hook ((sql-mode emacs-lisp-mode) . highlight-thing-mode)
   :custom-face
   (highlight-thing ((t (:inherit isearch))))
   :config
