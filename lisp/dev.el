@@ -82,7 +82,7 @@
   :custom
   (highlight-parentheses-colors '("green" "yellow" "purple" "orange" "red")))
 
-(use-package copilot :ensure t :after project
+(use-package copilot :ensure t :defer t
   :hook (prog-mode . copilot-mode)
   :bind (:map copilot-completion-map
               ("<tab>" . 'copilot-accept-completion)
