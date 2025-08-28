@@ -99,8 +99,8 @@
 (use-package aidermacs :ensure t :defer t
   :custom
   ;; (aidermacs-default-model "openrouter/deepseek/deepseek-r1-0528:free")
-  ;; (aidermacs-default-model "openrouter/moonshotai/kimi-k2:free")
-  (aidermacs-default-model "openrouter/qwen/qwen3-coder:free")
+  (aidermacs-default-model "openrouter/moonshotai/kimi-k2:free")
+  ;; (aidermacs-default-model "openrouter/qwen/qwen3-coder:free")
   ;; (aidermacs-weak-model "openrouter/qwen/qwen3-235b-a22b:free")
   (aidermacs-default-chat-mode 'architect))
 
