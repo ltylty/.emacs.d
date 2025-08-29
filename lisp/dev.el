@@ -109,3 +109,6 @@
   (add-hook 'xref-backend-functions #'dumb-jump-xref-activate)
   :config
   (add-to-list 'dumb-jump-project-denoters ".dir-locals.el"))
+
+(use-package jj-mode :ensure t :defer t
+  :vc (:url "https://github.com/bolivier/jj-mode.el" :branch "main" :rev :newest))
