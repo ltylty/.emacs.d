@@ -106,4 +106,6 @@
 
 (use-package dumb-jump :ensure t :defer t
   :init
-  (add-hook 'xref-backend-functions #'dumb-jump-xref-activate))
+  (add-hook 'xref-backend-functions #'dumb-jump-xref-activate)
+  :config
+  (add-to-list 'dumb-jump-project-denoters ".dir-locals.el"))
