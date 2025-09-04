@@ -73,9 +73,9 @@
     ;; git
     "gg" 'magit-status
     "gL" 'magit-log-buffer-file
-    "gd" 'vc-ediff
     "gp" 'magit-blob-previous
     "gn" 'magit-blob-next
+    "gd" 'vc-ediff
     ;; jump
     "jj" 'avy-goto-word-1
     "jw" 'ace-select-window
