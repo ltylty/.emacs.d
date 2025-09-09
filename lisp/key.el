@@ -67,7 +67,6 @@
     ;; code
     "ce" 'consult-flymake
     "cf" 'eglot-format
-    "ci" 'eglot-find-implementation
     "cr" 'eglot-rename
     "ca" 'eglot-code-actions
     ;; git
@@ -78,7 +77,8 @@
     "gd" 'vc-ediff
     ;; jump
     "jj" 'avy-goto-word-1
-    "jw" 'ace-select-window
+    "jl" 'avy-goto-line
+    "ji" 'eglot-find-implementation
     ;; project
     "pp" 'project-switch-project
     "pk" #'(lambda () (interactive) (project-kill-buffers) (tab-close))
