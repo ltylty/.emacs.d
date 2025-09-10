@@ -101,8 +101,7 @@
 
 (use-package aidermacs :ensure t :defer t
   :custom
-  (aidermacs-default-model "openrouter/qwen/qwen3-coder:free")
-  (aidermacs-default-chat-mode 'architect))
+  (aidermacs-default-model "openrouter/qwen/qwen3-coder:free"))
 
 (use-package dumb-jump :ensure t :defer t
   :init
