@@ -40,7 +40,7 @@
   :config
   (add-hook 'magit-pre-refresh-hook 'magit-prime-refresh-cache))
 
-(use-package diff-hl :ensure t :after project
+(use-package diff-hl :ensure t :defer 0.3
   :custom (diff-hl-draw-borders nil)
   :config
   (global-diff-hl-mode)
@@ -67,7 +67,7 @@
   :config
   (setq highlight-thing-exclude-thing-under-point t))
 
-(use-package color-rg :after project
+(use-package color-rg :defer 0.3
   :vc (:url "https://github.com/manateelazycat/color-rg" :branch "main" :rev :newest)
   :custom
   (color-rg-mac-load-path-from-shell nil)
@@ -80,7 +80,7 @@
   :config
   (define-key sql-mode-map (kbd "C-c C-f") 'sqlformat))
 
-(use-package highlight-parentheses :ensure t :after project
+(use-package highlight-parentheses :ensure t :defer t
   :hook (prog-mode . highlight-parentheses-mode)
   :custom
   (highlight-parentheses-colors '("green" "yellow" "purple" "orange" "red")))
@@ -94,14 +94,15 @@
               ("C-<tab>" . 'copilot-accept-completion-by-word)
               ("C-n" . 'copilot-next-completion)
               ("C-p" . 'copilot-previous-completion))
-  :config
+  :config  
   (add-to-list 'copilot-indentation-alist '(prog-mode 2))
   (add-to-list 'copilot-indentation-alist '(emacs-lisp-mode 2))
   (add-to-list 'copilot-indentation-alist '(special-mode 2)))
 
 (use-package aidermacs :ensure t :defer t
   :custom
-  (aidermacs-default-model "openrouter/deepseek/deepseek-chat-v3.1:free")
+  ;; (aidermacs-default-model "openrouter/deepseek/deepseek-chat-v3.1:free")
+  (aidermacs-default-model "gemini")
   (aidermacs-default-chat-mode 'architect))
 
 (use-package dumb-jump :ensure t :defer t
