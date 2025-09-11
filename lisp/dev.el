@@ -101,10 +101,13 @@
 
 (use-package aidermacs :ensure t :defer t
   :custom
-  (aidermacs-default-model "openrouter/qwen/qwen3-coder:free"))
+  (aidermacs-default-model "openrouter/deepseek/deepseek-chat-v3.1:free"))
 
 (use-package dumb-jump :ensure t :defer t
   :init
   (add-hook 'xref-backend-functions #'dumb-jump-xref-activate)
   :config
   (add-to-list 'dumb-jump-project-denoters ".dir-locals.el"))
+
+(use-package ws-butler :ensure t :defer t
+	:hook ((prog-mode text-mode) . ws-butler-mode))
