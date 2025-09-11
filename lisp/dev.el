@@ -101,7 +101,8 @@
 
 (use-package aidermacs :ensure t :defer t
   :custom
-  (aidermacs-default-model "openrouter/deepseek/deepseek-chat-v3.1:free"))
+  (aidermacs-default-model "openrouter/deepseek/deepseek-chat-v3.1:free")
+  (aidermacs-default-chat-mode 'architect))
 
 (use-package dumb-jump :ensure t :defer t
   :init
