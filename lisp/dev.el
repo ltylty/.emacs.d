@@ -87,17 +87,16 @@
 
 (use-package copilot :ensure t :defer t
   :hook (prog-mode . copilot-mode)
+  :custom
+  (copilot-indent-offset-warning-disable t)
+  (copilot-max-char-warning-disable t)
   :bind (:map copilot-completion-map
               ("<tab>" . 'copilot-accept-completion)
               ("TAB" . 'copilot-accept-completion)
               ("C-TAB" . 'copilot-accept-completion-by-word)
               ("C-<tab>" . 'copilot-accept-completion-by-word)
               ("C-n" . 'copilot-next-completion)
-              ("C-p" . 'copilot-previous-completion))
-  :config  
-  (add-to-list 'copilot-indentation-alist '(prog-mode 2))
-  (add-to-list 'copilot-indentation-alist '(emacs-lisp-mode 2))
-  (add-to-list 'copilot-indentation-alist '(special-mode 2)))
+              ("C-p" . 'copilot-previous-completion)))
 
 (use-package aidermacs :ensure t :defer t
   :custom
