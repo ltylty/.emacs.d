@@ -61,7 +61,7 @@
   (setq dired-sidebar-theme 'nerd-icons))
 
 (use-package highlight-thing :ensure t :defer t
-  :hook ((sql-mode emacs-lisp-mode) . highlight-thing-mode)
+  :hook ((sql-mode sh-mode emacs-lisp-mode) . highlight-thing-mode)
   :custom-face
   (highlight-thing ((t (:inherit isearch))))
   :config
