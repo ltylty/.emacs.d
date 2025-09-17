@@ -67,7 +67,7 @@
   :config
   (setq highlight-thing-exclude-thing-under-point t))
 
-(use-package color-rg :defer 0.3
+(use-package color-rg :ensure t :defer 0.3
   :vc (:url "https://github.com/manateelazycat/color-rg" :branch "main" :rev :newest)
   :custom
   (color-rg-mac-load-path-from-shell nil)
