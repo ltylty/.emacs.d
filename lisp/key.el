@@ -93,7 +93,6 @@
     "of" #'(lambda () (interactive) (browse-url buffer-file-name))
     "od" 'dired-jump
     ;; help
-    "ha" 'embark-act
     "hk" 'describe-key
     "hf" 'describe-function
     "hv" 'describe-variable
@@ -106,6 +105,7 @@
 
   (define-key evil-motion-state-map (kbd "RET") nil)
   (define-key evil-normal-state-map [mouse-2] nil)
+  (define-key evil-normal-state-map (kbd "C-a") #'embark-act)
   (evil-define-key 'normal prog-mode-map (kbd "RET") #'embark-dwim)
   (evil-define-key 'normal org-mode-map (kbd "RET") #'embark-dwim)
   (evil-define-key 'normal markdown-mode-map (kbd "RET") #'embark-dwim)
@@ -117,7 +117,6 @@
 
   (global-set-key (kbd "M-,") 'evil-jump-backward)
   (global-set-key (kbd "C-M-,") 'evil-jump-forward)
-  (global-set-key (kbd "C-z") 'undo)
 
   (evil-define-key '(normal motion visual) global-map "gh" #'evil-first-non-blank)
   (evil-define-key '(normal motion visual) global-map "gl" #'evil-last-non-blank)
