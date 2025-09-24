@@ -1,5 +1,8 @@
 ;; -*- lexical-binding: t; -*-
 (use-package emacs :defer 0.1
+  :custom
+  (dired-dwim-target t)
+  (completion-ignore-case t)
   :config
   (winner-mode)
   (save-place-mode)
@@ -13,10 +16,6 @@
   :custom
   (org-modules '(org-tempo))
   (org-log-done 'time))
-
-(use-package dired :defer t
-  :custom
-  (dired-dwim-target t))
 
 (use-package recentf :defer t
   :custom
