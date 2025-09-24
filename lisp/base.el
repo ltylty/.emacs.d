@@ -83,5 +83,6 @@
 (use-package doom-modeline :ensure t :defer t
   :hook (after-init . doom-modeline-mode))
 
-(use-package golden-ratio :ensure t :defer t
-  :hook (after-init . golden-ratio-mode))
+(use-package zoom :ensure t :defer t
+  :custom
+  (zoom-size '(0.618 . 0.618)))

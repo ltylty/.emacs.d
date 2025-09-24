@@ -41,7 +41,7 @@
     "bx" #'(lambda () (interactive) (switch-to-buffer "*scratch*"))
     ;; window
     "wd" 'evil-window-delete
-    "ww" 'evil-window-next
+    "ww" #'(lambda () (interactive) (other-window 1) (zoom))
     "wm" 'delete-other-windows
     "w-" 'evil-window-split
     "w|" 'evil-window-vsplit
@@ -51,6 +51,7 @@
     "wl" 'evil-window-right
     "wu" 'winner-undo
     "wr" 'winner-redo
+    "wz" 'zoom
     ;; file
     "ff" 'find-file
     "fd" #'(lambda () (interactive) (consult-fd default-directory))
