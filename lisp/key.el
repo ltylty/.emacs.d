@@ -41,17 +41,16 @@
     "bx" #'(lambda () (interactive) (switch-to-buffer "*scratch*"))
     ;; window
     "wd" 'evil-window-delete
-    "ww" #'(lambda () (interactive) (other-window 1) (zoom))
+    "ww" 'evil-window-next
     "wm" 'delete-other-windows
-    "w-" 'evil-window-split
-    "w|" 'evil-window-vsplit
     "wh" 'evil-window-left
     "wj" 'evil-window-down
     "wk" 'evil-window-up
     "wl" 'evil-window-right
     "wu" 'winner-undo
     "wr" 'winner-redo
-    "wz" 'zoom
+    "w>" #'(lambda () (interactive) (evil-window-increase-width 40))
+    "w<" #'(lambda () (interactive) (evil-window-decrease-width 40))
     ;; file
     "ff" 'find-file
     "fd" #'(lambda () (interactive) (consult-fd default-directory))
