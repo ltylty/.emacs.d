@@ -25,7 +25,7 @@
   ((python-mode) . eglot-ensure))
 
 (use-package eglot-java :ensure t :defer t
-  :hook (java-mode . eglot-java-mode))
+  :hook (java-mode . eglot-java-mode) (java-ts-mode . eglot-java-mode))
 
 (use-package eglot-java-lombok :ensure t :after eglot-java 
   :vc (:url "https://github.com/ltylty/eglot-java-lombok" :branch "main" :rev :newest)
