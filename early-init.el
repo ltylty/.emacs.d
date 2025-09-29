@@ -7,5 +7,4 @@
 (setq inhibit-startup-message t)
 (setq initial-major-mode 'fundamental-mode)
 (setq-default frame-title-format '("  %f" (:eval (if (buffer-modified-p) "  ✍️")))) 
-(setopt use-short-answers t)
 (setq default-frame-alist '((fullscreen . maximized)))

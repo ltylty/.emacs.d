@@ -1,6 +1,7 @@
 ;; -*- lexical-binding: t; -*-
 (use-package emacs :defer 0.1
   :custom
+  (use-short-answers t)
   (dired-dwim-target t)
   (completion-ignore-case t)
   :config

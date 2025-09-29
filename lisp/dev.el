@@ -22,7 +22,7 @@
   :custom-face
   (eglot-highlight-symbol-face ((t (:inherit nil :weight bold :foreground "yellow3"))))
   :hook
-  ((python-mode) . eglot-ensure))
+  ((python-mode python-ts-mode) . eglot-ensure))
 
 (use-package eglot-java :ensure t :defer t
   :hook (java-mode . eglot-java-mode) (java-ts-mode . eglot-java-mode))
