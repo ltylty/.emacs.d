@@ -34,7 +34,9 @@
 (use-package vertico :ensure t :defer t
   :custom
   (vertico-cycle t)
-  :hook (after-init . vertico-mode))
+  :hook (after-init . vertico-mode)
+  :config
+  (add-hook 'minibuffer-setup-hook #'vertico-repeat-save))
 
 (use-package marginalia :ensure t :defer t
   :hook (after-init . marginalia-mode))

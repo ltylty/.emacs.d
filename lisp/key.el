@@ -30,7 +30,8 @@
     "m" 'transient-major-mode-map
     "0" 'dired-sidebar-toggle-sidebar
     "u" 'universal-argument
-    "a" 'aidermacs-transient-menu 
+    "a" 'aidermacs-transient-menu
+    "'"	'vertico-repeat
     "x" ctl-x-map
     ;; buffer
     "bb" 'consult-buffer
