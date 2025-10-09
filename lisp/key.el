@@ -64,7 +64,7 @@
     "si" 'consult-imenu
     "so" 'consult-outline
     "sm" 'consult-mark
-    "st" 'fanyi-dwim
+    "st" 'gt-translate
     ;; code
     "ce" 'consult-flymake
     "cf" 'eglot-format

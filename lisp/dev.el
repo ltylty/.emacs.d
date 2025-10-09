@@ -74,7 +74,14 @@
   (color-rg-search-ignore-rules nil)
   (color-rg-search-no-ignore-file nil))
 
-(use-package fanyi :ensure t :defer t)
+(use-package gt :ensure t :defer t
+  :config
+  (setq gt-default-translator
+	(gt-translator
+	 :taker   (gt-taker :text 'buffer :pick 'paragraph)       ; 配置拾取器
+	 :engines (list (gt-bing-engine) (gt-youdao-dict-engine)) ; 指定多引擎
+	 :render  (gt-buffer-render)))                            ; 配置渲染器
+  (setq gt-langs '(en zh)))
 
 (use-package sqlformat :ensure t :after sql
   :config
