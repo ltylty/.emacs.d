@@ -78,9 +78,9 @@
   :config
   (setq gt-default-translator
 	(gt-translator
-	 :taker   (gt-taker :text 'buffer :pick 'paragraph)       ; 配置拾取器
-	 :engines (list (gt-bing-engine) (gt-youdao-dict-engine)) ; 指定多引擎
-	 :render  (gt-buffer-render)))                            ; 配置渲染器
+	 :taker   (gt-taker :text 'word :prompt t)
+	 :engines (list (gt-bing-engine) (gt-youdao-dict-engine))
+	 :render  (gt-buffer-render)))
   (setq gt-langs '(en zh)))
 
 (use-package sqlformat :ensure t :after sql
