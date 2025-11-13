@@ -2,7 +2,6 @@
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
-(load-theme 'modus-vivendi-tinted t)
 (prefer-coding-system 'utf-8)
 (setq inhibit-startup-message t)
 (setq initial-major-mode 'fundamental-mode)
