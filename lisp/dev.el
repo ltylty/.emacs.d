@@ -107,7 +107,6 @@
 
 (use-package aidermacs :ensure t :defer t
   :custom
-  (aidermacs-program "aider")
   ;; (aidermacs-default-model "openrouter/deepseek/deepseek-chat-v3.1:free")
   (aidermacs-default-model "gemini")
   (aidermacs-default-chat-mode 'architect))
