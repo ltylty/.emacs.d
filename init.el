@@ -4,11 +4,6 @@
                          ("melpa" . "https://mirrors.ustc.edu.cn/elpa/melpa/")
                          ("nongnu" . "https://mirrors.ustc.edu.cn/elpa/nongnu/")))
 
-;; (use-package persistent-cached-load-filter :ensure t
-;;   :vc (:url "https://github.com/include-yy/persistent-cached-load-filter" :branch "main" :rev :newest)
-;;   :config
-;;   (persistent-cached-load-filter-easy-setup))
-
 (load-theme 'modus-vivendi-tinted t)
 (when (member "Maple Mono NF CN" (font-family-list))
   (set-face-attribute 'default nil :font "Maple Mono NF CN" :height 110))
