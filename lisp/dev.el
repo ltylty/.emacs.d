@@ -92,25 +92,6 @@
   :custom
   (highlight-parentheses-colors '("green" "yellow" "purple" "orange" "red")))
 
-(use-package copilot :ensure t :defer t
-  :hook (prog-mode . copilot-mode)
-  :custom
-  (copilot-indent-offset-warning-disable t)
-  (copilot-max-char-warning-disable t)
-  :bind (:map copilot-completion-map
-              ("<tab>" . 'copilot-accept-completion)
-              ("TAB" . 'copilot-accept-completion)
-              ("C-TAB" . 'copilot-accept-completion-by-word)
-              ("C-<tab>" . 'copilot-accept-completion-by-word)
-              ("C-n" . 'copilot-next-completion)
-              ("C-p" . 'copilot-previous-completion)))
-
-(use-package aidermacs :ensure t :defer t
-  :custom
-  ;; (aidermacs-default-model "openrouter/deepseek/deepseek-chat-v3.1:free")
-  (aidermacs-default-model "gemini")
-  (aidermacs-default-chat-mode 'architect))
-
 (use-package dumb-jump :ensure t :defer t
   :init
   (add-hook 'xref-backend-functions #'dumb-jump-xref-activate)
@@ -119,3 +100,22 @@
 
 (use-package ws-butler :ensure t :defer t
 	:hook ((prog-mode text-mode) . ws-butler-mode))
+
+;; (use-package copilot :ensure t :defer t
+;;   :hook (prog-mode . copilot-mode)
+;;   :custom
+;;   (copilot-indent-offset-warning-disable t)
+;;   (copilot-max-char-warning-disable t)
+;;   :bind (:map copilot-completion-map
+;;               ("<tab>" . 'copilot-accept-completion)
+;;               ("TAB" . 'copilot-accept-completion)
+;;               ("C-TAB" . 'copilot-accept-completion-by-word)
+;;               ("C-<tab>" . 'copilot-accept-completion-by-word)
+;;               ("C-n" . 'copilot-next-completion)
+;;               ("C-p" . 'copilot-previous-completion)))
+
+;; (use-package aidermacs :ensure t :defer t
+;;   :custom
+;;   ;; (aidermacs-default-model "openrouter/deepseek/deepseek-chat-v3.1:free")
+;;   (aidermacs-default-model "gemini")
+;;   (aidermacs-default-chat-mode 'architect))
