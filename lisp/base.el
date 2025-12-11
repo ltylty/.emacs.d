@@ -16,7 +16,11 @@
 (use-package org :defer 0.2
   :custom
   (org-modules '(org-tempo))
-  (org-log-done 'time))
+  (org-log-done 'time)
+  (org-priority-faces
+   '((?A . (:foreground "#FF6B6B" :weight bold))
+     (?B . (:foreground "#4ECDC4"))
+     (?C . (:foreground "#95A5A6")))))
 
 (use-package recentf :defer t
   :custom
