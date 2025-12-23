@@ -30,7 +30,7 @@
     "m" 'transient-major-mode-map
     "0" 'dired-sidebar-toggle-sidebar
     "u" 'universal-argument
-    "a" 'aidermacs-transient-menu
+    "a" 'agent-shell
     "'"	'vertico-repeat
     "x" ctl-x-map
     ;; buffer
