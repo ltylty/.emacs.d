@@ -100,3 +100,6 @@
 
 (use-package ws-butler :ensure t :defer t
 	:hook ((prog-mode text-mode) . ws-butler-mode))
+
+(use-package vterm :ensure t :defer t
+  :vc (:url "https://github.com/xhcoding/emacs-libvterm" :branch "main" :rev :newest))
