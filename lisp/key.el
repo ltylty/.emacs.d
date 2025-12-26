@@ -32,6 +32,10 @@
     "u" 'universal-argument
     "'"	'vertico-repeat
     "x" ctl-x-map
+    ;; ai
+    "ao" 'xx/vterm-opencode
+    "aq" 'xx/vterm-qwen
+    "ac" 'xx/vterm-codebuddy
     ;; buffer
     "bb" 'consult-buffer
     "bi" 'ibuffer
