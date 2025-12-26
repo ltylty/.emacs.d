@@ -103,5 +103,3 @@
 
 (use-package vterm :ensure t :defer t
   :vc (:url "https://github.com/xhcoding/emacs-libvterm" :branch "main" :rev :newest))
-
-(use-package agent-shell :ensure t :defer t)
