@@ -36,9 +36,9 @@
   :config
   (setq magit-ediff-dwim-show-on-hunks t))
 
-(use-package magit-prime :ensure t :after magit
-  :config
-  (add-hook 'magit-pre-refresh-hook 'magit-prime-refresh-cache))
+;; (use-package magit-prime :ensure t :after magit
+;;   :config
+;;   (add-hook 'magit-pre-refresh-hook 'magit-prime-refresh-cache))
 
 (use-package diff-hl :ensure t :defer 0.3
   :custom (diff-hl-draw-borders nil)
