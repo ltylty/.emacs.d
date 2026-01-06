@@ -12,6 +12,7 @@
   (setq evil-toggle-key "C-M-z")
   :config
   (setq evil-emacs-state-modes '(ediff-mode))
+  (add-to-list 'evil-insert-state-modes 'vterm-mode)
   (add-hook 'with-editor-mode-hook 'evil-insert-state)
   (evil-select-search-module 'evil-search-module 'evil-search)
 
@@ -93,6 +94,7 @@
     "tt" 'tab-recent
     ;; open
     "oe" 'eshell
+    "ot" 'vterm
     "oo" #'(lambda () (interactive) (browse-url default-directory))
     "of" #'(lambda () (interactive) (browse-url buffer-file-name))
     "od" 'dired-jump
