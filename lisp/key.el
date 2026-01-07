@@ -94,7 +94,7 @@
     "tt" 'tab-recent
     ;; open
     "oe" 'eshell
-    "ot" 'vterm
+    "ot" 'xx/vterm-fish
     "oo" #'(lambda () (interactive) (browse-url default-directory))
     "of" #'(lambda () (interactive) (browse-url buffer-file-name))
     "od" 'dired-jump
