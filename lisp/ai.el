@@ -25,4 +25,4 @@ PREFIX is used for buffer name prefix, defaults to CMD."
 (defun xx/vterm-opencode () (interactive) (xx/vterm-with-command "opencode"))
 (defun xx/vterm-qwen () (interactive) (xx/vterm-with-command "qwen"))
 (defun xx/vterm-codebuddy () (interactive) (xx/vterm-with-command "codebuddy"))
-(defun xx/vterm-fish () (interactive) (xx/vterm-with-command "codebuddy"))
+(defun xx/vterm-fish () (interactive) (xx/vterm-with-command "fish"))
