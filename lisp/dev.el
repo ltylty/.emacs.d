@@ -22,7 +22,8 @@
   :custom-face
   (eglot-highlight-symbol-face ((t (:inherit nil :weight bold :foreground "yellow3"))))
   :hook
-  ((python-mode python-ts-mode) . eglot-ensure))
+  ((python-mode . eglot-ensure)
+   (python-ts-mode . eglot-ensure)))
 
 (use-package magit :ensure t :defer t
   :config
