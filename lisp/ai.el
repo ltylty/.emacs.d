@@ -5,8 +5,6 @@
   (define-key vterm-mode-map (kbd "<prior>") #'vterm--self-insert)
   (define-key vterm-mode-map (kbd "<next>") #'vterm--self-insert)
   (define-key vterm-mode-map (kbd "S-<insert>") #'vterm-yank)
-  (define-key vterm-mode-map (kbd "<home>") #'vterm--self-insert)
-  (define-key vterm-mode-map (kbd "<end>") #'vterm--self-insert)
   (define-key vterm-mode-map (kbd "C-u") #'vterm--self-insert))
 
 ;; Open vterm with command for current project
