@@ -16,6 +16,10 @@
   (add-hook 'with-editor-mode-hook 'evil-insert-state)
   (evil-select-search-module 'evil-search-module 'evil-search)
 
+  (setq evil-insert-state-cursor '(bar "#00FF00")
+	evil-visual-state-cursor '(box "#FF00FF")
+	evil-normal-state-cursor '(box "#E2E8EF"))
+
   (define-prefix-command 'space-leader-map)
   (keymap-set evil-motion-state-map "SPC" 'space-leader-map)
   (keymap-set evil-normal-state-map "SPC" 'space-leader-map)
@@ -94,7 +98,7 @@
     "tt" 'tab-recent
     ;; open
     "oe" 'eshell
-    "ot" 'xx/vterm-fish
+    "ot" 'vterm
     "oo" #'(lambda () (interactive) (browse-url default-directory))
     "of" #'(lambda () (interactive) (browse-url buffer-file-name))
     "od" 'dired-jump

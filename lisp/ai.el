@@ -1,11 +1,15 @@
 ;; -*- lexical-binding: t; -*-
 (use-package vterm :ensure t :defer t
   :vc (:url "https://github.com/xhcoding/emacs-libvterm" :branch "main" :rev :newest)
+  :init
+  (setq vterm-shell "fish")
   :config
   (define-key vterm-mode-map (kbd "<prior>") #'vterm--self-insert)
   (define-key vterm-mode-map (kbd "<next>") #'vterm--self-insert)
   (define-key vterm-mode-map (kbd "S-<insert>") #'vterm-yank)
-  (define-key vterm-mode-map (kbd "C-u") #'vterm--self-insert))
+  (define-key vterm-mode-map (kbd "C-u") #'vterm--self-insert)
+  (define-key vterm-mode-map (kbd "<home>") #'vterm--self-insert)
+  (define-key vterm-mode-map (kbd "<end>") #'vterm--self-insert))
 
 ;; Open vterm with command for current project
 (defun xx/vterm-with-command (cmd &optional prefix)
