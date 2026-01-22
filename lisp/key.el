@@ -38,9 +38,9 @@
     "'"	'vertico-repeat
     "x" ctl-x-map
     ;; ai
-    "ao" 'xx/vterm-opencode
-    "aq" 'xx/vterm-qwen
-    "ac" 'xx/vterm-codebuddy
+    "ao" 'agent-shell-opencode-start-agent
+    "aq" 'agent-shell-qwen-start
+    "ag" 'agent-shell-google-start-gemini
     ;; buffer
     "bb" 'consult-buffer
     "bi" 'ibuffer
