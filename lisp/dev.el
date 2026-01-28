@@ -91,7 +91,6 @@
 	:hook ((prog-mode text-mode) . ws-butler-mode))
 
 (use-package agent-shell :ensure t :defer t)
-
 ;; Configure agent-shell-qwen to not require login every time
 (with-eval-after-load 'agent-shell-qwen
   (setq agent-shell-qwen-authentication
