@@ -25,6 +25,12 @@
   ((python-mode . eglot-ensure)
    (python-ts-mode . eglot-ensure)))
 
+(use-package dumb-jump :ensure t :defer t
+  :init
+  (add-hook 'xref-backend-functions #'dumb-jump-xref-activate)
+  :config
+  (add-to-list 'dumb-jump-project-denoters ".dir-locals.el"))
+
 (use-package magit :ensure t :defer t
   :config
   (setq magit-ediff-dwim-show-on-hunks t))
@@ -80,12 +86,6 @@
   :hook (prog-mode . highlight-parentheses-mode)
   :custom
   (highlight-parentheses-colors '("green" "yellow" "purple" "orange" "red")))
-
-(use-package dumb-jump :ensure t :defer t
-  :init
-  (add-hook 'xref-backend-functions #'dumb-jump-xref-activate)
-  :config
-  (add-to-list 'dumb-jump-project-denoters ".dir-locals.el"))
 
 (use-package ws-butler :ensure t :defer t
 	:hook ((prog-mode text-mode) . ws-butler-mode))
