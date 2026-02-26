@@ -4,6 +4,10 @@
   (use-short-answers t)
   (dired-dwim-target t)
   (completion-ignore-case t)
+  ;; Tab behavior optimization
+  (tab-width 4)                    ; Set tab width to 4 spaces
+  (indent-tabs-mode nil)           ; Use spaces instead of tabs
+  (tab-always-indent 'complete)    ; TAB 先缩进，若已缩进则尝试补全
   :config
   (winner-mode)
   (save-place-mode)
@@ -18,8 +22,8 @@
   (org-modules '(org-tempo))
   (org-log-done 'time)
   (org-priority-faces '((?A . org-todo)
-			(?B . org-warning)
-			(?C . org-done))))
+			            (?B . org-warning)
+			            (?C . org-done))))
 
 (use-package recentf :defer t
   :custom
@@ -32,7 +36,7 @@
   :init
   ;; Use Consult to select xref locations with preview
   (setq xref-show-xrefs-function #'consult-xref
-	xref-show-definitions-function #'consult-xref))
+	    xref-show-definitions-function #'consult-xref))
 
 (use-package vertico :ensure t :defer t
   :custom
@@ -62,12 +66,12 @@
   :hook (after-init . global-company-mode)
   :config
   (setq company-backends '((company-capf company-dabbrev-code))
-	company-global-modes '(not shell-mode eshell-mode org-mode)
-	company-minimum-prefix-length 1
-	company-dabbrev-code-ignore-case t
-	company-dabbrev-code-modes t
-	company-dabbrev-code-everywhere t
-	company-dabbrev-code-completion-styles '(substring flex)))
+	    company-global-modes '(not shell-mode eshell-mode org-mode)
+	    company-minimum-prefix-length 1
+	    company-dabbrev-code-ignore-case t
+	    company-dabbrev-code-modes t
+	    company-dabbrev-code-everywhere t
+	    company-dabbrev-code-completion-styles '(substring flex)))
 
 (use-package company-box :ensure t :defer t
   :hook (company-mode . company-box-mode))
