@@ -62,6 +62,7 @@
     "ss" 'consult-line
     "sd" 'color-rg-search-input
     "sp" 'color-rg-search-input-in-project
+    "sf" 'color-rg-search-input-in-current-file
     "si" 'consult-imenu
     "so" 'consult-outline
     "sm" 'consult-mark

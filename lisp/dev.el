@@ -63,7 +63,7 @@
   (setq highlight-thing-exclude-thing-under-point t))
 
 (use-package color-rg :ensure t :defer 0.3
-  :vc (:url "https://github.com/manateelazycat/color-rg" :branch "main" :rev :newest)
+  :vc (:url "https://github.com/ltylty/color-rg" :branch "match_whole_word" :rev :newest)
   :custom
   (color-rg-mac-load-path-from-shell nil)
   (color-rg-search-ignore-rules nil)
