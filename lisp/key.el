@@ -81,6 +81,7 @@
     ;;vc
     "ve" 'vc-ediff
     "vp" 'project-vc-dir
+    "vL" 'vc-print-root-log
     ;; jump
     "jj" 'avy-goto-word-1
     "jl" 'avy-goto-line
