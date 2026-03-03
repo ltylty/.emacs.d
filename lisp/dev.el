@@ -25,6 +25,11 @@
   ((python-mode . eglot-ensure)
    (python-ts-mode . eglot-ensure)))
 
+(use-package vc :defer t
+  :config
+  (with-eval-after-load 'vc-dir
+    (define-key vc-dir-mode-map "e" 'vc-ediff)))
+
 (use-package dumb-jump :ensure t :defer t
   :init
   (add-hook 'xref-backend-functions #'dumb-jump-xref-activate)

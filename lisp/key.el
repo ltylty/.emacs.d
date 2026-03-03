@@ -11,8 +11,9 @@
   (setq evil-symbol-word-search t)
   (setq evil-toggle-key "C-M-z")
   :config
-  (setq evil-emacs-state-modes '(ediff-mode))
+  (setq evil-emacs-state-modes '(ediff-mode vc-dir-mode))
   (add-hook 'with-editor-mode-hook 'evil-insert-state)
+  (evil-set-initial-state 'vc-git-log-edit-mode 'insert)
   (evil-select-search-module 'evil-search-module 'evil-search)
 
   (define-prefix-command 'space-leader-map)
@@ -77,7 +78,9 @@
     "gL" 'magit-log-buffer-file
     "gp" 'magit-blob-previous
     "gn" 'magit-blob-next
-    "gd" 'vc-ediff
+    ;;vc
+    "ve" 'vc-ediff
+    "vp" 'project-vc-dir
     ;; jump
     "jj" 'avy-goto-word-1
     "jl" 'avy-goto-line
