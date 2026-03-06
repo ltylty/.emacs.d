@@ -80,8 +80,8 @@
     "gn" 'magit-blob-next
     ;;vc
     "ve" 'vc-ediff
-    "vp" 'project-vc-dir
     "vL" 'vc-print-root-log
+    "vl" 'vc-print-log
     ;; jump
     "jj" 'avy-goto-word-1
     "jl" 'avy-goto-line
@@ -90,6 +90,8 @@
     "pp" 'project-switch-project
     "pk" #'(lambda () (interactive) (project-kill-buffers) (tab-close))
     "pf" 'project-find-file
+    "pv" 'project-vc-dir
+    "pe" 'project-eshell
     "pb" 'project-switch-to-buffer
     "ps" 'consult-ripgrep
     ;; tab
