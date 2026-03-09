@@ -80,8 +80,6 @@
     "gn" 'magit-blob-next
     ;;vc
     "ve" 'vc-ediff
-    "vL" 'vc-print-root-log
-    "vl" 'vc-print-log
     ;; jump
     "jj" 'avy-goto-word-1
     "jl" 'avy-goto-line
