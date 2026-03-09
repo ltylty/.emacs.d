@@ -95,7 +95,7 @@
     ;; tab
     "tt" 'tab-recent
     ;; open
-    "oe" 'eshell
+    "oe" 'eshell-toggle
     "oo" #'(lambda () (interactive) (browse-url default-directory))
     "of" #'(lambda () (interactive) (browse-url buffer-file-name))
     "od" 'dired-jump
