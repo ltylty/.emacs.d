@@ -29,6 +29,7 @@
   :config
   (with-eval-after-load 'vc-dir
     (define-key vc-dir-mode-map "e" 'vc-ediff)
+    (define-key vc-dir-mode-map "k" 'vc-revert)
     (define-key vc-dir-mode-map "F" 'vc-pull)))
 
 (use-package dumb-jump :ensure t :defer t
