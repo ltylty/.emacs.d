@@ -7,7 +7,7 @@
   (ediff-quit . winner-undo)
   :config
   (setq ediff-window-setup-function 'ediff-setup-windows-plain
-	ediff-split-window-function 'split-window-horizontally))
+	    ediff-split-window-function 'split-window-horizontally))
 
 (use-package project :defer t
   :custom
