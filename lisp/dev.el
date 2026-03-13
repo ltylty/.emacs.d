@@ -46,21 +46,12 @@
   :custom (diff-hl-draw-borders nil)
   :config
   (global-diff-hl-mode)
-  (add-hook 'dired-mode-hook 'diff-hl-dired-mode)
   (with-eval-after-load 'magit
     (add-hook 'magit-post-refresh-hook #'diff-hl-magit-post-refresh)))
 
 (use-package markdown-mode :ensure t :defer t)
 
 (use-package json-mode :ensure t :defer t)
-
-(use-package nerd-icons-dired :ensure t :defer t
-  :hook (dired-mode . nerd-icons-dired-mode))
-
-(use-package dired-sidebar :ensure t :defer t
-  :config
-  (setq dired-sidebar-window-fixed nil)
-  (setq dired-sidebar-theme 'nerd-icons))
 
 (use-package highlight-thing :ensure t :defer t
   :hook ((sql-mode sh-mode emacs-lisp-mode java-mode java-ts-mode) . highlight-thing-mode)
@@ -104,3 +95,15 @@
 (with-eval-after-load 'agent-shell-qwen
   (setq agent-shell-qwen-authentication
         (agent-shell-qwen-make-authentication :none t)))
+
+(use-package dirvish :ensure t :defer t
+  :hook (after-init . dirvish-override-dired-mode)
+  :config
+  (dirvish-side-follow-mode)      ; similar to `treemacs-follow-mode'
+  (setq dirvish-path-separators '(" ~ " " / " " > "))
+  (setq dirvish-mode-line-format
+        '(:left (sort symlink) :right (omit yank index)))
+  (setq dirvish-attributes           ; The order *MATTERS* for some attributes
+        '(vc-state subtree-state nerd-icons collapse file-time file-size)
+        dirvish-side-attributes
+        '(vc-state nerd-icons collapse file-size)))

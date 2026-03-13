@@ -11,7 +11,7 @@
   (setq evil-symbol-word-search t)
   (setq evil-toggle-key "C-M-z")
   :config
-  (setq evil-emacs-state-modes '(ediff-mode vc-dir-mode))
+  (setq evil-emacs-state-modes '(ediff-mode))
   (add-hook 'with-editor-mode-hook 'evil-insert-state)
   (evil-set-initial-state 'vc-git-log-edit-mode 'insert)
   (evil-select-search-module 'evil-search-module 'evil-search)
@@ -29,7 +29,7 @@
     (kbd "SPC") 'execute-extended-command
     (kbd "RET") 'consult-bookmark
     "m" 'transient-major-mode-map
-    "0" 'dired-sidebar-toggle-sidebar
+    "0" 'dirvish-side
     "u" 'universal-argument
     "'"	'vertico-repeat
     "x" ctl-x-map
