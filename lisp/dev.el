@@ -98,12 +98,13 @@
 
 (use-package dirvish :ensure t :defer t
   :hook (after-init . dirvish-override-dired-mode)
+  :bind ; Bind `dirvish-fd|dirvish-side|dirvish-dwim' as you see fit
+  (:map dirvish-mode-map               ; Dirvish inherits `dired-mode-map'
+   ("TAB" . dirvish-subtree-toggle))
   :config
-  (dirvish-side-follow-mode)      ; similar to `treemacs-follow-mode'
+  (dirvish-side-follow-mode)
   (setq dirvish-path-separators '(" ~ " " / " " > "))
-  (setq dirvish-mode-line-format
-        '(:left (sort symlink) :right (omit yank index)))
-  (setq dirvish-attributes           ; The order *MATTERS* for some attributes
+  (setq dirvish-attributes
         '(vc-state subtree-state nerd-icons collapse file-time file-size)
         dirvish-side-attributes
         '(vc-state nerd-icons collapse file-size)))
