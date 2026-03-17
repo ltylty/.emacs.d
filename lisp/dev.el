@@ -27,6 +27,18 @@
 
 (use-package vc :defer t
   :config
+  (defun vc-dir-next-and-diff ()
+    "移动到下一行并显示当前文件的 diff，同时保持光标在列表。"
+    (interactive)
+    (vc-dir-next-line 1)
+    (save-selected-window
+      (vc-diff)))
+  (defun vc-dir-prev-and-diff ()
+    "移动到前一行并显示当前文件的 diff，同时保持光标在列表。"
+    (interactive)
+    (vc-dir-previous-line 1)
+    (save-selected-window
+      (vc-diff)))
   (defun vc-dir-quick-commit-all ()
     "标记所有文件并进入提交界面"
     (interactive)
@@ -37,6 +49,8 @@
     (define-key vc-dir-mode-map "e" 'vc-ediff)
     (define-key vc-dir-mode-map "k" 'vc-revert)
     (define-key vc-dir-mode-map "c" 'vc-dir-quick-commit-all)
+    (define-key vc-dir-mode-map (kbd "<tab>") 'vc-dir-next-and-diff)
+    (define-key vc-dir-mode-map (kbd "<backtab>") 'vc-dir-prev-and-diff)
     (define-key vc-dir-mode-map "F" 'vc-pull)))
 
 (use-package dumb-jump :ensure t :defer t
