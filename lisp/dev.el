@@ -27,7 +27,7 @@
 
 (use-package vc :defer t
   :config
-  (defun my-vc-quick-commit-all ()
+  (defun vc-dir-quick-commit-all ()
     "标记所有文件并进入提交界面"
     (interactive)
     (vc-dir-mark-all-files 1)
@@ -36,7 +36,7 @@
   (with-eval-after-load 'vc-dir
     (define-key vc-dir-mode-map "e" 'vc-ediff)
     (define-key vc-dir-mode-map "k" 'vc-revert)
-    (define-key vc-dir-mode-map "c" 'my-vc-quick-commit-all)
+    (define-key vc-dir-mode-map "c" 'vc-dir-quick-commit-all)
     (define-key vc-dir-mode-map "F" 'vc-pull)))
 
 (use-package dumb-jump :ensure t :defer t
@@ -107,9 +107,9 @@
 
 (use-package dirvish :ensure t :defer t
   :hook (after-init . dirvish-override-dired-mode)
-  :bind ; Bind `dirvish-fd|dirvish-side|dirvish-dwim' as you see fit
-  (:map dirvish-mode-map               ; Dirvish inherits `dired-mode-map'
-   ("TAB" . dirvish-subtree-toggle))
+  :bind
+  (:map dirvish-mode-map
+        ("TAB" . dirvish-subtree-toggle))
   :config
   (dirvish-side-follow-mode)
   (setq dirvish-path-separators '(" ~ " " / " " > "))
