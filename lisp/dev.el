@@ -47,6 +47,7 @@
   ;; todo 按tab 跳转到下一个文件 并显示diff
   (with-eval-after-load 'vc-dir
     (define-key vc-dir-mode-map "e" 'vc-ediff)
+    (define-key vc-dir-mode-map "d" 'vc-diff)
     (define-key vc-dir-mode-map "k" 'vc-revert)
     (define-key vc-dir-mode-map "c" 'vc-dir-quick-commit-all)
     (define-key vc-dir-mode-map (kbd "<tab>") 'vc-dir-next-and-diff)
