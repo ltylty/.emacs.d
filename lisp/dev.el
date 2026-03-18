@@ -60,9 +60,7 @@
   :config
   (add-to-list 'dumb-jump-project-denoters ".dir-locals.el"))
 
-(use-package magit :ensure t :defer t
-  :config
-  (setq magit-ediff-dwim-show-on-hunks t))
+(use-package magit :ensure t :defer t)
 
 (use-package diff-hl :ensure t :defer 0.3
   :custom (diff-hl-draw-borders nil)
@@ -128,6 +126,9 @@
   :config
   (dirvish-side-follow-mode)
   (setq dirvish-path-separators '(" ~ " " / " " > "))
+  (define-key dirvish-mode-map (kbd "<mouse-1>") 'dirvish-subtree-toggle-or-open)
+  (define-key dirvish-mode-map (kbd "<mouse-2>") 'dired-mouse-find-file-other-window)
+  (define-key dirvish-mode-map (kbd "<mouse-3>") 'dired-mouse-find-file)
   (setq dirvish-attributes
         '(vc-state subtree-state nerd-icons collapse file-time file-size)
         dirvish-side-attributes
