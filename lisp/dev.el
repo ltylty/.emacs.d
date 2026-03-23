@@ -125,7 +125,6 @@
         ("TAB" . dirvish-subtree-toggle))
   :config
   (dirvish-side-follow-mode)
-  (setq dirvish-path-separators '(" ~ " " / " " > "))
   (define-key dirvish-mode-map (kbd "<mouse-1>") 'dirvish-subtree-toggle-or-open)
   (define-key dirvish-mode-map (kbd "<mouse-2>") 'dired-mouse-find-file-other-window)
   (define-key dirvish-mode-map (kbd "<mouse-3>") 'dired-mouse-find-file)

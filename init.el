@@ -9,6 +9,8 @@
   (set-face-attribute 'default nil :font "Maple Mono NF CN" :height 110))
 (when (member "Segoe UI Emoji" (font-family-list))
   (set-fontset-font t 'emoji (font-spec :family "Segoe UI Emoji")))
+(when (member "Segoe UI Symbol" (font-family-list))
+  (set-fontset-font t 'symbol (font-spec :family "Segoe UI Symbol")))
 
 (when (eq system-type 'darwin)
   (setq mac-command-modifier 'meta)
