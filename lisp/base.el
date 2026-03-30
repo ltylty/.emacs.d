@@ -66,7 +66,7 @@
   :hook (after-init . global-company-mode)
   :config
   (setq company-backends '((company-capf company-dabbrev-code))
-        company-transformers '(delete-dups company-sort-by-occurrence)
+        company-transformers '(company-sort-by-occurrence)
 	    company-global-modes '(not shell-mode eshell-mode org-mode)
 	    company-minimum-prefix-length 1
 	    company-dabbrev-code-ignore-case t
