@@ -120,6 +120,8 @@
 
 (use-package dirvish :ensure t :defer t
   :hook (after-init . dirvish-override-dired-mode)
+  :custom
+  (dirvish-side-window-parameters '((no-delete-other-windows . nil) (no-other-window . t)))
   :bind
   (:map dirvish-mode-map
         ("TAB" . dirvish-subtree-toggle))
