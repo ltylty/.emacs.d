@@ -54,6 +54,8 @@
     (define-key vc-dir-mode-map (kbd "<backtab>") 'vc-dir-prev-and-diff)
     (define-key vc-dir-mode-map "F" 'vc-pull)))
 
+(use-package consult-vc-modified-files :ensure t :defer t)
+
 (use-package dumb-jump :ensure t :defer t
   :init
   (add-hook 'xref-backend-functions #'dumb-jump-xref-activate)
