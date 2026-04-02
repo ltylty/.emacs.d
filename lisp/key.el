@@ -117,6 +117,7 @@
   (evil-define-key 'normal org-mode-map (kbd "RET") #'embark-dwim)
   (evil-define-key 'normal markdown-mode-map (kbd "RET") #'embark-dwim)
   (evil-define-key 'normal special-mode-map "q" #'quit-window)
+  (evil-define-key 'normal special-mode-map (kbd "<escape>") #'quit-window)
 
   (define-key minibuffer-local-map (kbd "C-w") 'evil-delete-backward-word)
   (define-key minibuffer-local-map (kbd "C-u") 'evil-delete-back-to-indentation)
