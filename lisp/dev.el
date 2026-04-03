@@ -130,13 +130,15 @@
   (dirvish-side-window-parameters '((no-delete-other-windows . nil) (no-other-window . t)))
   :bind
   (:map dirvish-mode-map
+        ("<mouse-1>" . dirvish-subtree-toggle-or-open)
+        ("<mouse-2>" . dired-mouse-find-file-other-window)
+        ("<mouse-3>" . dired-mouse-find-file)
         ("TAB" . dirvish-subtree-toggle))
   :config
   (dirvish-side-follow-mode)
-  (define-key dirvish-mode-map (kbd "<mouse-1>") 'dirvish-subtree-toggle-or-open)
-  (define-key dirvish-mode-map (kbd "<mouse-2>") 'dired-mouse-find-file-other-window)
-  (define-key dirvish-mode-map (kbd "<mouse-3>") 'dired-mouse-find-file)
+  (setq dired-listing-switches
+      "-l --almost-all --human-readable --group-directories-first --no-group")
   (setq dirvish-attributes
-        '(vc-state subtree-state nerd-icons collapse file-time file-size)
-        dirvish-side-attributes
+        '(vc-state subtree-state nerd-icons collapse file-time file-size))
+  (setq dirvish-side-attributes
         '(vc-state nerd-icons collapse file-size)))
