@@ -40,11 +40,15 @@
     (save-selected-window
       (vc-diff)))
   (defun vc-dir-quick-commit-all ()
-    "标记所有文件并进入提交界面"
+    "标记所有已跟踪且修改过的文件并进入提交界面"
     (interactive)
-    (vc-dir-mark-all-files 1)
-    (vc-next-action nil))
-  ;; todo 按tab 跳转到下一个文件 并显示diff
+    (vc-dir-unmark-all-files 1)
+    (dolist (state '(edited added removed needs-merge))
+      (vc-dir-mark-state-files state))
+    (let ((files (vc-dir-marked-files)))
+      (if files
+          (vc-next-action nil)
+        (message "No files to commit"))))
   (with-eval-after-load 'vc-dir
     (define-key vc-dir-mode-map "e" 'vc-ediff)
     (define-key vc-dir-mode-map "d" 'vc-diff)
