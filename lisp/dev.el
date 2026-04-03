@@ -43,7 +43,7 @@
     "标记所有已跟踪且修改过的文件并进入提交界面"
     (interactive)
     (vc-dir-unmark-all-files 1)
-    (dolist (state '(edited added removed needs-merge))
+    (dolist (state '(edited added removed))
       (vc-dir-mark-state-files state))
     (let ((files (vc-dir-marked-files)))
       (if files
