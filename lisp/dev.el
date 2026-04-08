@@ -1,5 +1,5 @@
 ;; -*- lexical-binding: t; -*-
-(add-hook 'prog-mode-hook 'electric-pair-mode) ;括号配对
+(add-hook 'prog-mode-hook 'electric-pair-local-mode) ;括号配对
 (add-hook 'prog-mode-hook 'hs-minor-mode) ;代码折叠
 
 (use-package ediff :defer t
@@ -141,4 +141,4 @@
   (setq dirvish-attributes
         '(vc-state subtree-state nerd-icons collapse file-time file-size))
   (setq dirvish-side-attributes
-        '(vc-state nerd-icons collapse file-size)))
+        '(vc-state subtree-state nerd-icons collapse file-size)))
