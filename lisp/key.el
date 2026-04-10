@@ -113,12 +113,14 @@
 
   (define-key evil-motion-state-map (kbd "RET") nil)
   (define-key evil-normal-state-map [mouse-2] nil)
+  (define-key evil-normal-state-map "q" nil)
   (define-key evil-normal-state-map (kbd "C-a") #'embark-act)
   (evil-define-key 'normal prog-mode-map (kbd "RET") #'embark-dwim)
   (evil-define-key 'normal org-mode-map (kbd "RET") #'embark-dwim)
   (evil-define-key 'normal markdown-mode-map (kbd "RET") #'embark-dwim)
-  (evil-define-key 'normal special-mode-map "q" #'quit-window)
+  ;; (evil-define-key 'normal special-mode-map "q" #'quit-window)
   (evil-define-key 'normal special-mode-map (kbd "<escape>") #'quit-window)
+  (evil-define-key 'normal dirvish-mode-map (kbd "<escape>") #'dirvish-quit)
 
   (define-key minibuffer-local-map (kbd "C-w") 'evil-delete-backward-word)
   (define-key minibuffer-local-map (kbd "C-u") 'evil-delete-back-to-indentation)

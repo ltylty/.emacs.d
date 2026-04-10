@@ -128,6 +128,7 @@
   :hook (after-init . dirvish-override-dired-mode)
   :custom
   (dirvish-side-window-parameters '((no-delete-other-windows . nil) (no-other-window . t)))
+  (dirvish-reuse-session t)
   :bind
   (:map dirvish-mode-map
         ("<mouse-1>" . dirvish-subtree-toggle-or-open)
@@ -137,8 +138,8 @@
   :config
   (dirvish-side-follow-mode)
   (setq dired-listing-switches
-      "-l --almost-all --human-readable --group-directories-first --no-group")
+        "-l --almost-all --human-readable --group-directories-first --no-group")
   (setq dirvish-attributes
         '(vc-state subtree-state nerd-icons collapse file-time file-size))
   (setq dirvish-side-attributes
-        '(vc-state subtree-state nerd-icons collapse file-size)))
+        '(vc-state subtree-state nerd-icons collapse)))
