@@ -72,8 +72,7 @@
   :custom (diff-hl-draw-borders nil)
   :config
   (global-diff-hl-mode)
-  (with-eval-after-load 'magit
-    (add-hook 'magit-post-refresh-hook #'diff-hl-magit-post-refresh)))
+  (diff-hl-flydiff-mode))
 
 (use-package markdown-mode :ensure t :defer t)
 
@@ -116,13 +115,13 @@
 
 (use-package eshell-toggle :ensure t :defer t)
 
-(use-package agent-shell :ensure t :defer t)
-;; Configure agent-shell-qwen to not require login every time
-(with-eval-after-load 'agent-shell-qwen
-  (setq agent-shell-qwen-authentication
-        (agent-shell-qwen-make-authentication :none t)))
-
 (use-package nerd-icons :ensure t :defer t)
+
+(use-package dired :defer t
+  :config
+  (setq dired-listing-switches
+        "-l --almost-all --human-readable --group-directories-first --no-group")
+  (setq dired-dwim-target t))
 
 (use-package dirvish :ensure t :defer t
   :hook (after-init . dirvish-override-dired-mode)
@@ -137,9 +136,13 @@
         ("TAB" . dirvish-subtree-toggle))
   :config
   (dirvish-side-follow-mode)
-  (setq dired-listing-switches
-        "-l --almost-all --human-readable --group-directories-first --no-group")
   (setq dirvish-attributes
         '(vc-state subtree-state nerd-icons file-time file-size))
   (setq dirvish-side-attributes
         '(vc-state subtree-state nerd-icons)))
+
+(use-package agent-shell :ensure t :defer t)
+;; Configure agent-shell-qwen to not require login every time
+(with-eval-after-load 'agent-shell-qwen
+  (setq agent-shell-qwen-authentication
+        (agent-shell-qwen-make-authentication :none t)))
