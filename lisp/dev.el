@@ -27,7 +27,6 @@
 
 (use-package vc :defer t
   :config
-  (setq auto-revert-check-vc-info t)
   (defun vc-dir-next-and-diff ()
     "移动到下一行并显示当前文件的 diff，同时保持光标在列表。"
     (interactive)
@@ -69,10 +68,11 @@
 
 (use-package magit :ensure t :defer t)
 
-(use-package diff-hl :ensure t :defer 0.3
+(use-package diff-hl :ensure t :defer t
+  :hook ((after-init . global-diff-hl-mode)
+         (after-init . global-diff-hl-show-hunk-mouse-mode))
   :custom (diff-hl-draw-borders nil)
   :config
-  (global-diff-hl-mode)
   (diff-hl-flydiff-mode))
 
 (use-package markdown-mode :ensure t :defer t)
