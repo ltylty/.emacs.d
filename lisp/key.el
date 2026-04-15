@@ -99,7 +99,7 @@
     "oe" 'eshell-toggle
     "oo" #'(lambda () (interactive) (browse-url default-directory))
     "of" #'(lambda () (interactive) (browse-url buffer-file-name))
-    "od" 'dired-jump
+    "od" 'dirvish
     ;; help
     "hk" 'describe-key
     "hf" 'describe-function

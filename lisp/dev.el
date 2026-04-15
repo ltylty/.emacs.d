@@ -140,6 +140,6 @@
   (setq dired-listing-switches
         "-l --almost-all --human-readable --group-directories-first --no-group")
   (setq dirvish-attributes
-        '(vc-state subtree-state nerd-icons collapse file-time file-size))
+        '(vc-state subtree-state nerd-icons file-time file-size))
   (setq dirvish-side-attributes
-        '(vc-state subtree-state nerd-icons collapse)))
+        '(vc-state subtree-state nerd-icons)))
