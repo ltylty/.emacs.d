@@ -27,13 +27,13 @@
 
 (use-package vc :defer t
   :config
-  (defun vc-dir-current-is-directory-p ()
-    "判断 vc-dir 当前行是否为目录。"
+  (defun vc-dir-current-should-skip-p ()
+ "判断当前行是否需要跳过"
     (when vc-ewoc
       (let* ((node (ewoc-locate vc-ewoc))
              (data (ewoc-data node)))
-        (and data
-             (vc-dir-fileinfo->directory data)))))
+        (when data
+          (not (eq (vc-dir-fileinfo->state data) 'edited))))))
   (defun vc-dir-next-and-diff ()
     "移动到下一个文件并显示 diff，跳过文件夹。如果在最后一个文件则跳转到第一个文件。"
     (interactive)
@@ -42,7 +42,7 @@
       (when (= (point) start-pos)
         (goto-char (point-min))
         (vc-dir-next-line 1)))
-    (when (vc-dir-current-is-directory-p)
+    (when (vc-dir-current-should-skip-p)
       (vc-dir-next-and-diff))
     (save-selected-window
       (vc-diff)))
@@ -50,7 +50,7 @@
     "移动到上一个文件并显示 diff，跳过文件夹。"
     (interactive)
     (vc-dir-previous-line 1)
-    (when (vc-dir-current-is-directory-p)
+    (when (vc-dir-current-should-skip-p)
       (vc-dir-prev-and-diff))
     (save-selected-window
       (vc-diff)))
