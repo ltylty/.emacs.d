@@ -89,7 +89,7 @@
     "pp" 'project-switch-project
     "pk" #'(lambda () (interactive) (project-kill-buffers) (tab-close))
     "pf" 'project-find-file
-    "pv" #'(lambda () (interactive) (project-vc-dir) (consult-vc-modified-files))
+    "pv" 'project-vc-dir
     "pe" 'project-eshell
     "pb" 'project-switch-to-buffer
     "ps" 'consult-ripgrep

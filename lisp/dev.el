@@ -28,9 +28,14 @@
 (use-package vc :defer t
   :config
   (defun vc-dir-next-and-diff ()
-    "移动到下一行并显示当前文件的 diff，同时保持光标在列表。"
+    "移动到下一行并显示当前文件的 diff，同时保持光标在列表。
+如果在最后一个文件则跳转到第一个文件。"
     (interactive)
-    (vc-dir-next-line 1)
+    (let ((start-pos (point)))
+      (vc-dir-next-line 1)
+      (when (= (point) start-pos)
+        (goto-char (point-min))
+        (vc-dir-next-line 1)))
     (save-selected-window
       (vc-diff)))
   (defun vc-dir-prev-and-diff ()
@@ -143,7 +148,3 @@
         '(vc-state subtree-state nerd-icons)))
 
 (use-package agent-shell :ensure t :defer t)
-;; Configure agent-shell-qwen to not require login every time
-(with-eval-after-load 'agent-shell-qwen
-  (setq agent-shell-qwen-authentication
-        (agent-shell-qwen-make-authentication :none t)))
