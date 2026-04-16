@@ -28,8 +28,7 @@
 (use-package vc :defer t
   :config
   (defun vc-dir-next-and-diff ()
-    "移动到下一行并显示当前文件的 diff，同时保持光标在列表。
-如果在最后一个文件则跳转到第一个文件。"
+    "移动到下一行并显示当前文件的 diff，同时保持光标在列表。如果在最后一个文件则跳转到第一个文件。"
     (interactive)
     (let ((start-pos (point)))
       (vc-dir-next-line 1)
