@@ -27,20 +27,31 @@
 
 (use-package vc :defer t
   :config
+  (defun vc-dir-current-is-directory-p ()
+    "判断 vc-dir 当前行是否为目录。"
+    (when vc-ewoc
+      (let* ((node (ewoc-locate vc-ewoc))
+             (data (ewoc-data node)))
+        (and data
+             (vc-dir-fileinfo->directory data)))))
   (defun vc-dir-next-and-diff ()
-    "移动到下一行并显示当前文件的 diff，同时保持光标在列表。如果在最后一个文件则跳转到第一个文件。"
+    "移动到下一个文件并显示 diff，跳过文件夹。如果在最后一个文件则跳转到第一个文件。"
     (interactive)
     (let ((start-pos (point)))
       (vc-dir-next-line 1)
       (when (= (point) start-pos)
         (goto-char (point-min))
         (vc-dir-next-line 1)))
+    (when (vc-dir-current-is-directory-p)
+      (vc-dir-next-and-diff))
     (save-selected-window
       (vc-diff)))
   (defun vc-dir-prev-and-diff ()
-    "移动到前一行并显示当前文件的 diff，同时保持光标在列表。"
+    "移动到上一个文件并显示 diff，跳过文件夹。"
     (interactive)
     (vc-dir-previous-line 1)
+    (when (vc-dir-current-is-directory-p)
+      (vc-dir-prev-and-diff))
     (save-selected-window
       (vc-diff)))
   (defun vc-dir-quick-commit-all ()
