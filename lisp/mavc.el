@@ -2,7 +2,7 @@
 (use-package vc :defer t
   :config
   (defun vc-dir-current-should-skip-p ()
-    "判断当前行是否需要跳过：跳过文件夹 + 跳过未修改(up-to-date)文件"
+    "判断当前行是否需要跳过"
     (when vc-ewoc
       (let* ((node (ewoc-locate vc-ewoc))
              (data (ewoc-data node)))
@@ -11,9 +11,7 @@
               (eq (vc-dir-fileinfo->state data) 'up-to-date))))))
 
   (defun vc-dir-move-and-diff (move-fn wrap-pos)
-    "沿 MOVE-FN 方向移动，跳过文件夹和 up-to-date 文件，回环后显示 diff。
-MOVE-FN 为移动函数 (vc-dir-next-line / vc-dir-previous-line)。
-WRAP-POS 为回环目标位置 (point-min / point-max)。"
+    "移动到下一个文件并显示 diff"
     (let ((start-node (and vc-ewoc (ewoc-locate vc-ewoc)))
           (wrapped nil))
       (catch 'done
@@ -41,12 +39,12 @@ WRAP-POS 为回环目标位置 (point-min / point-max)。"
       (vc-diff)))
 
   (defun vc-dir-next-and-diff ()
-    "移动到下一个文件并显示 diff，跳过文件夹。如果在最后一个文件则跳转到第一个文件。"
+    "向后移动"
     (interactive)
     (vc-dir-move-and-diff #'vc-dir-next-line (point-min)))
 
   (defun vc-dir-prev-and-diff ()
-    "移动到上一个文件并显示 diff，跳过文件夹。如果在第一个文件则跳转到最后一个文件。"
+    "向前移动"
     (interactive)
     (vc-dir-move-and-diff #'vc-dir-previous-line (point-max)))
 
@@ -60,7 +58,7 @@ WRAP-POS 为回环目标位置 (point-min / point-max)。"
       (if files
           (vc-next-action nil)
         (message "No files to commit"))))
-  (add-hook 'vc-dir-mode-hook #'vc-dir-hide-up-to-date)
+
   (with-eval-after-load 'vc-dir
     (define-key vc-dir-mode-map "e" 'vc-ediff)
     (define-key vc-dir-mode-map "d" 'vc-diff)
