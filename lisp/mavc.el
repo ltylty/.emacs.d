@@ -1,4 +1,3 @@
-
 (use-package vc :defer t
   :config
   (defun vc-dir-current-should-skip-p ()
