@@ -2,10 +2,9 @@
 (use-package vc :defer t
   :custom
   (vc-handled-backends '(Git))
-  (vc-auto-revert-mode t)
   (vc-dir-hide-up-to-date-on-revert t)
   :config
-  (add-hook 'vc-dir-mode-hook #'vc-dir-hide-up-to-date)
+  (vc-auto-revert-mode)
 
   (defun vc-dir-current-should-skip-p ()
     "判断当前行是否需要跳过"
