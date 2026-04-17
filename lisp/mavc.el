@@ -4,6 +4,7 @@
   (vc-dir-hide-up-to-date-on-revert t)
   :config
   (vc-auto-revert-mode)
+  (add-hook 'vc-dir-mode-hook #'vc-dir-hide-up-to-date)
 
   (defun vc-dir-current-should-skip-p ()
     "判断当前行是否需要跳过"
