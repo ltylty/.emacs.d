@@ -38,6 +38,7 @@
          (after-init . global-diff-hl-show-hunk-mouse-mode))
   :custom (diff-hl-draw-borders nil)
   :config
+  (add-hook 'after-revert-hook #'diff-hl-update)
   (diff-hl-flydiff-mode))
 
 (use-package markdown-mode :ensure t :defer t)
