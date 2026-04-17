@@ -117,7 +117,7 @@
       (let* ((node (ewoc-locate vc-ewoc))
              (data (ewoc-data node)))
         (when data
-          (not (eq (vc-dir-fileinfo->state data) 'edited))))))
+          (vc-dir-fileinfo->directory data)))))
   (defun vc-dir-next-and-diff ()
     "移动到下一个文件并显示 diff，跳过文件夹。如果在最后一个文件则跳转到第一个文件。"
     (interactive)
