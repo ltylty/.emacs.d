@@ -83,6 +83,7 @@
       (if files
           (vc-next-action nil)
         (message "No files to commit"))))
+  (add-hook 'vc-dir-mode-hook #'vc-dir-hide-up-to-date)
   (with-eval-after-load 'vc-dir
     (define-key vc-dir-mode-map "e" 'vc-ediff)
     (define-key vc-dir-mode-map "d" 'vc-diff)
