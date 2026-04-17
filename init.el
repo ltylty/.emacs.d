@@ -5,11 +5,11 @@
                          ("nongnu" . "https://mirrors.ustc.edu.cn/elpa/nongnu/")))
 
 (load-theme 'modus-vivendi-tinted t)
-(when (member "Maple Mono NF CN" (font-family-list))
+(if (find-font (font-spec :name "Maple Mono NF CN"))
   (set-face-attribute 'default nil :font "Maple Mono NF CN" :height 110))
-(when (member "Segoe UI Emoji" (font-family-list))
+(if (find-font (font-spec :name "Segoe UI Emoji"))
   (set-fontset-font t 'emoji (font-spec :family "Segoe UI Emoji")))
-(when (member "Segoe UI Symbol" (font-family-list))
+(if (find-font (font-spec :name "Segoe UI Symbol"))
   (set-fontset-font t 'symbol (font-spec :family "Segoe UI Symbol")))
 
 (when (eq system-type 'darwin)
