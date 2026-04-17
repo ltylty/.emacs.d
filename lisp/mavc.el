@@ -1,6 +1,7 @@
 ;;; -*- lexical-binding: t; -*-
 (use-package vc :defer t
   :custom
+  (vc-handled-backends '(Git))
   (vc-auto-revert-mode t)
   (vc-dir-hide-up-to-date-on-revert t)
   :config
