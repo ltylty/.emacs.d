@@ -1,9 +1,9 @@
 ;;; -*- lexical-binding: t; -*-
 (use-package vc :defer t
   :custom
+  (vc-auto-revert-mode t)
   (vc-dir-hide-up-to-date-on-revert t)
   :config
-  (vc-auto-revert-mode)
   (add-hook 'vc-dir-mode-hook #'vc-dir-hide-up-to-date)
 
   (defun vc-dir-current-should-skip-p ()
