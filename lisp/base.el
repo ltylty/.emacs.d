@@ -19,6 +19,8 @@
   :custom
   (org-modules '(org-tempo))
   (org-log-done 'time)
+  (org-todo-keywords
+      '((sequence "TODO(t)" "START(s)" "|" "DONE(d)" "KILL(k)")))
   (org-priority-faces '((?A . org-todo)
 			            (?B . org-warning)
 			            (?C . org-done))))
