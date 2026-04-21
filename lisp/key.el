@@ -118,7 +118,7 @@
   (evil-define-key 'normal prog-mode-map (kbd "RET") #'embark-dwim)
   (evil-define-key 'normal org-mode-map (kbd "RET") #'embark-dwim)
   (evil-define-key 'normal markdown-mode-map (kbd "RET") #'embark-dwim)
-  (evil-define-key 'normal special-mode-map (kbd "<escape>") #'quit-window)
+  (evil-define-key '(normal motion) special-mode-map (kbd "<escape>") #'quit-window)
   (evil-define-key 'normal dirvish-mode-map (kbd "<escape>") #'dirvish-quit)
 
   (define-key minibuffer-local-map (kbd "C-w") 'evil-delete-backward-word)
