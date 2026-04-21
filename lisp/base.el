@@ -45,6 +45,10 @@
   :config
   (add-hook 'minibuffer-setup-hook #'vertico-repeat-save))
 
+(use-package orderless :ensure t :after vertico
+  :config
+  (setq completion-styles '(substring orderless flex)))
+
 (use-package marginalia :ensure t :defer t
   :hook (after-init . marginalia-mode))
 
@@ -80,10 +84,6 @@
 (use-package completion-preview :defer t
   :custom (completion-preview-minimum-symbol-length 2)
   :hook ((shell-mode . completion-preview-mode) (eshell-mode . completion-preview-mode)))
-
-(use-package orderless :ensure t :defer 0.1
-  :config
-  (setq completion-styles '(substring orderless flex)))
 
 (use-package undo-fu-session :ensure t :defer t
   :hook (after-init . undo-fu-session-global-mode))
