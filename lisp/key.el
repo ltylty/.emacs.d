@@ -135,6 +135,8 @@
   (evil-define-key 'insert eshell-mode-map (kbd "C-r") #'consult-history)
   (evil-define-key 'insert eshell-mode-map (kbd "C-w") #'evil-delete-backward-word)
   (evil-define-key 'insert eshell-mode-map (kbd "C-u") #'eshell-kill-input)
+  (evil-define-key 'normal eshell-mode-map (kbd "<escape>")
+    (lambda () (interactive) (if eshell-toggle--toggle-buffer-p (eshell-toggle) (bury-buffer))))
 
   (cua-mode)
   (defun entry-insert-state ()
