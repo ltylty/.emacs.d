@@ -21,9 +21,12 @@
   (eldoc-echo-area-use-multiline-p nil) ;; eldoc-documentation-function should only return a single line
   :custom-face
   (eglot-highlight-symbol-face ((t (:inherit nil :weight bold :foreground "yellow3"))))
+  :config
+  (with-eval-after-load 'eglot
+    (add-to-list 'eglot-server-programs
+                 '(python-base-mode . ("ty" "server"))))
   :hook
-  ((python-mode . eglot-ensure)
-   (python-ts-mode . eglot-ensure)))
+  ((python-base-mode . eglot-ensure)))
 
 (use-package dumb-jump :ensure t :defer t
   :init
