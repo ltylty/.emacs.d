@@ -22,9 +22,8 @@
   :custom-face
   (eglot-highlight-symbol-face ((t (:inherit nil :weight bold :foreground "yellow3"))))
   :config
-  (with-eval-after-load 'eglot
-    (add-to-list 'eglot-server-programs
-                 '(python-base-mode . ("ty" "server"))))
+  (add-to-list 'eglot-server-programs
+               '(python-base-mode . ("ty" "server")))
   :hook
   ((python-base-mode . eglot-ensure)))
 
