@@ -96,6 +96,8 @@
   :custom
   (dirvish-side-window-parameters '((no-delete-other-windows . nil) (no-other-window . t)))
   (dirvish-reuse-session t)
+  (dirvish-side-width 55)
+  (dirvish-default-layout nil)
   :bind
   (:map dirvish-mode-map
         ("<mouse-1>" . dirvish-subtree-toggle-or-open)
