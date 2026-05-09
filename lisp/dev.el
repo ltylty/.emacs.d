@@ -91,6 +91,9 @@
         "-l --almost-all --human-readable --group-directories-first --no-group")
   (setq dired-dwim-target t))
 
+(use-package nerd-icons-dired :ensure t :defer t
+  :hook (dired-mode . nerd-icons-dired-mode))
+
 (use-package dired-sidebar :ensure t :defer t
   :config
   (setq dired-sidebar-window-fixed nil)
