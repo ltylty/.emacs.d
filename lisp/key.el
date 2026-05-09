@@ -29,7 +29,7 @@
     (kbd "SPC") 'execute-extended-command
     (kbd "RET") 'consult-bookmark
     "m" 'transient-major-mode-map
-    "0" 'dirvish-side
+    "0" 'dired-sidebar-toggle-sidebar
     "u" 'universal-argument
     "'"	'vertico-repeat
     "x" ctl-x-map
@@ -99,7 +99,7 @@
     "oe" 'eshell-toggle
     "oo" #'(lambda () (interactive) (browse-url default-directory))
     "of" #'(lambda () (interactive) (browse-url buffer-file-name))
-    "od" 'dirvish
+    "od" 'dired-jump
     ;; help
     "hk" 'describe-key
     "hf" 'describe-function
@@ -119,7 +119,6 @@
   (evil-define-key 'normal org-mode-map (kbd "RET") #'embark-dwim)
   (evil-define-key 'normal markdown-mode-map (kbd "RET") #'embark-dwim)
   (evil-define-key '(normal motion) special-mode-map (kbd "<escape>") #'quit-window)
-  (evil-define-key 'normal dirvish-mode-map (kbd "<escape>") #'dirvish-quit)
 
   (define-key minibuffer-local-map (kbd "C-w") 'evil-delete-backward-word)
   (define-key minibuffer-local-map (kbd "C-u") 'evil-delete-back-to-indentation)
@@ -132,6 +131,7 @@
   (evil-define-key '(normal motion visual) global-map "gl" #'evil-last-non-blank)
   (evil-define-key 'normal global-map "gr" #'xref-find-references)
   (evil-define-key 'normal dired-mode-map (kbd "<backspace>") #'dired-up-directory)
+  (evil-define-key 'normal dired-mode-map (kbd "i") #'dired-subtree-cycle)
   (evil-define-key 'insert eshell-mode-map (kbd "C-r") #'consult-history)
   (evil-define-key 'insert eshell-mode-map (kbd "C-w") #'evil-delete-backward-word)
   (evil-define-key 'insert eshell-mode-map (kbd "C-u") #'eshell-kill-input)

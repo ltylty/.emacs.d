@@ -91,24 +91,9 @@
         "-l --almost-all --human-readable --group-directories-first --no-group")
   (setq dired-dwim-target t))
 
-(use-package dirvish :ensure t :defer t
-  :hook (after-init . dirvish-override-dired-mode)
-  :custom
-  (dirvish-side-window-parameters '((no-delete-other-windows . nil) (no-other-window . t)))
-  (dirvish-reuse-session t)
-  (dirvish-side-width 55)
-  (dirvish-default-layout nil)
-  :bind
-  (:map dirvish-mode-map
-        ("<mouse-1>" . dirvish-subtree-toggle-or-open)
-        ("<mouse-2>" . dired-mouse-find-file-other-window)
-        ("<mouse-3>" . dired-mouse-find-file)
-        ("TAB" . dirvish-subtree-toggle))
+(use-package dired-sidebar :ensure t :defer t
   :config
-  (dirvish-side-follow-mode)
-  (setq dirvish-attributes
-        '(vc-state subtree-state nerd-icons file-time file-size))
-  (setq dirvish-side-attributes
-        '(vc-state subtree-state nerd-icons)))
+  (setq dired-sidebar-window-fixed nil)
+  (setq dired-sidebar-theme 'nerd-icons))
 
 (use-package agent-shell :ensure t :defer t)
