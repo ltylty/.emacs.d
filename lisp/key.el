@@ -111,6 +111,7 @@
     "qr" 'restart-emacs
     "qq" '("Quit" . save-buffers-kill-terminal))
 
+  (define-key evil-motion-state-map (kbd "C-o") nil)
   (define-key evil-motion-state-map (kbd "RET") nil)
   (define-key evil-normal-state-map [mouse-2] nil)
   (define-key evil-normal-state-map "q" nil)
