@@ -99,4 +99,8 @@
   (setq dired-sidebar-window-fixed nil)
   (setq dired-sidebar-theme 'nerd-icons))
 
+(use-package dired-preview :ensure t :after dired
+  :config
+  (setq dired-preview-delay 0.1))
+
 (use-package agent-shell :ensure t :defer t)
