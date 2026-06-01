@@ -101,6 +101,6 @@
 
 (use-package dired-preview :ensure t :after dired
   :config
-  (setq dired-preview-delay 0.1))
+  (setq dired-preview-delay 0.15))
 
 (use-package agent-shell :ensure t :defer t)
