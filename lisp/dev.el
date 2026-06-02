@@ -103,4 +103,6 @@
   :config
   (setq dired-preview-delay 0.15))
 
-(use-package agent-shell :ensure t :defer t)
+(use-package agent-shell :ensure t :defer t
+  :custom
+  (agent-shell-header-style "text"))
