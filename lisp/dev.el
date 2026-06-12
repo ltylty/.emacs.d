@@ -71,6 +71,7 @@
 
 (use-package sqlformat :ensure t :after sql
   :config
+  (setq sqlformat-command 'sqlfmt)
   (define-key sql-mode-map (kbd "C-c C-f") 'sqlformat))
 
 (use-package highlight-parentheses :ensure t :defer t
