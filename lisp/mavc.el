@@ -2,8 +2,9 @@
 (use-package vc :defer t
   :custom
   (vc-handled-backends '(Git))
+  (auto-revert-check-vc-info t)
   (vc-auto-revert-mode t)
-  (vc-dir-auto-hide-up-to-date 'revert)
+  (vc-dir-auto-hide-up-to-date t)
   :config
   ;;模拟magit
   (defun vc-dir-current-should-skip-p ()
