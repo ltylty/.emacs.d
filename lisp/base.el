@@ -3,6 +3,8 @@
   :custom
   (use-short-answers t)
   (completion-ignore-case t)
+  (treesit-auto-install-grammar 'always)
+  (treesit-enabled-modes t)
   (tab-width 4)                    ; Set tab width to 4 spaces
   (indent-tabs-mode nil)           ; Use spaces instead of tabs
   (tab-always-indent 'complete)    ; TAB 先缩进，若已缩进则尝试补全
@@ -45,7 +47,7 @@
   :config
   (add-hook 'minibuffer-setup-hook #'vertico-repeat-save))
 
-(use-package orderless :ensure t :after vertico
+(use-package orderless :ensure t :after minibuffer
   :config
   (setq completion-styles '(substring orderless flex)))
 

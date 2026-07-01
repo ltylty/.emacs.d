@@ -2,7 +2,10 @@
 (use-package vc :defer t
   :custom
   (vc-handled-backends '(Git))
+  (vc-auto-revert-mode t)
+  (vc-dir-auto-hide-up-to-date 'revert)
   :config
+  ;;模拟magit
   (defun vc-dir-current-should-skip-p ()
     "判断当前行是否需要跳过"
     (when vc-ewoc
