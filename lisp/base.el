@@ -93,3 +93,9 @@
 
 (use-package doom-modeline :ensure t :defer t
   :hook (after-init . doom-modeline-mode))
+
+(use-package dashboard :ensure t :defer t
+  :custom
+  (dashboard-items nil)
+  :init
+  (dashboard-setup-startup-hook))
