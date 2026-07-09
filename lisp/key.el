@@ -133,6 +133,8 @@
   (evil-define-key 'normal dired-mode-map
     (kbd "<backspace>") #'dired-up-directory
     (kbd "i") #'dired-subtree-cycle
+    (kbd "<down>") #'dired-next-line
+    (kbd "<up>") #'dired-previous-line
     "j" #'dired-next-line
     "k" #'dired-previous-line)
   (evil-define-key 'insert eshell-mode-map (kbd "C-r") #'consult-history)
