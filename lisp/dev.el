@@ -116,3 +116,7 @@
 (use-package agent-shell :ensure t :defer t
   :custom
   (agent-shell-header-style "text"))
+
+(use-package ghostel :ensure t :defer t
+  :custom
+  (ghostel-shell "nu"))

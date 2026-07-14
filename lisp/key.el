@@ -97,6 +97,7 @@
     "tt" 'tab-recent
     ;; open
     "oe" 'eshell-toggle
+    "os" 'ghostel
     "oo" #'(lambda () (interactive) (browse-url default-directory))
     "of" #'(lambda () (interactive) (browse-url buffer-file-name))
     "od" 'dired-jump
@@ -194,3 +195,6 @@
   :config
   (define-key evil-insert-state-map (kbd "<home>") 'mwim-beginning)
   (define-key evil-insert-state-map (kbd "<end>") 'mwim-end))
+
+(use-package evil-ghostel :ensure t :defer t :after (ghostel evil)
+  :hook (ghostel-mode . evil-ghostel-mode))
