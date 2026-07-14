@@ -97,7 +97,7 @@
     "tt" 'tab-recent
     ;; open
     "oe" 'eshell-toggle
-    "os" 'ghostel
+    "os" 'ghostel-project
     "oo" #'(lambda () (interactive) (browse-url default-directory))
     "of" #'(lambda () (interactive) (browse-url buffer-file-name))
     "od" 'dired-jump
