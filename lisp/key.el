@@ -28,7 +28,6 @@
   (evil-define-key nil space-leader-map
     (kbd "SPC") 'execute-extended-command
     (kbd "RET") 'consult-bookmark
-    (kbd "M-SPC") 'cycle-spacing
     "m" 'transient-major-mode-map
     "0" 'dired-sidebar-toggle-sidebar
     "'"	'vertico-repeat
