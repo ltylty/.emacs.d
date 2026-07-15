@@ -22,9 +22,8 @@
 
   (defun transient-major-mode-map ()
     (interactive)
-    (message (format "transient %s-map" major-mode))
-    (set-transient-map (symbol-value (intern-soft (format "%s-map" major-mode)))))
-  
+    (set-transient-map (current-local-map)))
+
   (evil-define-key nil space-leader-map
     (kbd "SPC") 'execute-extended-command
     (kbd "RET") 'consult-bookmark
