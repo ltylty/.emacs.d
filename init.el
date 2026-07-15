@@ -4,7 +4,6 @@
                          ("melpa" . "https://mirrors.ustc.edu.cn/elpa/melpa/")
                          ("nongnu" . "https://mirrors.ustc.edu.cn/elpa/nongnu/")))
 
-(load-theme 'modus-vivendi-tinted t)
 (if (find-font (font-spec :name "Maple Mono NF CN"))
   (set-face-attribute 'default nil :font "Maple Mono NF CN" :height 110))
 (if (find-font (font-spec :name "Segoe UI Emoji"))

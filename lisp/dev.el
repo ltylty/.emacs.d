@@ -27,6 +27,9 @@
   :hook
   ((python-base-mode . eglot-ensure)))
 
+(use-package treesit :defer t
+  :custom(treesit-enabled-modes t))
+
 (use-package dumb-jump :ensure t :defer t
   :init
   (add-hook 'xref-backend-functions #'dumb-jump-xref-activate)

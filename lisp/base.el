@@ -3,7 +3,6 @@
   :custom
   (use-short-answers t)
   (completion-ignore-case t)
-  (treesit-enabled-modes t)
   (tab-width 4)                    ; Set tab width to 4 spaces
   (indent-tabs-mode nil)           ; Use spaces instead of tabs
   (tab-always-indent 'complete)    ; TAB 先缩进，若已缩进则尝试补全
@@ -46,8 +45,9 @@
   :config
   (add-hook 'minibuffer-setup-hook #'vertico-repeat-save))
 
-(use-package orderless :ensure t
-  :custom (completion-styles '(substring orderless flex)))
+(use-package orderless :ensure t :defer t
+  :init
+  (setq completion-styles '(substring orderless flex)))
 
 (use-package marginalia :ensure t :defer t
   :hook (after-init . marginalia-mode))
@@ -89,11 +89,12 @@
   :hook (after-init . undo-fu-session-global-mode))
 
 (use-package nyan-mode :ensure t :defer t
-  :hook (after-init . nyan-mode))
+  :hook (window-setup . nyan-mode))
 
 (use-package doom-modeline :ensure t :defer t
-  :hook (after-init . doom-modeline-mode))
+  :hook (window-setup . doom-modeline-mode))
 
 (use-package dashboard :ensure t :defer t
-  :custom (dashboard-items nil)
+  :custom (dashboard-items '((recents   . 10)
+                             (projects  . 5)))
   :hook (window-setup . dashboard-open))
