@@ -6,7 +6,6 @@
   (setq evil-disable-insert-state-bindings t)
   (setq evil-undo-system 'undo-redo)
   (setq evil-want-keybinding nil)
-  (setq evil-want-C-u-scroll t)
   (setq evil-want-C-i-jump nil)
   (setq evil-symbol-word-search t)
   (setq evil-toggle-key "C-M-z")
@@ -19,6 +18,7 @@
   (define-prefix-command 'space-leader-map)
   (keymap-set evil-motion-state-map "SPC" 'space-leader-map)
   (keymap-set evil-normal-state-map "SPC" 'space-leader-map)
+  (keymap-set global-map "M-SPC" #'space-leader-map)
 
   (defun transient-major-mode-map ()
     (interactive)
@@ -28,9 +28,9 @@
   (evil-define-key nil space-leader-map
     (kbd "SPC") 'execute-extended-command
     (kbd "RET") 'consult-bookmark
+    (kbd "M-SPC") 'cycle-spacing
     "m" 'transient-major-mode-map
     "0" 'dired-sidebar-toggle-sidebar
-    "u" 'universal-argument
     "'"	'vertico-repeat
     "x" ctl-x-map
     ;; ai
