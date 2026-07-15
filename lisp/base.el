@@ -72,7 +72,7 @@
   :config
   (setq company-backends '((company-capf company-dabbrev-code))
         company-transformers '(company-sort-by-occurrence)
-	    company-global-modes '(not shell-mode eshell-mode org-mode)
+	    company-global-modes '(not shell-mode eshell-mode org-mode agent-shell-mode)
 	    company-minimum-prefix-length 1
 	    company-dabbrev-code-ignore-case t
 	    company-dabbrev-code-modes t
