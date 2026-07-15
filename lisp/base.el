@@ -16,7 +16,7 @@
   (global-hl-line-mode)
   (which-key-mode))
 
-(use-package org :defer 0.2
+(use-package org :defer t
   :custom
   (org-modules '(org-tempo))
   (org-log-done 'time)
@@ -46,9 +46,8 @@
   :config
   (add-hook 'minibuffer-setup-hook #'vertico-repeat-save))
 
-(use-package orderless :ensure t :after minibuffer
-  :config
-  (setq completion-styles '(substring orderless flex)))
+(use-package orderless :ensure t
+  :custom (completion-styles '(substring orderless flex)))
 
 (use-package marginalia :ensure t :defer t
   :hook (after-init . marginalia-mode))
