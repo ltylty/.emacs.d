@@ -18,7 +18,7 @@
   (define-prefix-command 'space-leader-map)
   (keymap-set evil-motion-state-map "SPC" 'space-leader-map)
   (keymap-set evil-normal-state-map "SPC" 'space-leader-map)
-  (keymap-set global-map "M-SPC" #'space-leader-map)
+  (global-set-key (kbd "C-c SPC") 'space-leader-map)
 
   (defun transient-major-mode-map ()
     (interactive)
