@@ -96,6 +96,7 @@
 (use-package nerd-icons :ensure t :defer t)
 
 (use-package dired :defer t
+  :hook (dired-mode . dired-hide-details-mode)
   :config
   (setq dired-listing-switches
         "-l --almost-all --human-readable --group-directories-first --no-group")

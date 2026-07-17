@@ -3,7 +3,7 @@
   :custom
   (use-short-answers t)
   (completion-ignore-case t)
-  (treesit-enabled-modes t)
+  ;; (treesit-enabled-modes t)
   (tab-width 4)                    ; Set tab width to 4 spaces
   (indent-tabs-mode nil)           ; Use spaces instead of tabs
   (tab-always-indent 'complete)    ; TAB 先缩进，若已缩进则尝试补全
