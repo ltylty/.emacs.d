@@ -72,16 +72,8 @@
 (use-package sqlformat :ensure t :after sql
   :config
   (setq sqlformat-command 'sqlfmt)
-  (defun sqlfmt-with-dialect (dialect)
-    (interactive)
-    (let ((sqlformat-args (list "--dialect" dialect)))
-      (call-interactively #'sqlformat)))
-  (defvar sqlfmt-map (let ((map (make-sparse-keymap)))
-                       (keymap-set map "f" 'sqlformat)
-                       (keymap-set map "c" (lambda () (interactive) (sqlfmt-with-dialect "clickhouse")))
-                       (keymap-set map "m" (lambda () (interactive) (sqlfmt-with-dialect "mysql")))
-                       map))
-  (keymap-set sql-mode-map "C-c C-f" sqlfmt-map))
+  (setq sqlformat-args '("--dialect" "clickhouse"))
+  (define-key sql-mode-map (kbd "C-c C-f") 'sqlformat))
 
 (use-package highlight-parentheses :ensure t :defer t
   :hook (prog-mode . highlight-parentheses-mode)
