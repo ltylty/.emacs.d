@@ -72,4 +72,7 @@
     (define-key vc-dir-mode-map "c" 'vc-dir-quick-commit-all)
     (define-key vc-dir-mode-map (kbd "<tab>") 'vc-dir-next-and-diff)
     (define-key vc-dir-mode-map (kbd "<backtab>") 'vc-dir-prev-and-diff)
-    (define-key vc-dir-mode-map "F" 'vc-pull)))
+    (define-key vc-dir-mode-map "F" 'vc-pull))
+
+  (with-eval-after-load 'vc-git
+    (define-key vc-git-log-view-mode-map (kbd "RET") 'log-view-diff)))
