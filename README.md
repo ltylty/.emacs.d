@@ -1,6 +1,6 @@
 # My Emacs Configuration
 
-一套面向开发的 Emacs 配置，基于 **Emacs 30**，深度集成 **Evil**（Vim 键绑定）、**Eglot**（LSP）、**Vertico/Orderless**（补全）以及 **Magit**（Git）等现代 Emacs 生态工具。
+一套面向开发的 Emacs 配置，基于 **Emacs 31**，深度集成 **Evil**（Vim 键绑定）、**Eglot**（LSP）、**Vertico/Orderless**（补全）以及 **Magit**（Git）等现代 Emacs 生态工具。
 
 ---
 
