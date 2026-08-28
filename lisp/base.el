@@ -22,6 +22,7 @@
   (org-log-done 'time)
   (org-todo-keywords
    '((sequence "TODO(t)" "START(s)" "WAITING(w)" "|" "DONE(d)" "KILL(k)")))
+  (org-todo-keyword-faces '(("KILL" . "gray")))
   (org-priority-faces '((?A . org-todo)
 			            (?B . org-warning)
 			            (?C . org-done))))
