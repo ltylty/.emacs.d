@@ -1,5 +1,10 @@
 ;; -*- lexical-binding: t; -*-
-(setq gc-cons-threshold (* 100 1024 1024))
+(setq gc-cons-threshold (* 128 1024 1024))
+(setq read-process-output-max (* 1024 1024))
+;; Windows 提速：避免反复枚举字体,关闭真文件属性查询
+(when (eq system-type 'windows-nt)
+  (setq inhibit-compacting-font-caches t)
+  (setq w32-get-true-file-attributes nil))
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
