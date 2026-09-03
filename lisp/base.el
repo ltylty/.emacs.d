@@ -88,6 +88,7 @@
   :hook ((shell-mode . completion-preview-mode) (eshell-mode . completion-preview-mode)))
 
 (use-package undo-fu-session :ensure t :defer t
+  :custom (undo-fu-session-compression nil)
   :hook (after-init . undo-fu-session-global-mode))
 
 (use-package nyan-mode :ensure t :defer t

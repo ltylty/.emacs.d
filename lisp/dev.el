@@ -97,6 +97,8 @@
 (use-package nerd-icons-dired :ensure t :defer t
   :hook (dired-mode . nerd-icons-dired-mode))
 
+(use-package dired-subtree :ensure t :after dired)
+
 (use-package dired-sidebar :ensure t :defer t
   :config
   (setq dired-sidebar-window-fixed nil)
