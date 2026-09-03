@@ -18,8 +18,7 @@
             (lambda ()
               (setq load-suffixes default-load-suffixes
                     load-file-rep-suffixes default-load-file-rep-suffixes
-                    file-name-handler-alist default-file-name-handler-alist))
-            101))
+                    file-name-handler-alist default-file-name-handler-alist))))
 
 (when (eq system-type 'windows-nt)
   (setq w32-get-true-file-attributes nil   ; decrease file IO workload
