@@ -106,6 +106,7 @@
 
 (use-package dired-preview :ensure t :after dired
   :config
+  (define-key dired-mode-map (kbd "C-c C-p") 'dired-preview-global-mode)
   (setq dired-preview-delay 0.15))
 
 (use-package agent-shell :ensure t :defer t

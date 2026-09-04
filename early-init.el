@@ -12,9 +12,9 @@
         load-file-rep-suffixes '(""))
   (add-hook 'emacs-startup-hook
             (lambda ()
-              (setq load-suffixes default-load-suffixes
-                    load-file-rep-suffixes default-load-file-rep-suffixes
-                    file-name-handler-alist default-file-name-handler-alist))))
+              (setq file-name-handler-alist default-file-name-handler-alist
+                    load-suffixes default-load-suffixes
+                    load-file-rep-suffixes default-load-file-rep-suffixes))))
 
 (when (eq system-type 'windows-nt)
   (setq w32-get-true-file-attributes nil))   ; decrease file IO workload
